@@ -1,0 +1,28 @@
+---
+title: Is my Switch homebrew-able?
+---
+
+This is... complicated.
+
+Technically speaking, every single Switch is homebrew-able, but the methods will differ depending on the model and situation.
+
+Currently, there are two different ways to homebrew a Switch.
+
+1. Using an RCM JIG.
+2. Soldering a modchip.
+
+The JIG is by far the easiest method, but in order to be able to use an RCM JIG to homebrew your Switch you specifically need a V1 Switch [ manufactured in 2017 - 2018 ] which is also unpatched. Only then can you use an RCM JIG.
+
+If you have a V1 Switch and want to check whether it is unpatched or not, please refer to the image below to check:
+
+![Image](https://i.imgur.com/MYlCYRG.png)
+
+:::note
+**V1** Switches are often referred to as **Erista**.
+
+**V2, Lite and OLED** Switches are often referred to as **Mariko**.
+:::
+
+Now, if you have a V1 Switch that is unpatched or possibly patched, you can skip to [Requirements](/getting_started/requirements).
+
+If you have a patched V1, V2, Lite or OLED, please go to [Patched](/introduction/patched).
