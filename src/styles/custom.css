@@ -40,6 +40,15 @@
 }
 
 
+/* Top nav title */
+.site-title {
+    background-color: rgba(61, 80, 245, 0.2);
+    padding: 0.2rem 1rem;
+    border-radius: 0.5rem;
+}
+
+
+
 /* .starlight-aside--note {
     --sl-color-asides-text-accent: rgb(207, 189, 255);
     --sl-color-asides-border: #7800FF;
