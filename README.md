@@ -1,5 +1,5 @@
 
-# Project Title
+# SP Homebrew Guide
 
 ## Table of Contents
 
