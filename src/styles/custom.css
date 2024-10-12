@@ -47,6 +47,11 @@
     border-radius: 0.5rem;
 }
 
+/* Links */
+a {
+    text-decoration: none;
+    font-weight: bold;
+}
 
 
 /* .starlight-aside--note {
