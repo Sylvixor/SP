@@ -16,6 +16,8 @@ export default defineConfig({
 			},
 			social: {
 				github: "https://github.com/sylvixor/sp",
+				discord: "https://discord.gg/zc2CmJWbz8",
+				telegram: "https://t.me/sylvixor",
 			},
 			sidebar: [
 				{
