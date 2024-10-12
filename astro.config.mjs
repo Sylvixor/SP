@@ -1,30 +1,34 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
-import starlight from '@astrojs/starlight';
+import { defineConfig } from "astro/config";
+import starlight from "@astrojs/starlight";
 
 // https://astro.build/config
 export default defineConfig({
 	integrations: [
 		starlight({
-			title: 'SP',
+			title: "SP",
+			description: "Homebrew Guide",
+			customCss: [
+				"./src/styles/custom.css",
+			],
+			logo: {
+				src: "./src/assets/favicon.png",
+			},
 			social: {
-				github: 'https://github.com/sylvixor/sp',
+				github: "https://github.com/sylvixor/sp",
 			},
 			sidebar: [
 				{
-					label: 'Introduction',
-					items: [
-						// Each item here is one entry in the navigation menu.
-						{ label: 'FAQ', slug: 'introduction/faq' },
-						{ label: 'Homebrew-able?', slug: 'introduction/homebrewable' },
-						{ label: 'Patched', slug: 'introduction/patched'},
-					],
+					label: "Introduction",
+					autogenerate: { directory: "introduction" },
 				},
 				{
-					label: 'Getting Started',
-					items: [
-						{ label: 'Requirements', slug: 'getting_started/requirements'},
-					]
+					label: "Getting Started",
+					autogenerate: { directory: "getting_started" },
+				},
+				{
+					label: "Homebrewing",
+					autogenerate: { directory: "homebrewing" },
 				},
 			],
 		}),

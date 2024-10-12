@@ -1,0 +1,36 @@
+/* Fonts */
+@font-face {
+	font-family: "made_carving_soft_personal_Lg";
+	src:
+		url("../fonts/madecarvingsoftpersonaluse-light-webfont.woff2")
+			format("woff2"),
+		url("../fonts/madecarvingsoftpersonaluse-light-webfont.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
+
+:root,
+::backdrop {
+	--sl-font-system: "made_carving_soft_personal_Lg", sans-serif;
+}
+
+/* For smooth navigating */
+@view-transition {
+	navigation: auto;
+}
+
+
+
+/* .starlight-aside--note {
+    --sl-color-asides-text-accent: rgb(207, 189, 255);
+    --sl-color-asides-border: #7800FF;
+    background-color: rgb(33, 23, 79);
+} */
+
+/* :where(.astro-3ii7xxms)[aria-current="page"],
+:where(.astro-3ii7xxms)[aria-current="page"]:hover,
+:where(.astro-3ii7xxms)[aria-current="page"]:focus {
+	font-weight: 600;
+	color: var(--sl-color-white);
+	background-color: #ff0080a4;
+} */
