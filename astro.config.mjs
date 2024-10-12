@@ -8,7 +8,7 @@ export default defineConfig({
 		starlight({
 			title: 'SP',
 			social: {
-				github: 'https://github.com/withastro/starlight',
+				github: 'https://github.com/sylvixor/sp',
 			},
 			sidebar: [
 				{
