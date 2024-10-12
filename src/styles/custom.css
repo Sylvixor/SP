@@ -19,7 +19,9 @@
 	navigation: auto;
 }
 
-
+.starlight-aside {
+    border-radius: 0.5rem;
+}
 
 /* .starlight-aside--note {
     --sl-color-asides-text-accent: rgb(207, 189, 255);
