@@ -151,20 +151,27 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"docs": {
-"getting_started/requirements.md": {
-	id: "getting_started/requirements.md";
+"getting_started/requirements.mdx": {
+	id: "getting_started/requirements.mdx";
   slug: "getting_started/requirements";
   body: string;
   collection: "docs";
   data: InferEntrySchema<"docs">
-} & { render(): Render[".md"] };
-"homebrewing/unpatched_v1.md": {
-	id: "homebrewing/unpatched_v1.md";
-  slug: "homebrewing/unpatched_v1";
+} & { render(): Render[".mdx"] };
+"homebrewing/1-unpatched_v1.mdx": {
+	id: "homebrewing/1-unpatched_v1.mdx";
+  slug: "homebrewing/1-unpatched_v1";
   body: string;
   collection: "docs";
   data: InferEntrySchema<"docs">
-} & { render(): Render[".md"] };
+} & { render(): Render[".mdx"] };
+"homebrewing/2-possibly_patched_v1.mdx": {
+	id: "homebrewing/2-possibly_patched_v1.mdx";
+  slug: "homebrewing/2-possibly_patched_v1";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdx"] };
 "index.mdx": {
 	id: "index.mdx";
   slug: "index";
@@ -172,27 +179,27 @@ declare module 'astro:content' {
   collection: "docs";
   data: InferEntrySchema<"docs">
 } & { render(): Render[".mdx"] };
-"introduction/faq.md": {
-	id: "introduction/faq.md";
-  slug: "introduction/faq";
+"introduction/1-faq.mdx": {
+	id: "introduction/1-faq.mdx";
+  slug: "introduction/1-faq";
   body: string;
   collection: "docs";
   data: InferEntrySchema<"docs">
-} & { render(): Render[".md"] };
-"introduction/homebrewable.md": {
-	id: "introduction/homebrewable.md";
-  slug: "introduction/homebrewable";
+} & { render(): Render[".mdx"] };
+"introduction/2-homebrewable.mdx": {
+	id: "introduction/2-homebrewable.mdx";
+  slug: "introduction/2-homebrewable";
   body: string;
   collection: "docs";
   data: InferEntrySchema<"docs">
-} & { render(): Render[".md"] };
-"introduction/patched.md": {
-	id: "introduction/patched.md";
-  slug: "introduction/patched";
+} & { render(): Render[".mdx"] };
+"introduction/3-patched.mdx": {
+	id: "introduction/3-patched.mdx";
+  slug: "introduction/3-patched";
   body: string;
   collection: "docs";
   data: InferEntrySchema<"docs">
-} & { render(): Render[".md"] };
+} & { render(): Render[".mdx"] };
 };
 
 	};
@@ -203,5 +210,5 @@ declare module 'astro:content' {
 
 	type AnyEntryMap = ContentEntryMap & DataEntryMap;
 
-	export type ContentConfig = typeof import("./../../src/content/config.js");
+	export type ContentConfig = typeof import("../../src/content/config.js");
 }
