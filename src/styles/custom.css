@@ -19,9 +19,26 @@
 	navigation: auto;
 }
 
+/* Asides style */
 .starlight-aside {
-    border-radius: 0.5rem;
+	border-radius: 0.5rem;
 }
+
+/* Home page logo */
+@media (min-width: 50rem) {
+    .hero:where(.astro-jbfsktt5) {
+        grid-template-columns: 5fr 4fr;
+        gap: 3%;
+        padding-block: clamp(2.5rem, calc(1rem + 10vmin), 10rem);
+    }
+
+	.hero:where(.astro-jbfsktt5) > img:where(.astro-jbfsktt5),
+	.hero:where(.astro-jbfsktt5) > .hero-html:where(.astro-jbfsktt5) {
+		order: 2;
+		width: 100%;
+	}
+}
+
 
 /* .starlight-aside--note {
     --sl-color-asides-text-accent: rgb(207, 189, 255);
