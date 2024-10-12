@@ -91,7 +91,7 @@ Here is an overview of the project structure:
 
 This project is licensed under the terms of the **MIT License**.
 
-## Acknowledgments
+## Acknowledgements
 Special thanks to:
 - The Astro team for developing such a great framework.
 - All contributors of the [Starlight](https://github.com/withastro/starlight) framework.
