@@ -17,7 +17,7 @@ If you have a V1 Switch and want to check whether it is unpatched or not, please
 
 ![Image](https://i.imgur.com/MYlCYRG.png)
 
-:::note
+:::note[Naming schemes]
 **V1** Switches are often referred to as **Erista**.
 
 **V2, Lite and OLED** Switches are often referred to as **Mariko**.
