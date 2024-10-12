@@ -1,1 +1,4 @@
 node_modules
+.astro/collections
+.astro/astro
+.astro
