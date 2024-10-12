@@ -27,7 +27,7 @@
 /* Home page logo */
 @media (min-width: 50rem) {
     .hero:where(.astro-jbfsktt5) {
-        grid-template-columns: 5fr 4fr;
+        grid-template-columns: 6fr 6fr;
         gap: 3%;
         padding-block: clamp(2.5rem, calc(1rem + 10vmin), 10rem);
     }
