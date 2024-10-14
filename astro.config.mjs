@@ -4,14 +4,12 @@ import starlight from "@astrojs/starlight";
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://homebrew.sylvixor.com',
+	site: "https://homebrew.sylvixor.com",
 	integrations: [
 		starlight({
 			title: "SP",
 			description: "Homebrew Guide",
-			customCss: [
-				"./src/styles/custom.css",
-			],
+			customCss: ["./src/styles/custom.css"],
 			logo: {
 				src: "./src/assets/favicon.png",
 			},
@@ -23,16 +21,26 @@ export default defineConfig({
 			sidebar: [
 				{
 					label: "Introduction",
-					autogenerate: { directory: "introduction" },
+					items: [
+						{ label: "FAQ", link: "/introduction/faq" },
+						{ label: "Homebrewable", link: "/introduction/homebrewable" },
+					],
 				},
 				{
 					label: "Homebrewing",
-					autogenerate: { directory: "homebrewing" },
+					items: [
+						{ label: "Possibly Patched", link: "/homebrewing/possibly-patched" },
+						{ label: "Unpatched", link: "/homebrewing/unpatched" },
+						{ label: "Patched", link: "/homebrewing/patched" },
+						{ label: "Mariko", link: "/homebrewing/mariko" },
+					]
 				},
 				{
 					label: "Miscellaneous",
-					autogenerate: { directory: "miscellaneous"},
-				},
+					items: [
+						{ label: "MicroSD", link: "/miscellaneous/microsd" },
+					]
+				}
 			],
 		}),
 	],
