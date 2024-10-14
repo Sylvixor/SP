@@ -1,18 +1,26 @@
 ---
-title: Possibilly Patched
+title: Possibly Patched
 ---
 
-### How to check
+This section will cover how you can find out whether your unit is patched or not.
+
+---
+
 :::note[Possible outcomes]
-There are **2 outcomes** from this. You will find out whether your V1 Switch is **patched** or **unpatched**
+There are **2** outcomes. You will find out whether your V1 Switch is **unpatched** or **patched**.
 :::
 
-First, follow the guide for [Unpatched V1](/homebrewing/unpatched_v1/) like normal:
+### How to check
 
-- If the injection is successful, and you boot into Hekate, your V1 Switch is **unpatched**
-- If the injection is successful, but the Switch stay in RCM mode, see the references below to confirm if your V1 Switch is patched or not
-    - If it's **patched**, please follow the guide for [Patched](/homebrewing/patched) Switch
+First, follow the guide for [Unpatched](/homebrewing/1-unpatched) like normal:
 
-## Further reading
+- If the injection is successful, and you boot into Hekate, your V1 Switch is **unpatched**.
+- Inside of TegraRCMGui, if the injection is successful but you get the message **"Smashed the stack with a 0x0000 byte..."**, your Switch is **patched**.
 
-- Read [about reference](https://diataxis.fr/reference/) in the Diátaxis framework
+---
+
+### Continue
+
+If your Switch is **unpatched**, please continue to [Unpatched](/homebrewing/1-unpatched).
+
+If your Switch is **patched**, please continue to [Patched](/homebrewing/3-patched)
