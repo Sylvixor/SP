@@ -151,30 +151,30 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"docs": {
-"homebrewing/1-unpatched.mdx": {
-	id: "homebrewing/1-unpatched.mdx";
-  slug: "homebrewing/1-unpatched";
+"homebrewing/mariko.mdx": {
+	id: "homebrewing/mariko.mdx";
+  slug: "homebrewing/mariko";
   body: string;
   collection: "docs";
   data: InferEntrySchema<"docs">
 } & { render(): Render[".mdx"] };
-"homebrewing/2-possibly_patched.mdx": {
-	id: "homebrewing/2-possibly_patched.mdx";
-  slug: "homebrewing/2-possibly_patched";
+"homebrewing/patched.mdx": {
+	id: "homebrewing/patched.mdx";
+  slug: "homebrewing/patched";
   body: string;
   collection: "docs";
   data: InferEntrySchema<"docs">
 } & { render(): Render[".mdx"] };
-"homebrewing/3-patched.mdx": {
-	id: "homebrewing/3-patched.mdx";
-  slug: "homebrewing/3-patched";
+"homebrewing/possibly-patched.mdx": {
+	id: "homebrewing/possibly-patched.mdx";
+  slug: "homebrewing/possibly-patched";
   body: string;
   collection: "docs";
   data: InferEntrySchema<"docs">
 } & { render(): Render[".mdx"] };
-"homebrewing/4-mariko.mdx": {
-	id: "homebrewing/4-mariko.mdx";
-  slug: "homebrewing/4-mariko";
+"homebrewing/unpatched.mdx": {
+	id: "homebrewing/unpatched.mdx";
+  slug: "homebrewing/unpatched";
   body: string;
   collection: "docs";
   data: InferEntrySchema<"docs">
@@ -186,23 +186,23 @@ declare module 'astro:content' {
   collection: "docs";
   data: InferEntrySchema<"docs">
 } & { render(): Render[".mdx"] };
-"introduction/1-faq.mdx": {
-	id: "introduction/1-faq.mdx";
-  slug: "introduction/1-faq";
+"introduction/faq.mdx": {
+	id: "introduction/faq.mdx";
+  slug: "introduction/faq";
   body: string;
   collection: "docs";
   data: InferEntrySchema<"docs">
 } & { render(): Render[".mdx"] };
-"introduction/2-homebrewable.mdx": {
-	id: "introduction/2-homebrewable.mdx";
-  slug: "introduction/2-homebrewable";
+"introduction/homebrewable.mdx": {
+	id: "introduction/homebrewable.mdx";
+  slug: "introduction/homebrewable";
   body: string;
   collection: "docs";
   data: InferEntrySchema<"docs">
 } & { render(): Render[".mdx"] };
-"miscellaneous/1-microsd.mdx": {
-	id: "miscellaneous/1-microsd.mdx";
-  slug: "miscellaneous/1-microsd";
+"miscellaneous/microsd.mdx": {
+	id: "miscellaneous/microsd.mdx";
+  slug: "miscellaneous/microsd";
   body: string;
   collection: "docs";
   data: InferEntrySchema<"docs">
