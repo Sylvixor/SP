@@ -17,6 +17,7 @@ export default defineConfig({
 				github: "https://github.com/sylvixor/sp",
 				discord: "https://discord.gg/zc2CmJWbz8",
 				telegram: "https://t.me/sylvixor",
+				reddit: "https://www.reddit.com/r/SwitchPirates"
 			},
 			sidebar: [
 				{
