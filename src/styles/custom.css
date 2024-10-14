@@ -54,16 +54,8 @@ a {
 }
 
 
-/* .starlight-aside--note {
-    --sl-color-asides-text-accent: rgb(207, 189, 255);
-    --sl-color-asides-border: #7800FF;
-    background-color: rgb(33, 23, 79);
-} */
 
-/* :where(.astro-3ii7xxms)[aria-current="page"],
-:where(.astro-3ii7xxms)[aria-current="page"]:hover,
-:where(.astro-3ii7xxms)[aria-current="page"]:focus {
-	font-weight: 600;
-	color: var(--sl-color-white);
-	background-color: #ff0080a4;
-} */
+/* Custom header font size */
+.sl-markdown-content h3:not(:where(.not-content *)) {
+    font-size: 1.5rem;
+}
