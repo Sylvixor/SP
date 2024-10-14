@@ -10,6 +10,7 @@ export default defineConfig({
 			title: "SP",
 			description: "Homebrew Guide",
 			customCss: ["./src/styles/custom.css"],
+			credits: true,
 			logo: {
 				src: "./src/assets/SP-logo-nav.png",
 			},
