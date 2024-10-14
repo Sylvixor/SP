@@ -25,12 +25,12 @@ export default defineConfig({
 					autogenerate: { directory: "introduction" },
 				},
 				{
-					label: "Getting Started",
-					autogenerate: { directory: "getting_started" },
-				},
-				{
 					label: "Homebrewing",
 					autogenerate: { directory: "homebrewing" },
+				},
+				{
+					label: "Miscellaneous",
+					autogenerate: { directory: "miscellaneous"},
 				},
 			],
 		}),
