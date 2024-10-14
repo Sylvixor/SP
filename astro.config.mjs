@@ -4,6 +4,7 @@ import starlight from "@astrojs/starlight";
 
 // https://astro.build/config
 export default defineConfig({
+	site: 'https://homebrew.sylvixor.com',
 	integrations: [
 		starlight({
 			title: "SP",
@@ -25,12 +26,12 @@ export default defineConfig({
 					autogenerate: { directory: "introduction" },
 				},
 				{
-					label: "Getting Started",
-					autogenerate: { directory: "getting_started" },
-				},
-				{
 					label: "Homebrewing",
 					autogenerate: { directory: "homebrewing" },
+				},
+				{
+					label: "Miscellaneous",
+					autogenerate: { directory: "miscellaneous"},
 				},
 			],
 		}),
