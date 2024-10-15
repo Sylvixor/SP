@@ -27,13 +27,14 @@ export default defineConfig({
 					items: [
 						{ label: "FAQ", link: "/introduction/faq" },
 						{ label: "Homebrewable", link: "/introduction/homebrewable" },
+						{ label: "Avoid bans", link: "/introduction/avoid-ban" },
 					],
 				},
 				{
 					label: "Homebrewing",
 					items: [
-						{ label: "Possibly Patched", link: "/homebrewing/possibly-patched" },
 						{ label: "Unpatched", link: "/homebrewing/unpatched" },
+						{ label: "Possibly Patched", link: "/homebrewing/possibly-patched" },
 						{ label: "Patched", link: "/homebrewing/patched" },
 						{ label: "Mariko", link: "/homebrewing/mariko" },
 					]
@@ -42,6 +43,7 @@ export default defineConfig({
 					label: "Miscellaneous",
 					items: [
 						{ label: "MicroSD", link: "/miscellaneous/microsd" },
+						{ label: "Partition or file", link: "/miscellaneous/partition-or-file" },
 					]
 				}
 			],

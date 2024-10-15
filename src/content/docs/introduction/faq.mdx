@@ -4,33 +4,154 @@ title: Frequently Asked Questions
 
 ### The goal?
 
+---
+
 To walk you through all of the steps in order to Homebrew your Switch safely, with updated terminology, methodology and more.
 
 ### Is it safe? Will I get banned?
 
+---
+
 Homebrewing is completely safe and if done right will not get you banned. In this guide we will be taking the necessary measures to prevent bans.
 
-### What is CFW ( Custom Firmware )?
+### What is RCM?
 
-Custom firmware, often referred to as CFW, is a piece of software that modifies the function of the original operating system, often referred to as OS. Custom firmware allows near limitless control and freedom with your hardware. For the Switch we will be using Atmosphere.
+---
 
-### What is OFW ( Original Firmware )?
+RCM stands for recovery mode.
 
-Original firmware, often referred to as OFW, is the original operating system of a console. In the case of the Switch the original operating system is called Horizon OS, HOS for short.
+### OS
 
-### What is Homebrew / Homebrewing?
+---
 
-Homebrew / Homebrewing refers to unofficial software written by hobbyists for locked down systems, CFW basically, It's like the word jailbreak, but only for Switch-like products and in this case, the Switch itself. Jailbreaking for example is often associated with iPhones but they essentially do the same thing.
+OS stands for operating system.
 
-### What is Hekate?
+### Horizon OS [ HOS ]
 
-Hekate is a custom bootloader for the Switch and is essential to homebrewing. You can use Hekate to access CFW and OFW.
+---
 
-### What is Atmosphere?
+Horizon is the name of the Switch OS.
 
-Atmosphere is the choice of CFW for the Switch. It runs underneath HOS and actively patches it.
+### Original Firmware [ OFW ]
+
+---
+
+OFW stands for original firmware. It is your devices unmodified firmware.
+
+### Custom Firmware [ CFW ]
+
+---
+
+CFW stands for custom firmware. It is a firmware that in this case allows your Switch to run Homebrew.
+
+### Homebrew
+
+---
+
+A term used to describe unofficial software created by developers for an otherwise locked-down device.
+In the case of the Switch, it can include things like save managers, emulators or games.
+Homebrewing can also be interpreted as a synonym for the more broadly known term jailbreaking.
+Homebrewing is NOT piracy.
+
+### Atmosphere [ AMS ]
+
+---
+
+A free and open source [ FOS ] CFW created and maintained by [SciresM](https://github.com/SciresM) and other [contributers](https://github.com/Atmosphere-NX/Atmosphere/graphs/contributors).
+
+### SXOS
+
+---
+
+A paid, no longer maintained and closed source CFW created by [Team Xecuter](https://en.wikipedia.org/wiki/Team_Xecuter).
+:::note[Note]
+Does not work with firmware above 11.0.0.
+:::
+
+### NAND / MMC
+
+---
+
+The **NAND** or **MMC** is your devices built-in memory [ not to be confused with an SD card ].
+
+### SysNAND / SysMMC
+
+---
+
+**Sys-** stands for **system**.
+The SysNAND [ /MMC ] is the contents stored on your devices internal storage [ NAND / MMC ] [ Not to be confused with OFW ].
+It contains everything ranging from the OS itself to games, screenshots, saves and more.
+Every device has a SysNAND [ /MMC ].
+
+### EmuNAND / EmuMMC
+
+---
+
+:::note[Note]
+Having an EmuNAND [ /MMC ] on it's own won't do enough to keep you from getting banned.
+This guide will show you what you can do to prevent bans.
+:::
+
+**Emu-** stands for **emulated**.
+The EmuNAND is a copy of your SysNAND that is stored on your SD card and not in the internal storage.
+It is used to isolate any actions that you might perform that on your SysNAND would either harm your device or get it banned.
+It is just a copy. Anything done on an EmuNAND does not affect the SysNAND.
+
+### Signature Patches [ Sigpatches ]
+
+---
+
+**Signature Patches**, or often shortly referred to as **SigPatches**, allow your device to bypass signature checks performed by HOS for installed titles.
+
+### Hekate
+
+---
+
+**Hekate** is a custom bootloader that allows you to bypass fuse checks, other than that, it has a lot of useful tools.
+**Hekate** can be used to boot into OFW, CFW, Android, Linux and everything else inbetween.
+
+### Fusee
+
+---
+
+**Fusee** is a custom, minimal bootloader that is only used to boot into **Atmosphere [ AMS ]**.
+The difference between **Hekate** and **Fusee** is that **Hekate** needs a custom configuration file that tells **Atmosphere [ AMS ]** what KIP's, patches and other settings it should use, while **Fusee** boots them automatically.
+
+### NSP
+
+---
+
+**NSP** stands for **Nintendo Submission Package**.
+It is either a dump of a title or a Homebrew package that can be installed.
+
+### XCI
+
+---
+
+**XCI** stands for **NX Card Image**.
+It is a dump of a physical game cartridge.
+
+### NSZ
+
+---
+
+An **NSZ** is a **compressed NSP file**.
+
+### XCZ
+
+---
+
+An **XCZ** is a **compressed XCI file**.
+
+### NRO
+
+---
+
+An **NRO** is an extension that Homebrew applications use.
 
 ### What can I do with a modded / homebrewed Switch?
+
+---
 
 Customize your Switch with custom themes, splash screens, icons and more.
 Play dumped games, DLC and updates.
@@ -41,6 +162,8 @@ Overclock your console for better performance.
 Have overlays for different applications.
 
 ### Do I lose any functionality by Homebrewing?
+
+---
 
 No, using Hekate you can easily switch between CFW, OFW and anything in-between. You can still access OFW in order to play your games online for example and CFW for everything else.
 
