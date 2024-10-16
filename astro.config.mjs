@@ -40,10 +40,32 @@ export default defineConfig({
 					]
 				},
 				{
+					label: "Important",
+					items: [
+						{ label: "Launch payload", link: "/important/payload" },
+						{ label: "Backup Switch", link: "/important/backup" },
+						{ label: "Backup save files", link: "/important/save" },
+						{ label: "Dump titles", link: "/important/dump" },
+						{ label: "Dump keys", link: "/important/keys" },
+						{ label: "Dump firmware", link: "/important/firmware" },
+						{ label: "Upgrade / downgrade Switch", link: "/important/upgrade" },
+					]
+				},
+				{
 					label: "Miscellaneous",
 					items: [
 						{ label: "MicroSD", link: "/miscellaneous/microsd" },
 						{ label: "Partition or file", link: "/miscellaneous/partition-or-file" },
+						{ label: "USB installation", link: "/miscellaneous/usb" },
+						{ label: "Enable gamecard reader", link: "/miscellaneous/gamecard" },
+						{ label: "Manage cheats", link: "miscellaneous/cheats" },
+						{ label: "Manage sysmodules", link: "/miscellaneous/sysmodules" },
+						{ label: "Setup Tesla overlay", link: "/miscellaneous/tesla" },
+						{ label: "Browse SD via USB", link: "/miscellaneous/browse" },
+						{ label: "Install themes", link: "/miscellaneous/themes" },
+						{ label: "Verify dumps", link: "/miscellaneous/verify" },
+						{ label: "Emulating amiibo", link: "/miscellaneous/emuiibo" },
+						{ label: "SXOS migration", link: "/miscellaneous/sxos" },
 					]
 				}
 			],
