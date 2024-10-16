@@ -1,3 +1,106 @@
 ---
 title: Avoid getting your Switch banned
 ---
+
+In the case that your Switch gets banned, you will no longer be able to access:
+
+- The Eshop.
+- Nintendo Switch Online.
+- Getting updates to games from the Eshop.
+
+:::note[Device]
+Your device getting banned does not mean your account is also banned.
+:::
+
+:::note[Account]
+If you do something like cheat in online games, you run the risk of your account getting banned as well.
+:::
+
+### What WILL get you banned?
+
+---
+
+- Modifying online games.
+    - Cheating in online games.
+    - Using layeredfs mods with games.
+    - Editing save files for online games.
+- Making modifications to your SysNAND.
+    - Installing NSP / XCI / NSZ / XCZ files.
+        - Installing homebrew forwarders.
+        - Installing game backups.
+    - Running NRO's that modify your SysNAND.
+    - Using a custom profile picture.
+- Doing the above things on EmuNAND without using:
+    - Exosphere / Incognito.
+    - DNS_MITM.
+
+:::note[Note]
+Just booting into SysNAND while using CFW will not get you banned.
+:::
+
+### What MIGHT get you banned?
+
+---
+
+- Using CFW.
+- Using cheats in offline games.
+- Running homebrew.
+- Using layeredfs to mod offline games.
+
+:::note[Note]
+It is NOT recommended to use EmuNAND without Exosphere / Incognito and DNS_MITM.
+:::
+
+### How to avoid getting banned?
+
+---
+
+There are four things you can use to avoid getting banned:
+
+- EmuNAND.
+- Exosphere.
+- Incognito.
+- DNS_MITM.
+
+This guide will go over how to install everything the right way so you don't end up getting your Switch banned.
+
+:::note[Note]
+Nintendo often makes changes to their systems, and therfore methods can get outdated and new ones can be found. Regularly check this guide to make sure the methods are still up to date.
+:::
+
+:::note[Note 2]
+Even if your Switch is already banned, using these measures is still recommended since getting banned does not stop you from receiving firmware updates and you don't accidentally want to update.
+:::
+
+:::note[Note 3]
+DNS_MITM only works on AMS 0.18.1 and up, if you're using an older version of AMS DNS_MITM will not work.
+:::
+
+### Is it possible to unban a Switch?
+
+---
+
+No.
+
+### DO NOT USE 90DNS
+
+---
+
+Use **DNS_MITM** instead of **90DNS**, the reason for this is because 90DNS relies on an external server. You have no control over what exactly gets blocked and it can also affect your download speeds.
+More importantly, protection is per network, DNS_MITM is globally. If you go somewhere else and forget to set up 90DNS again for that network, there is a good chance you'll get banned.
+
+DNS_MITM does not rely on an external server and blocks from your own device. You can also choose exactly what to block and what not to block. Since it is also applied globally there is no risk when switching networks.
+
+Stick to using **DNS_MITM** and do **NOT** use **90DNS**.
+
+---
+
+### Continue
+
+Now, if you have an **unpatched V1** Switch, please continue to [Unpatched](/homebrewing/unpatched).
+
+If you have a **possibly patched V1** Switch, please continue to [Possibly Patched](/homebrewing/possibly-patched).
+
+If you have a **patched V1**, **V2**, **Lite** or **OLED** **without** a modchip, please continue to [Patched](/homebrewing/patched).
+
+If you have a **patched V1**, **V2**, **Lite** or **OLED** but **with** a modchip, please continue to [Mariko](/homebrewing/mariko).
