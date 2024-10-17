@@ -54,14 +54,14 @@ export default defineConfig({
 				{
 					label: "Miscellaneous",
 					items: [
-						{ label: "MicroSD", link: "/miscellaneous/microsd" },
+						{ label: "MicroSD guide", link: "/miscellaneous/microsd" },
 						{ label: "Partition or file", link: "/miscellaneous/partition-or-file" },
+						{ label: "Browse SD via USB", link: "/miscellaneous/browse" },
 						{ label: "USB installation", link: "/miscellaneous/usb" },
 						{ label: "Enable gamecard reader", link: "/miscellaneous/gamecard" },
 						{ label: "Manage cheats", link: "miscellaneous/cheats" },
 						{ label: "Manage sysmodules", link: "/miscellaneous/sysmodules" },
 						{ label: "Setup Tesla overlay", link: "/miscellaneous/tesla" },
-						{ label: "Browse SD via USB", link: "/miscellaneous/browse" },
 						{ label: "Install themes", link: "/miscellaneous/themes" },
 						{ label: "Verify dumps", link: "/miscellaneous/verify" },
 						{ label: "Emulating amiibo", link: "/miscellaneous/emuiibo" },
