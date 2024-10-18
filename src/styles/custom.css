@@ -53,7 +53,18 @@ a {
     font-weight: bold;
 }
 
+/* Custom tabs bg color */
+starlight-tabs {
+	background-color: rgba(61, 79, 245, 0.07);
+	padding: 1rem;
+	border-radius: 0.5rem;
+	box-shadow: 0.1rem 0.2rem 0.4rem rgba(0, 0, 0, 0.1);
+}
 
+/* Custom link card bg color */
+.sl-link-card {
+	background-color: var(--sl-color-bg);
+}
 
 /* Custom header font size */
 .sl-markdown-content h3:not(:where(.not-content *)) {
