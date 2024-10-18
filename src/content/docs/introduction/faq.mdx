@@ -2,6 +2,8 @@
 title: Frequently Asked Questions
 ---
 
+import { Badge } from '@astrojs/starlight/components';
+
 ### The goal?
 
 ---
@@ -59,13 +61,12 @@ Homebrewing is NOT piracy.
 
 A free and open source [ FOS ] CFW created and maintained by [SciresM](https://github.com/SciresM) and other [contributers](https://github.com/Atmosphere-NX/Atmosphere/graphs/contributors).
 
-### SXOS
+### SXOS <Badge text="Deprecated" variant="danger" />
 
 ---
 
 A paid, no longer maintained and closed source CFW created by [Team Xecuter](https://en.wikipedia.org/wiki/Team_Xecuter).
-:::note[Note]
-Does not work with firmware above 11.0.0.
+:::danger[Does not work with firmware above 11.0.0]
 :::
 
 ### NAND / MMC
@@ -87,7 +88,7 @@ Every device has a SysNAND [ /MMC ].
 
 ---
 
-:::note[Note]
+:::caution[Note]
 Having an EmuNAND [ /MMC ] on it's own won't do enough to keep you from getting banned.
 This guide will show you what you can do to prevent bans.
 :::
