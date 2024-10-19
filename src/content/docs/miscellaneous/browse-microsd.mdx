@@ -2,6 +2,8 @@
 title: Browsing microSD card using USB
 ---
 
+import { Badge } from "@astrojs/starlight/components";
+
 This section will go over how you can browse your microSD card without having to take it out of the Switch.
 This is the recommended way to do things in regards to your microSD card.
 The reason for this is because the microSD card reader inside of the Switch is fragile and you may risk damage if you keep taking your microSD card in and out.
@@ -18,24 +20,20 @@ import { Card, CardGrid } from "@astrojs/starlight/components";
         - This method won't allow you to update AMS via USB, however, it can be used from the homebrew menu.
 
         ### Requirement
+        ---
 
-        <Card title="AMS 1.5.2">
-            Or newer.
-        </Card>
+        <Card title="AMS 1.5.2 or newer"></Card>
 
         ### Steps
-
         ---
 
         1. Launch the homebrew menu.
             - There are 2 ways to launch the homebrew menu:
-                - [ Recommended ] Launch any game on the homescreen while holding R.
-                - [ Not recommended ] Launch the album.
+                - Launch any game on the homescreen while holding R.
+                - Launch the album.
         2. Connect your Switch to your PC / laptop using a cable.
         3. A new drive called ```Nintendo Switch``` should now shop up in your file explorer.
         4. Access the drive, now you can browse your microSD card without having to take it out.
-
-        ---
 
     </TabItem>
 

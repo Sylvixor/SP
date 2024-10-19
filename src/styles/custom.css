@@ -61,12 +61,19 @@ starlight-tabs {
 	box-shadow: 0.1rem 0.2rem 0.4rem rgba(0, 0, 0, 0.1);
 }
 
-/* Custom link card bg color */
-.sl-link-card {
-	background-color: var(--sl-color-bg);
+/* Custom card styling */
+.card {
+	padding: clamp(0.5rem, calc(0.125rem + 3vw), 1.25rem);
+	box-shadow: 0.1rem 0.2rem 0.4rem rgba(0, 0, 0, 0.1);
+	border-radius: 0.5rem;
+}
+
+.card > p {
+	font-size: 1.3rem;
 }
 
 /* Custom header font size */
 .sl-markdown-content h3:not(:where(.not-content *)) {
     font-size: 1.5rem;
 }
+

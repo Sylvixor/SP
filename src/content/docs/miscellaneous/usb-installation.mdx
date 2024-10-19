@@ -1,0 +1,221 @@
+---
+title: Performing USB installations
+---
+
+import { Badge } from "@astrojs/starlight/components";
+import { Tabs, TabItem } from "@astrojs/starlight/components";
+import { Card, LinkCard, CardGrid } from "@astrojs/starlight/components";
+
+This section will go over how to install title(s) using USB.
+
+---
+
+You can perform USB installations using the following homebrew applications:
+
+- Tinfoil via MTP. <Badge text="Recommended" variant="success" />
+- DBI via MTP. <Badge text="Recommended" variant="success" />
+- Tinfoil & NUT.
+- Tinleaf & NSUSBInstaller.
+
+---
+
+<Tabs>
+    <TabItem label = "Tinfoil via MTP">
+        :::note[Enabling MTP]
+            If you are on MacOS, please install a file transfer application to enable MTP functionality.
+        :::
+
+        ### Requirement
+        ---
+
+        {/* <CardGrid> */}
+            <Card title="Tinfoil"></Card>
+            <LinkCard title="Tinfoil"></LinkCard>
+        {/* </CardGrid> */}
+        ### Steps
+        ---
+
+        1. Launch a game while holding the R button to access the homebrew menu.
+
+        2.  Launch `Tinfoil-Installer`.
+        3.  Exit out of the homebrew menu and select `Tinfoil` on your home menu.
+        4.  Once inside of Tinfoil, scroll down to `options`.
+        5.  Once inside options, make sure tha the `enable MTP` option is set to `yes` and that the `enable NUT` option is set to `no`.
+        6.  Connect your Switch to your device using a cable.
+        7.  Once connected, access the Switch by the new drive named `Switch`.
+        8.  Once inside the Switch drive, access the `install` folder.
+        9.  Place your desired title(s) in this folder.
+        - *The following file formats are supported:* **XCI**, **NSP**, **XCZ**, **NSZ**
+        10. Your installation should start now, it can take a while. Once it is done, you should see the installed title on your homescreen.
+        11. After that, you can disconnect your Switch and exit out of the application.
+
+        </TabItem>
+
+        <TabItem label = "DBI via MTP">
+        :::note[Enabling MTP]
+            If you are on MacOS, please install a file transfer application to enable MTP functionality.
+        :::
+
+        ### Requirement
+        ---
+
+        <Card title="DBI"></Card>
+
+        ### Steps
+        ---
+
+        1. Launch a game while holding the R button to access the homebrew menu.
+        2. Launch `DBI`.
+        3. Connect your Switch to your device using a cable.
+        4. Once inside DBI, select `Run MTP responder`.
+        5. Once connected, access the Switch by the new drive named `Switch`.
+        6. Once inside, access `5. MicroSD Install` to install titles.
+        7. Once connected, access the Switch by the new drive named `Switch`.
+        8. Once inside the Switch drive, access the `install` folder.
+        9.  Place your desired title(s) in this folder.
+        - The following file formats are supported: **XCI**, **NSP**, **XCZ**, **NSZ**
+        10. Your installation should start now, it can take a while. Once it is done, you should see the installed title on your homescreen.
+        11. After that, you can disconnect your Switch and exit out of the application.
+
+        </TabItem>
+
+        <TabItem label = "Tinfoil & NUT">
+
+        </TabItem>
+
+        <TabItem label = "Tinleaf & NSUSBInstaller">
+
+        </TabItem>
+
+    </Tabs>
+
+### Tinfoil via MTP <Badge text="Recommended" variant="success" />
+
+---
+
+You'll need:
+
+- Tinfoil.
+
+### Steps Tinfoil via MTP
+
+---
+
+1. Launch a game while holding the R button to access the homebrew menu.
+2. Launch `Tinfoil-Installer`.
+3. Exit out of the homebrew menu and select `Tinfoil` on your home menu.
+4. Once inside of Tinfoil, scroll down to `options`.
+5. Once inside options, make sure tha the `enable MTP` option is set to `yes` and that the `enable NUT` option is set to `no`.
+6. Connect your Switch to your device using a cable.
+7. Once connected, access the Switch by the new drive named `Switch`.
+8. Once inside the Switch drive, access the `install` folder.
+9. Place your desired title(s) in this folder.
+   - The following file formats are supported:
+     - XCI.
+     - NSP.
+     - XCZ.
+     - NSZ.
+10. Your installation should start now, once it is done you should see the installed title on your homescreen.
+    - You can disconnect your Switch and exit out of the application.
+
+### DBI via MTP <Badge text="Recommended" variant="success" />
+
+---
+
+You'll need:
+
+- DBI.
+
+### Steps DBI via MTP
+
+---
+
+1. Launch a game while holding the R button to access the homebrew menu.
+2. Launch `DBI`.
+3. Connect your Switch to your device using a cable.
+4. Once inside DBI, select `Run MTP responder`.
+5. Once connected, access the Switch by the new drive named `Switch`.
+6. Once inside, access `5. MicroSD Install` to install titles.
+7. Place your desired title(s) in this folder.
+   - The following file formats are supported:
+     - XCI.
+     - NSP.
+     - XCZ.
+     - NSZ.
+8. Your installation should start now, once it is done you should see the installed title on your homescreen.
+   - You can disconnect your Switch and exit out of the homebrew menu.
+
+### Tinfoil & NUT
+
+---
+
+You'll need:
+
+- Tinfoil.
+- NUT.
+- Tinfoil driver.
+
+### Steps Tinfoil & NUT
+
+---
+
+1. Extract `tinfoil.latest.zip` to the root of your microSD card.
+2. Run `Tinfoil_driver.exe`.
+3. Create a folder named `nut` anywhere on your device, and place `nut.exe` inside of it.
+4. Create a folder named `titles` in your `nut` folder.
+5. Run `nut.exe`.
+6. Once NUT launches, click on `local scan paths`.
+7. Click on the browse tab and pick your `titles` folder that you created earlier.
+8. Place your desired title(s) in this folder.
+   - The following file formats are supported:
+     - XCI.
+     - XCZ.
+     - NSP.
+     - NSZ.
+9. Click on the `files` tab and click `scan`.
+10. Once you see the aforementioned title(s) in NUT, plug your Switch in your device using a cable.
+11. On your Switch, access the homebrew menu by holding R while launching a game and launch `Tinfoil-Installer`.
+12. Exit out of the homebrew menu and select `Tinfoil` on you home menu.
+13. Once inside of Tinfoil, head over to the `new games` tab and you should see your aforementioned title(s) there.
+14. Click `A` on a title to select it, and `A` again to install it.
+    - You can click `X` and then `A` instead to install **all** titles in the new games tab.
+15. Your installation should start now, once it is done you should see the installed title(s) on your homescreen.
+    - You can disconnect your Switch and exit out of the application.
+
+### Tinleaf & NSUSBInstaller
+
+---
+
+You'll need:
+
+- Tinleaf.
+- NSUSBInstaller.
+
+### Steps Tinleaf & NSUSBInstaller
+
+---
+
+1. Copy `tinleaf.nro` to the `/switch/` folder that's on the root of your microSD card.
+2. Connect your Switch to your device and run `ns-usbloader-x-x.jar`.
+3. Once launched, click on the cogwheel icon.
+   - You can skip to step x if you're on MacOS or Linux.
+4. Click on `download and install drivers`.
+5. An installation wizard will open, click `next` and then click `finish`.
+6. Click on the controller icon to go back to the main menu.
+7. Drag your desired title(s) in this place.
+   - The following file formats are supported:
+     - XCI.
+     - XCZ.
+     - NSP.
+     - NSZ.
+8. Click on `upload to NS`.
+9. On your Switch, launch a game while holding R to launch the homebrew menu and launch `Tinleaf-Installer`.
+10. Enter `Tinleaf`.
+11. Once in Tinleaf, select `install over USB`.
+12. You will now see your aforementioned title(s), press `A` to install a selected title.
+    - If you want to install all titles, press `Y` and then `+` in order to install all titles.
+13. Select your desired location.
+14. Your installation should start now, once it is done you should see the installed title(s) on your homescreen.
+    - You can disconnect your Switch and exit out of the homebrew menu.
+
+-

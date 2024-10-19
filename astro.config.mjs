@@ -55,9 +55,9 @@ export default defineConfig({
 					label: "Miscellaneous",
 					items: [
 						{ label: "MicroSD guide", link: "/miscellaneous/microsd" },
-						{ label: "Partition or file", link: "/miscellaneous/partition-or-file" },
-						{ label: "Browse SD via USB", link: "/miscellaneous/browse" },
-						{ label: "USB installation", link: "/miscellaneous/usb" },
+						{ label: "Partition-based or file-based", link: "/miscellaneous/partition-or-file" },
+						{ label: "Browse microSD via USB", link: "/miscellaneous/browse-microsd" },
+						{ label: "USB installation", link: "/miscellaneous/usb-installation" },
 						{ label: "Enable gamecard reader", link: "/miscellaneous/gamecard" },
 						{ label: "Manage cheats", link: "miscellaneous/cheats" },
 						{ label: "Manage sysmodules", link: "/miscellaneous/sysmodules" },

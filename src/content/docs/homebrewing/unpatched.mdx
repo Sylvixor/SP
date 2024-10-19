@@ -64,7 +64,7 @@ If everything before this point has been done, please select a device / operatin
 Choose the device / operating system of choice to download the required files.
 
 import { Tabs, TabItem } from "@astrojs/starlight/components";
-import { LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Card, CardGrid } from "@astrojs/starlight/components";
 
 <Tabs>
     <TabItem label="Windows">
@@ -72,15 +72,18 @@ import { LinkCard, CardGrid } from "@astrojs/starlight/components";
             :--:    |  :--:  |    :--:    |    :--:
 [Download](https://github.com/eliboa/TegraRcmGUI/releases/download/2.6/TegraRcmGUI_v2.6_Installer.msi) | [Download](https://github.com/CTCaer/hekate/releases/download/v6.2.1/hekate_ctcaer_6.2.1_Nyx_1.6.3.zip) | [Download](https://github.com/Atmosphere-NX/Atmosphere/releases/download/1.7.1/atmosphere-1.7.1-master-39c201e37+hbl-2.4.4+hbmenu-3.6.0.zip) | [Download](https://sigmapatches.su/sigpatches.zip?06.11.2024) */}
         #### Downloads
+        ---
 
         <CardGrid>
-            <LinkCard title="TegraRcmGui v2.6" href="https://github.com/eliboa/TegraRcmGUI/releases/download/2.6/TegraRcmGUI_v2.6_Installer.msi" />
-            <LinkCard title="hekate v6.2.2" href="https://github.com/CTCaer/hekate/releases/download/v6.2.1/hekate_ctcaer_6.2.1_Nyx_1.6.3.zip" />
-            <LinkCard title="Atmosphere v1.7.1" href="https://github.com/Atmosphere-NX/Atmosphere/releases/tag/1.7.1" />
-            <LinkCard title="Sigpatches (FW 18.0.1)" href="https://sigmapatches.su/sigpatches.zip" />
+            <Card title="TegraRcmGUI">From its **website** or **GitHub**. Search `TegraRcmGUI`</Card>
+            <Card title="hekate">From **GitHub**. Search `Hekate Switch`</Card>
+            <Card title="Atmosphère">From **GitHub**. Search `Atmosphere-NX`</Card>
+            <Card title="Sigpatches">From its **website**. Search `Sigmapatches`</Card>
         </CardGrid>
 
         #### Injecting the payload
+        ---
+
         :::note[You can skip this step if you have an RCMLoader]
         :::
             
@@ -100,15 +103,18 @@ import { LinkCard, CardGrid } from "@astrojs/starlight/components";
 
     <TabItem label="Linux">
         #### Downloads
+        ---
 
         <CardGrid>
-            <LinkCard title="Fusee-nano v1.0.0" href="https://github.com/DefenderOfHyrule/fusee-nano/releases/tag/v1.0.0" />
-            <LinkCard title="hekate v6.2.2" href="https://github.com/CTCaer/hekate/releases/download/v6.2.1/hekate_ctcaer_6.2.1_Nyx_1.6.3.zip" />
-            <LinkCard title="Atmosphere v1.7.1" href="https://github.com/Atmosphere-NX/Atmosphere/releases/tag/1.7.1" />
-            <LinkCard title="Sigpatches (FW 18.0.1)" href="https://sigmapatches.su/sigpatches.zip" />
+            <Card title="Fusee-nano">From **GitHub**. Search `Fusee-nano`</Card>
+            <Card title="hekate">From **GitHub**. Search `Hekate Switch`</Card>
+            <Card title="Atmosphère">From **GitHub**. Search `Atmosphere-NX`</Card>
+            <Card title="Sigpatches">From its **website**. Search `Sigmapatches`</Card>
         </CardGrid>
 
         #### Injecting the payload
+        ---
+
         :::note[You can skip this step if you have an RCMLoader]
         :::
 
@@ -126,19 +132,39 @@ import { LinkCard, CardGrid } from "@astrojs/starlight/components";
 
     </TabItem>
 
-    <TabItem label="MacOS [ OS X ]">
+    <TabItem label="Mac">
+    #### Downloads
+    ---
+
+    #### Injecting the payload
+    ---
 
     </TabItem>
 
     <TabItem label="ChromeOS">
+    #### Downloads
+    ---
+
+    #### Injecting the payload
+    ---
 
     </TabItem>
 
     <TabItem label="Android">
+    #### Downloads
+    ---
+
+    #### Injecting the payload
+    ---
 
     </TabItem>
 
     <TabItem label="iOS">
+    #### Downloads
+    ---
+
+    #### Injecting the payload
+    ---
 
     </TabItem>
 
