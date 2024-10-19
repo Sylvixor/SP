@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Play DOOM! | SP</title>
+		<link rel="icon" href="/favicon.png" />
+		<style type="text/css">
+			@font-face {
+				font-family: "made_carving_soft_personal_Lg";
+				src:
+					url("/src/fonts/madecarvingsoftpersonaluse-light-webfont.woff2")
+						format("woff2"),
+					url("/src/fonts/madecarvingsoftpersonaluse-light-webfont.woff")
+						format("woff");
+				font-weight: normal;
+				font-style: normal;
+			}
+
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+				font-family: "made_carving_soft_personal_Lg";
+				transition: 0.12s;
+			}
+
+			body {
+				height: 90svh;
+			}
+
+			.dosbox-container {
+				width: 640px;
+				height: 400px;
+			}
+			.dosbox-container > .dosbox-overlay {
+				background: url(https://js-dos.com/cdn/DOOM.png);
+			}
+
+			#dosbox-bg {
+				display: flex;
+				width: 100%;
+				height: 100%;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+			}
+
+			#dosbox-bg > * {
+				text-align: center;
+			}
+
+			#dosbox-bg > h1 {
+				color: #3d50f5;
+			}
+
+			#dosbox-fullscreen {
+				margin-top: 1rem;
+				padding: 1rem;
+				font-size: 20px;
+				background-color: #3d50f5;
+				color: white;
+				cursor: pointer;
+				border: none;
+				border-radius: 2rem;
+			}
+
+			#dosbox-fullscreen:hover {
+				background-color: #2c3cb7;
+			}
+
+			#dosbox-buttons {
+				display: flex;
+				flex-direction: row;
+				justify-content: center;
+				align-items: center;
+				gap: 1rem;
+			}
+
+			#dosbox-home {
+				margin-top: 1rem;
+				padding: 1rem;
+				font-size: 20px;
+				background-color: #f80;
+				color: white;
+				cursor: pointer;
+				border: none;
+				border-radius: 2rem;
+				text-decoration: none;
+			}
+
+			#dosbox-home:hover {
+				background-color: #b70;
+			}
+
+			#dosbox-credit {
+				margin-top: 4rem;
+				color: grey;
+			}
+
+			#dosbox-credit > a {
+				color: #f80;
+				text-decoration: none;
+				font-weight: bold;
+			}
+
+			#dosbox-credit > a:hover {
+				text-decoration: underline;
+			}
+
+			#dosbox-credit > a > img {
+				box-sizing: content-box;
+				width: 1.5rem;
+				height: 1.5rem;
+				vertical-align: middle;
+				padding: 0 0.3rem;
+			}
+
+			.dosbox-start {
+				bottom: 45% !important;
+				width: 100%;
+				background-color: #ff8800bb;
+				color: #fff !important;
+				padding: 1rem 0;
+			}
+
+			.dosbox-powered {
+				display: none;
+			}
+
+			/* Nav bar */
+			.navbar {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				background-color: #f5f7fa;
+				padding: 0.5rem 1.5rem;
+				border-bottom: 1px solid #eaeaea;
+			}
+			
+			.navbar-left {
+				display: flex;
+				align-items: center;
+				background-color: rgba(61, 80, 245, 0.1);
+				padding: 0.3rem 1rem;
+				border-radius: 0.5rem;
+				align-items: center;
+				gap: 1.5rem;
+				font-size: 1.5rem;
+				font-weight: 600;
+				color: #3d50f5;
+				text-decoration: none;
+				white-space: nowrap;
+			}
+
+			.logo {
+				width: 40px;
+				height: 40px;
+			}
+
+			.app-name {
+				font-size: 20px;
+				margin-left: 10px;
+				color: #4a4a4a;
+			}
+
+			.navbar-right {
+				display: flex;
+				align-items: center;
+			}
+
+			.icon-link {
+				margin-right: 15px;
+			}
+
+			.icon-link img {
+				width: 24px;
+				height: 24px;
+			}
+
+			.theme-select {
+				display: flex;
+				align-items: center;
+				border-left: 1px solid #eaeaea;
+				padding-left: 1rem;
+				appearance: none;
+			}
+
+			.theme-select label {
+				margin-right: 5px;
+				font-size: 14px;
+				color: #333;
+			}
+
+			.theme-select select {
+				padding: 1rem;
+				border: none;
+				background-color: transparent;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<!-- Nav bar -->
+	<nav class="navbar">
+		<a class="navbar-left" href="/">
+			<img src="/src/assets/SP-logo-nav.png" alt="Logo" class="logo" />
+			SP
+		</a>
+
+		<div class="navbar-right">
+			<a href="https://github.com/sylvixor/sp" class="icon-link"
+				><svg aria-hidden="true" class="astro-wy4te6ga astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="#3d50f5">
+					<path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.08 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0 0 12 .3Z"></path>
+				</svg></a>
+			<a href="https://discord.gg/zc2CmJWbz8" class="icon-link"
+				><svg aria-hidden="true" class="astro-wy4te6ga astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="#3d50f5">
+					<path d="M20.32 4.37a19.8 19.8 0 0 0-4.93-1.51 13.78 13.78 0 0 0-.64 1.28 18.27 18.27 0 0 0-5.5 0 12.64 12.64 0 0 0-.64-1.28h-.05A19.74 19.74 0 0 0 3.64 4.4 20.26 20.26 0 0 0 .11 18.09l.02.02a19.9 19.9 0 0 0 6.04 3.03l.04-.02a14.24 14.24 0 0 0 1.23-2.03.08.08 0 0 0-.05-.07 13.1 13.1 0 0 1-1.9-.92.08.08 0 0 1 .02-.1 10.2 10.2 0 0 0 .41-.31h.04a14.2 14.2 0 0 0 12.1 0l.04.01a9.63 9.63 0 0 0 .4.32.08.08 0 0 1-.03.1 12.29 12.29 0 0 1-1.9.91.08.08 0 0 0-.02.1 15.97 15.97 0 0 0 1.27 2.01h.04a19.84 19.84 0 0 0 6.03-3.05v-.03a20.12 20.12 0 0 0-3.57-13.69ZM8.02 15.33c-1.18 0-2.16-1.08-2.16-2.42 0-1.33.96-2.42 2.16-2.42 1.21 0 2.18 1.1 2.16 2.42 0 1.34-.96 2.42-2.16 2.42Zm7.97 0c-1.18 0-2.15-1.08-2.15-2.42 0-1.33.95-2.42 2.15-2.42 1.22 0 2.18 1.1 2.16 2.42 0 1.34-.94 2.42-2.16 2.42Z"></path>
+				</svg></a>
+			<a href="https://t.me/sylvixor" class="icon-link"
+				><svg aria-hidden="true" class="astro-wy4te6ga astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="#3d50f5">
+					<path d="M22.265 2.428a2.048 2.048 0 0 0-2.078-.324L2.266 9.339a2.043 2.043 0 0 0 .104 3.818l3.625 1.261 2.02 6.682a.998.998 0 0 0 .119.252c.008.012.019.02.027.033a.988.988 0 0 0 .211.215.972.972 0 0 0 .07.05.986.986 0 0 0 .31.136l.013.001.006.003a1.022 1.022 0 0 0 .203.02l.018-.003a.993.993 0 0 0 .301-.052c.023-.008.042-.02.064-.03a.993.993 0 0 0 .205-.114 250.76 250.76 0 0 1 .152-.129l2.702-2.983 4.03 3.122a2.023 2.023 0 0 0 1.241.427 2.054 2.054 0 0 0 2.008-1.633l3.263-16.017a2.03 2.03 0 0 0-.693-1.97ZM9.37 14.736a.994.994 0 0 0-.272.506l-.31 1.504-.784-2.593 4.065-2.117Zm8.302 5.304-4.763-3.69a1.001 1.001 0 0 0-1.353.12l-.866.955.306-1.487 7.083-7.083a1 1 0 0 0-1.169-1.593L6.745 12.554 3.02 11.191 20.999 4Z"></path>
+				</svg></a>
+			<a href="https://www.reddit.com/r/SwitchPirates" class="icon-link"
+				><svg aria-hidden="true" class="astro-wy4te6ga astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24" fill="#3d50f5">
+					<path d="M14.41 16.87a3.38 3.38 0 0 1-2.37.63 3.37 3.37 0 0 1-2.36-.63 1 1 0 0 0-1.42 1.41 5.11 5.11 0 0 0 3.78 1.22 5.12 5.12 0 0 0 3.78-1.22 1 1 0 1 0-1.41-1.41ZM9.2 15a1 1 0 1 0-1-1 1 1 0 0 0 1 1Zm6-2a1 1 0 1 0 1 1 1 1 0 0 0-1-1Zm7.8-1.22a3.77 3.77 0 0 0-6.8-2.26 16.5 16.5 0 0 0-3.04-.48l.85-5.7 2.09.7a3 3 0 0 0 6-.06v-.02a3.03 3.03 0 0 0-3-2.96 2.98 2.98 0 0 0-2.34 1.16l-3.24-1.1a1 1 0 0 0-1.3.8l-1.09 7.17a16.66 16.66 0 0 0-3.34.49 3.77 3.77 0 0 0-6.22 4.23A4.86 4.86 0 0 0 1 16c0 3.92 4.83 7 11 7s11-3.08 11-7a4.86 4.86 0 0 0-.57-2.25 3.78 3.78 0 0 0 .57-1.97ZM19.1 3a1 1 0 1 1-1 1 1.02 1.02 0 0 1 1-1ZM4.77 10a1.76 1.76 0 0 1 .88.25A9.98 9.98 0 0 0 3 11.92v-.14A1.78 1.78 0 0 1 4.78 10ZM12 21c-4.88 0-9-2.29-9-5s4.12-5 9-5 9 2.29 9 5-4.12 5-9 5Zm8.99-9.08a9.98 9.98 0 0 0-2.65-1.67 1.76 1.76 0 0 1 .88-.25A1.78 1.78 0 0 1 21 11.78l-.01.14Z"></path>
+				</svg>
+				</a>
+			<div class="theme-select">
+				<!-- <label for="theme">Mode:</label> -->
+				<svg aria-hidden="true" class="icon label-icon astro-4yphtoen astro-c6vsoqas" width="16" height="16" viewBox="0 0 24 24">
+					<path
+						d="M5 12a1 1 0 0 0-1-1H3a1 1 0 0 0 0 2h1a1 1 0 0 0 1-1Zm.64 5-.71.71a1 1 0 0 0 0 1.41 1 1 0 0 0 1.41 0l.71-.71A1 1 0 0 0 5.64 17ZM12 5a1 1 0 0 0 1-1V3a1 1 0 0 0-2 0v1a1 1 0 0 0 1 1Zm5.66 2.34a1 1 0 0 0 .7-.29l.71-.71a1 1 0 1 0-1.41-1.41l-.66.71a1 1 0 0 0 0 1.41 1 1 0 0 0 .66.29Zm-12-.29a1 1 0 0 0 1.41 0 1 1 0 0 0 0-1.41l-.71-.71a1.004 1.004 0 1 0-1.43 1.41l.73.71ZM21 11h-1a1 1 0 0 0 0 2h1a1 1 0 0 0 0-2Zm-2.64 6A1 1 0 0 0 17 18.36l.71.71a1 1 0 0 0 1.41 0 1 1 0 0 0 0-1.41l-.76-.66ZM12 6.5a5.5 5.5 0 1 0 5.5 5.5A5.51 5.51 0 0 0 12 6.5Zm0 9a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7Zm0 3.5a1 1 0 0 0-1 1v1a1 1 0 0 0 2 0v-1a1 1 0 0 0-1-1Z"
+					></path>
+				</svg>
+				<select id="theme" name="theme">
+					<option value="auto">Auto</option>
+					<option value="light" selected>Light</option>
+					<option value="dark">Dark</option>
+				</select>
+			</div>
+		</div>
+	</nav>
+
+	<!-- JS DOS -->
+	<body>
+		<div id="dosbox-bg">
+			<h1>But the real question is, can it play DOOM?</h1>
+			<br />
+			<h2> Well, yes, it absolutely can!</h2>
+			<br />
+			<br />
+			<h3>Enjoy the classic DOOM, right in your browser!</h3>
+			<br />
+			<div id="dosbox"></div>
+			<br />
+			<div id="dosbox-buttons">
+				<button id="dosbox-fullscreen" onclick="dosbox.requestFullScreen();">
+					Go fullscreen
+				</button>
+
+				<a id="dosbox-home" href="/"> Back to Home </a>
+			</div>
+
+			<span id="dosbox-credit"
+				>Powered by
+				<a href="https://js-dos.com"
+					><img
+						src="https://js-dos.com/images/logo-512.png"
+						alt="js-doc"
+					/>js-dos</a
+				></span
+			>
+		</div>
+
+		<script
+			type="text/javascript"
+			src="https://js-dos.com/cdn/js-dos-api.js"
+		></script>
+		<script type="text/javascript">
+			var dosbox = new Dosbox({
+				id: "dosbox",
+				onload: function (dosbox) {
+					dosbox.run("/src/assets/DOOM-@evilution.zip", "./DOOM/DOOM.EXE");
+				},
+				onrun: function (dosbox, app) {
+					console.log("App '" + app + "' is runned");
+				},
+			});
+
+			const themeSelect = document.getElementById("theme");
+
+			themeSelect.addEventListener("change", (e) => {
+				const selectedTheme = e.target.value;
+
+				if (selectedTheme === "dark") {
+					document.body.classList.add("dark-mode");
+				} else {
+					document.body.classList.remove("dark-mode");
+				}
+			});
+		</script>
+	</body>
+</html>
