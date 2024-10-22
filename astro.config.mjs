@@ -43,12 +43,12 @@ export default defineConfig({
 					label: "Important",
 					items: [
 						{ label: "Launch payload", link: "/important/payload" },
-						{ label: "Backup Switch", link: "/important/backup" },
+						{ label: "Backup / Restore", link: "/important/backup" },
 						{ label: "Backup save files", link: "/important/save" },
+						{ label: "Upgrade / Downgrade", link: "/important/upgrade" },
 						{ label: "Dump titles", link: "/important/dump" },
 						{ label: "Dump keys", link: "/important/keys" },
 						{ label: "Dump firmware", link: "/important/firmware" },
-						{ label: "Upgrade / downgrade Switch", link: "/important/upgrade" },
 					]
 				},
 				{

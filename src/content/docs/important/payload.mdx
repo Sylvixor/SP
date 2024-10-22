@@ -1,3 +1,88 @@
 ---
 title: Launching a payload
 ---
+
+This section will go over how to launch a payload of your choice on your Switch.
+
+### Erista [ Unpatched V1 ]
+
+---
+
+1. Go into RCM mode.
+
+2. Download:
+
+import { Tabs, TabItem, Card, CardGrid } from "@astrojs/starlight/components";
+
+<Tabs>
+    <TabItem label="Windows">
+        <Card title="TegraRCMGUI">
+            From their **Github**.
+        </Card>
+        <Card title="NSUSBLoader">
+            From their **Github**.
+        </Card>
+    </TabItem>
+
+    <TabItem label="Linux">
+        <Card title="NSUSBLoader">
+            From their **Github**.
+        </Card>
+        <Card title="Web Fusee Launcher">
+            From their **Github**.
+        </Card>
+    </TabItem>
+
+    <TabItem label="MacOS">
+        <Card title="NSUSBLoader">
+            From their **Github**.
+        </Card>
+        <Card title="Web Fusee Launcher">
+            From their **Github**.
+        </Card>
+    </TabItem>
+
+    <TabItem label="ChromeOS">
+
+    </TabItem>
+
+    <TabItem label="Android">
+        <Card title="Rekado">
+            From their **Github**.
+        </Card>
+    </TabItem>
+
+    <TabItem label="iOS">
+        <Card title="NXBoot">
+            Requires a jailbroken device.
+        </Card>
+    </TabItem>
+</Tabs>
+
+- OR a portable payload injector. [ Like the RCMLoader ]
+
+:::note[Note]
+Follow the instructions for your choice of payload injector.
+:::
+
+3. Pick your desired payload with your payload injector of your choice and connect your Switch to your PC / laptop.
+    - If you use a portable payload injector, then you only need to connect the payload injector to your Switch.
+4. You should now launch into your desired payload.
+
+### Mariko [ and patched Erista ]
+
+---
+
+:::note[Mariko users]
+Please ensure that your desired payload supports your device.
+:::
+
+1. Make sure you have Hekate installed on your device.
+    - If you have SX Gear, first follow [SXOS Migration](/miscellaneous/sxos).
+2. Rename ```hekate_ctcaer_x.x.x.bin``` to ```payload.bin```.
+3. Place your desired payload in ```/bootloader/payloads/```.
+4. Press the power button and launch into Hekate.
+5. Once inside Hekate, press the ```payloads``` option and pick your desired payload.
+6. You should now launch into your desired payload.
+
+---
