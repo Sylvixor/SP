@@ -10,12 +10,14 @@ This section will go over how to launch a payload of your choice on your Switch.
 
 1. Go into RCM mode.
 
-2. Download:
-
 import { Tabs, TabItem, Card, CardGrid } from "@astrojs/starlight/components";
 
 <Tabs>
     <TabItem label="Windows">
+        Download 1:
+
+        ---
+
         <Card title="TegraRCMGUI">
             From their **Github**.
         </Card>
@@ -25,36 +27,60 @@ import { Tabs, TabItem, Card, CardGrid } from "@astrojs/starlight/components";
     </TabItem>
 
     <TabItem label="Linux">
+        Download / Access:
+
+        ---
+
         <Card title="NSUSBLoader">
             From their **Github**.
         </Card>
         <Card title="Web Fusee Launcher">
-            From their **Github**.
+            From their **website**.
         </Card>
     </TabItem>
 
     <TabItem label="MacOS">
+        Download / Access:
+
+        ---
+
         <Card title="NSUSBLoader">
             From their **Github**.
         </Card>
         <Card title="Web Fusee Launcher">
-            From their **Github**.
+            From their **website**.
         </Card>
     </TabItem>
 
     <TabItem label="ChromeOS">
+        Access:
 
+        ---
+
+        <Card title="Web Fusee Launcher">
+            From their **website**.
+        </Card>
     </TabItem>
 
     <TabItem label="Android">
+        Download:
+
+        ---
+
         <Card title="Rekado">
             From their **Github**.
         </Card>
     </TabItem>
 
     <TabItem label="iOS">
+        Download:
+
+        ---
+
         <Card title="NXBoot">
-            Requires a jailbroken device.
+            From their **Github**.
+
+            **Requires a jailbroken device.**
         </Card>
     </TabItem>
 </Tabs>
@@ -65,9 +91,9 @@ import { Tabs, TabItem, Card, CardGrid } from "@astrojs/starlight/components";
 Follow the instructions for your choice of payload injector.
 :::
 
-3. Pick your desired payload with your payload injector of your choice and connect your Switch to your PC / laptop.
+2. Pick your desired payload with your payload injector of your choice and connect your Switch to your PC / laptop.
     - If you use a portable payload injector, then you only need to connect the payload injector to your Switch.
-4. You should now launch into your desired payload.
+3. Launch the payload and you should now be in your desired payload.
 
 ### Mariko [ and patched Erista ]
 
@@ -78,11 +104,12 @@ Please ensure that your desired payload supports your device.
 :::
 
 1. Make sure you have Hekate installed on your device.
-    - If you have SX Gear, first follow [SXOS Migration](/miscellaneous/sxos).
 2. Rename ```hekate_ctcaer_x.x.x.bin``` to ```payload.bin```.
 3. Place your desired payload in ```/bootloader/payloads/```.
 4. Press the power button and launch into Hekate.
 5. Once inside Hekate, press the ```payloads``` option and pick your desired payload.
 6. You should now launch into your desired payload.
+
+### Continue reading
 
 ---

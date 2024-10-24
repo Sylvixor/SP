@@ -17,10 +17,57 @@ import { Tabs, TabItem, Card, CardGrid } from "@astrojs/starlight/components";
 
 <Tabs>
     <TabItem label="Switch Method">
+        You'll need:
 
+        ---
+
+        <Card title="Hekate">
+            From their **Github**.
+        </Card>
+
+        ### Creating a backup
+
+        ---
+
+        1. Extract ```hekate_ctcaer_x.x.x_Nyx_x.x.x.zip``` into your microSD card.
+        2. Boot into Hekate.
+        3. Press on the ```Tools``` tab.
+        4. Pick the ```Backup eMMC``` option.
+        5. Pick the ```eMMC RAW GPP``` option.
+        6. Once done, press ```Backup eMMC``` again but pick the ```eMMC BOOT0 & BOOT1``` option this time.
+        7. Once done, your backup should be in a folder named ```Backup``` on the root of your microSD card.
+        8. Move this folder to your PC, laptop or any other storage device so you don't lose it.
+            - Make sure that you don't lose this folder as it will mean losing your backup.
+
+        Now you have successfully backed up your Switch!
+
+        :::note[Backups]
+        It is highly recommended to make backups regularly, whether this be every day, month, 6 months or a year is up to you.
+        This way, in the case that anything might happen, you have a recent-ish backup to fall back on.
+        :::
+
+        ### Restoring a backup
+
+        ---
+
+        1. Take the ```Backup``` folder you have stored safely somewhere and move it back to the root of your microSD card.
+        2. Move all files that are inside of ```/bootloader/``` to ```/bootloader/restore/```.
+            - If this folder doesn't exist, create it.
+        3. Boot into Hekate.
+        4. Press on the ```Tools``` tab.
+        5. Pick the ```Restore eMMC``` option.
+        6. Pick the ```eMMC RAW GPP``` option.
+        7. Once done, press ```Restore eMMC``` again but pick the ```eMMC BOOT0 & BOOT1``` option this time.
+        8. Once done, close out of Hekate.
+
+        Now you have successfully restored a backup of your Switch!
     </TabItem>
 
     <TabItem label="PC Method">
 
     </TabItem>
 </Tabs>
+
+### Continue reading
+
+---
