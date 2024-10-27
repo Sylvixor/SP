@@ -57,6 +57,7 @@ export default defineConfig({
 						{ label: "MicroSD guide", link: "/miscellaneous/microsd" },
 						{ label: "Partition-based or file-based", link: "/miscellaneous/partition-or-file" },
 						{ label: "Browse microSD via USB", link: "/miscellaneous/browse-microsd" },
+						{ label: "Homebrew app installation", link: "/miscellaneous/hbapp" },
 						{ label: "USB installation", link: "/miscellaneous/usb-installation" },
 						{ label: "Enable gamecard reader", link: "/miscellaneous/gamecard" },
 						{ label: "Manage cheats", link: "miscellaneous/cheats" },

@@ -2,7 +2,386 @@
 title: Unpatched
 ---
 
-This section will go over homebrewing your unpatched V1 Switch. We will go over everything,
+This section will go over homebrewing your unpatched V1 Switch. We will be going over how to go into RCM ( recovery ) mode,
+creating an emulated NAND ( emuNAND / emuMMC ) while also blocking Nintendo's servers so you don't get banned.
+    - In order for this method to work, you explicitly do need an **unpatched V1**, any other Switch will **not** work.
+
+Make sure you have read the Introduction section before doing this, as it contains a lot of important information to homebrewing.
+
+### First
 
 ---
 
+<Steps>
+1. ###### Disable cloud saves
+    - To do this, go to ```Settings``` -> ```Data Management``` -> ```Save Data Cloud``` -> ```Settings``` and disable ```Automatically back up save data``` and ```Automatically download save data```.
+2. ###### Read [Partition-based or file-based](/miscellaneous/partition-or-file/)
+    - **TLDR:** Partition-based emuMMC is recommended because of it's lower chance of corruption and higher performance, despite being a little harder to back up.
+3. ###### Backup
+    - Make sure you have backed up anything on the microSD card if the card has been used beforehand, because following this guide **will** wipe the microSD card.
+
+    ---
+
+</Steps>
+
+:::note[Note]
+This guide will enable ```AutoRCM``` by default. Once you've used Hekate to enable it, the console from that moment on will always
+go into RCM when turned on, making the RCM JIG not needed anymore ( It is needed for the first time and every time you go out of CFW ).
+:::
+
+import { Card, Steps, FileTree, Tabs, TabItem } from "@astrojs/starlight/components";
+
+### MicroSD Card Setup
+
+---
+
+###### For the initial setup you will need:
+
+- This ( fantastic ) guide. :)
+- An unpatched V1 Switch.
+- A microSD card of your choice.
+    - Read [microSD guide](/miscellaneous/microsd/).
+- A ( micro ) SD card reader.
+    - You can buy a microSD card reader, you can buy an SD card reader with a microSD to SD adapter, you can use your laptops ( micro ) SD card reader. Whatever works, so long as you have something to access your microSD card.
+
+---
+
+<Steps>
+    4. ###### Download the following files:
+        <Card title = "Hekate">
+            ```hekate_ctcaer_x.x.x_Nyx_x.x.x.zip```
+
+            From their **Github**.
+        </Card>
+        <Card title = "Atmosphere">
+            ```atmosphere-x.x.x-master-xxxxxxxxx+hbl-x.x.x+hbmenu-x.x.x.zip```
+
+            From their **Github**.
+        </Card>
+        <Card title = "Sigpatches">
+            ```sigpatches.zip```
+
+            From their **website**.
+        </Card>
+    5. ###### Hekate launch options
+
+        Inside of ```/bootloader/``` on the root of your microSD card, create a file named ```hekate_ipl.ini```.
+            - You will need to create a configuration file to set up parameters for Hekate.
+
+        <FileTree>
+            - atmosphere
+            - bootloader
+                - **hekate_ipl.ini**
+            - switch
+            - hekate_ctcaer_x.x.x.bin
+            - hbmenu.nro
+        </FileTree>
+
+        Copy the bit below and paste it inside of ```hekate_ipl.ini```:
+            - You can use the button in the top right of the box in order to copy.
+
+        ```
+        [config]
+        autoboot=0
+        autoboot_list=0
+        bootwait=3
+        backlight=100
+        autohosoff=0
+        autonogc=1
+        updater2p=1
+        bootprotect=0
+
+        [CFW, emuMMC - Atmosphere]
+        fss0=atmosphere/package3
+        emummcforce=1
+        cal0blank=1
+        kip1patch=nosigchk
+        icon=bootloader/res/icon_payload.bmp
+
+        [Stock]
+        fss0=atmosphere/package3
+        stock=1
+        emummc_force_disable=1
+        icon=bootloader/res/icon_switch.bmp
+        ```
+
+    6. ###### Avoiding a ban
+
+        Inside of the root of your microSD card, create a file named ```exosphere.ini```.
+
+        <FileTree>
+        - atmosphere
+        - bootloader
+        - switch
+        - hekate_ctcaer_x.x.x.bin
+        - **hekate_ipl.ini**
+        - hbmenu.nro
+        </FileTree>
+
+        Copy the bit below and paste it inside of ```exosphere.ini```:
+            - You can use the button in the top right of the box in order to copy.
+
+        ```
+        [exosphere]
+        debugmode=1
+        debugmode_user=0
+        disable_user_exception_handlers=0
+        enable_user_pmu_access=0
+        blank_prodinfo_sysmmc=0
+        blank_prodinfo_emummc=1
+        allow_writing_to_cal_sysmmc=0
+        log_port=0
+        log_baud_rate=115200
+        log_inverted=0
+        ```
+
+    7. ###### Blocking Nintendo connections
+
+        Inside of ```/atmosphere/hosts/``` on the root of your microSD card, create a file named ```default.txt```.
+
+        <FileTree>
+        - atmosphere
+            - hosts
+                - **default.txt**
+        - bootloader
+        - switch
+        - hekate_ctcaer_x.x.x.bin
+        - hekate_ipl.ini
+        - hbmenu.nro
+        </FileTree>
+
+        Copy the bit below and paste it inside of ```default.txt```:
+            - You can use the button in the top right of the box in order to copy.
+
+        ```
+        # Block Nintendo Servers
+        127.0.0.1 *nintendo.*
+        127.0.0.1 *nintendo-europe.com
+        127.0.0.1 *nintendoswitch.*
+        95.216.149.205 *conntest.nintendowifi.net
+        95.216.149.205 *ctest.cdn.nintendo.net
+        ```
+
+        :::note[Note]
+        You can rename the file to ```emummc.txt``` if you **only** want this to apply to emuMMC, if you rename it to ```emummc.txt``` Nintendo connections will **not** be blocked in sysMMC.
+        :::
+
+        ---
+</Steps>
+
+### Injecting A Payload
+
+---
+To continue you'll also need:
+
+- An RCM JIG ( can be found on marketplaces like Amazon ).
+- A USB cable to connect your Switch to your device.
+- A PC or laptop.
+
+OR
+
+- A phone or tablet.
+
+OR
+
+- A portable payload launcher ( like the RCMLoader ).
+
+### Start
+
+---
+
+<Steps>
+    8.  To start, place your microSD card inside of your Switch, take off the right joycon and put the RCM JIG on the right rail and slide it all the way down.
+
+        If the Switch is on, turn it off and then power it back on while holding the ```Vol +``` button, this should result in just a black screen.
+
+        If you have a black screen, it means you're in RCM mode and your Switch is ready to inject.
+</Steps>
+
+<Tabs>
+    <TabItem label = "PC / Laptop">
+        <Tabs>
+            <TabItem label = "Windows">
+                <Steps>
+                    9. ###### Download:
+                        <Card title = "TegraRcmGui">
+                            ```TegraRcmGUI_vx.x_Installer.msi```
+
+                            From their **Github**.
+                        </Card>
+
+                    10. ###### TegraRcmGui
+
+                        1. Open the installer and install TegraRcmGui. Once installed, open it. Once TegraRcmGui is running, go to the ```Settings``` tab and click on ```Install Driver```.
+
+                        2. Once the driver is installed, create a folder named ```Hekate``` on your PC or laptop somewhere and extract ```hekate_ctcaer_x.x.x_Nyx_x.x.x.zip``` to that directory.
+
+                        3. Go back to TegraRcmGui, go to the ```Payload``` tab and press the folder icon. Go to the folder you made named ```Hekate``` and pick the file named ```hekate_ctcaer_x.x.x.bin```.
+
+                        4. Connect your Switch to your PC or laptop using an USB cable and press ```Inject payload```, you should now launch into Hekate.
+
+                        ---
+
+                </Steps>
+            </TabItem>
+            <TabItem label = "Linux">
+                <Steps>
+                    9. ###### Download:
+                        <Card title = "NS-USBLoader">
+                            ```ns-usbloader-x.x.jar```
+
+                            From their **Github**.
+
+                            Requires **JDK 11** to be installed.
+                        </Card>
+
+                    10. ###### NS-USBLoader
+
+                        1.
+                </Steps>
+            </TabItem>
+            <TabItem label = "MacOS">
+                <Steps>
+                    9. ###### Download ( Apple Silicon ):
+                        <Card title = "NS-USBLoader">
+                            ```ns-usbloader-x.x-m1.jar```
+
+                            From their **Github**.
+
+                            Requires **libusb** to be installed ( brew install libusb ).
+
+                            Requires **JDK 11** to be installed.
+                        </Card>
+                        ###### Download ( Intel ):
+                        <Card title = "NS-USBLoader">
+                            ```ns-usbloader-x.x.jar```
+
+                            From their **Github**.
+
+                            Requires **JDK 11** to be installed.
+                        </Card>
+
+                    10. ###### NS-USBLoader
+
+                        1.
+                </Steps>
+            </TabItem>
+            <TabItem label = "ChromeOS">
+                <Steps>
+                    9. ###### Download:
+                        <Card title = "Rekado">
+                            ```x.x.Rekado.xxx.-release.apk```
+
+                            From their **Github**.
+                        </Card>
+
+                    10. ###### Rekado
+
+                        1.
+                </Steps>
+            </TabItem>
+        </Tabs>
+    </TabItem>
+    <TabItem label = "Phone / Tablet">
+        <Tabs>
+            <TabItem label = "Android">
+                <Steps>
+                    9. ###### Download:
+                        <Card title = "Rekado">
+                            ```x.x.Rekado.xxx.-release.apk```
+
+                            From their **Github**.
+                        </Card>
+
+                    10. ###### Rekado
+
+                        1.
+                </Steps>
+            </TabItem>
+            <TabItem label = "iOS / iPadOS">
+                <Steps>
+                    9. ###### Download:
+                        <Card title = "NXBoot">
+                            ```NXBoot_x.x.x-x.tipa```
+
+                            From their **Github**.
+
+                            Requires device to be **jailbroken** / requires **sideloading**.
+                        </Card>
+
+                    10. ###### NXBoot
+
+                        1.
+                </Steps>
+            </TabItem>
+        </Tabs>
+    </TabItem>
+    <TabItem label = "Payload Launcher">
+
+    </TabItem>
+</Tabs>
+
+### Creating emuMMC
+
+---
+
+Now, you will have to choose between either a partition-based emuMMC or file-based emuMMC, you can read about the differences in [partition-based or file-based](/miscellaneous/partition-or-file/) if you still haven't done so.
+
+**TLDR:** Partition-based emuMMC is recommended because of it's lower chance of corruption and higher performance, despite being a little harder to back up.
+
+
+<Tabs>
+    <TabItem label = "Partition-based">
+        <Steps>
+            11. ###### Partition
+
+                You should now be inside of Hekate. Select the ```Tools``` tab, and then select ```Partition SD card```, and then press ```Ok```.
+
+                Move the emuMMC ( RAW ) slider until it says ```29 FULL```, and then press ```Next Step```, and then press ```Start```.
+
+                Once the operation is done, press ```Close``` and then select the ```Home``` tab.
+
+            12. ###### Create emuMMC
+
+                Select ```emuMMC``` in the main menu, and then select ```Create emuMMC```.
+
+                Select ```SD Partition```, and then select ```Part 1```.
+
+                Wait for your emuMMC to get created. Once it's done, press ```Close```.
+
+                Select the ```Tools``` tab again, and then select ```Archive Bit - AutoRCM``` and pick ```Enable AutoRCM```.
+
+            13. ###### Create backup
+
+                It is recommended to now make a backup, please read [backup / restore](/important/backup/) in order to make a backup using Hekate since you're already in it. Kill two birds with one stone.
+
+                ---
+        </Steps>
+    </TabItem>
+    <TabItem label = "File-based">
+
+    </TabItem>
+</Tabs>
+
+### Finishing up
+
+---
+
+<Steps>
+    14. On the main menu of Hekate, press ```Launch```, and then select ```emuMMC - Atmosphere CFW``` to launch emuMMC with Atmosphere.
+
+        Otherwise, select ```Stock``` to launch OFW ( can be used for things like online play ).
+</Steps>
+
+---
+
+Done! You have now successfully set up Atmosphere on your emuMMC.
+
+Now, if you want to take advantage of CFW on emuMMC, it's recommended to read through:
+
+- [Homebrew app installation](/miscellaneous/hbapp/).
+- [USB installation](/miscellaneous/usb-installation/).
+- [Manage cheats](/miscellaneous/cheats/).
+- [Setup Tesla overlay](/miscellaneous/tesla/).
+- [Install themes](/miscellaneous/themes/).
+- [Emulating amiibo](/miscellaneous/emuiibo/).
