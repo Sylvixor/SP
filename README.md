@@ -15,7 +15,7 @@
 
 A homebrew guide for the **Nintendo Switch**
 
-This project is built with [Astro](https://astro.build/) and [Starlight](https://github.com/withastro/starlight) framework.
+This project is built with [Starlight](https://github.com/withastro/starlight) documentation framework on top of [Astro](https://astro.build/) web framework.
 ## Installation
 
 To install and run this project locally, follow these steps:
