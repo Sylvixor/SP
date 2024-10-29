@@ -3,33 +3,36 @@ title: Unpatched
 ---
 
 This section will go over homebrewing your unpatched V1 Switch. We will be going over how to go into RCM ( recovery ) mode,
-creating an emulated NAND ( emuNAND / emuMMC ) while also blocking Nintendo's servers so you don't get banned.
-    - In order for this method to work, you explicitly do need an **unpatched V1**, any other Switch will **not** work.
+creating an emulated NAND ( emuNAND / emuMMC ) while also blocking Nintendo's servers so you don't get banned. - In order for this method to work, you explicitly do need an **unpatched V1**, any other Switch will **not** work.
 
-Make sure you have read the Introduction section before doing this, as it contains a lot of important information to homebrewing.
+Make sure you have read the **Introduction** section before doing this, as it contains a lot of important information to homebrewing.
 
 ### First
 
 ---
 
+{/* prettier-ignore */}
 <Steps>
 1. ###### Disable cloud saves
     - To do this, go to ```Settings``` -> ```Data Management``` -> ```Save Data Cloud``` -> ```Settings``` and disable ```Automatically back up save data``` and ```Automatically download save data```.
 2. ###### Read [Partition-based or file-based](/miscellaneous/partition-or-file/)
-    - **TLDR:** Partition-based emuMMC is recommended because of it's lower chance of corruption and higher performance, despite being a little harder to back up.
+    - **TLDR:** Partition-based emuMMC is recommended because of its lower chance of corruption and higher performance, despite being a little harder to back up.
 3. ###### Backup
-    - Make sure you have backed up anything on the microSD card if the card has been used beforehand, because following this guide **will** wipe the microSD card.
-
-    ---
-
+    - Make sure you have backed up anything you wanted to on the microSD card if it has been used beforehand, because the following guide **will** wipe the microSD card.
 </Steps>
 
 :::note[Note]
-This guide will enable ```AutoRCM``` by default. Once you've used Hekate to enable it, the console from that moment on will always
+This guide will enable `AutoRCM` by default. Once you've used Hekate to enable it, the console from that moment on will always
 go into RCM when turned on, making the RCM JIG not needed anymore ( It is needed for the first time and every time you go out of CFW ).
 :::
 
-import { Card, Steps, FileTree, Tabs, TabItem } from "@astrojs/starlight/components";
+import {
+	Card,
+	Steps,
+	FileTree,
+	Tabs,
+	TabItem,
+} from "@astrojs/starlight/components";
 
 ### MicroSD Card Setup
 
@@ -40,9 +43,12 @@ import { Card, Steps, FileTree, Tabs, TabItem } from "@astrojs/starlight/compone
 - This ( fantastic ) guide. :)
 - An unpatched V1 Switch.
 - A microSD card of your choice.
-    - Read [microSD guide](/miscellaneous/microsd/).
+  - Read [microSD guide](/miscellaneous/microsd/).
 - A ( micro ) SD card reader.
-    - You can buy a microSD card reader, you can buy an SD card reader with a microSD to SD adapter, you can use your laptops ( micro ) SD card reader. Whatever works, so long as you have something to access your microSD card.
+
+  - You can buy a microSD card reader, you can buy an SD card reader with a microSD to SD adapter, you can use your laptops ( micro ) SD card reader, or maybe even that microSD slot in your phone! _( Not recommended. Android will make folders in the card, which may make it look a bit messy, but it's a way )_.
+
+    **Whatever works, so long as you have something to access your microSD card.**
 
 ---
 
@@ -69,16 +75,17 @@ import { Card, Steps, FileTree, Tabs, TabItem } from "@astrojs/starlight/compone
             - You will need to create a configuration file to set up parameters for Hekate.
 
         <FileTree>
-            - atmosphere
+            - atmosphere/
             - bootloader
                 - **hekate_ipl.ini**
-            - switch
+                - ...
+            - switch/
             - hekate_ctcaer_x.x.x.bin
             - hbmenu.nro
         </FileTree>
 
         Copy the bit below and paste it inside of ```hekate_ipl.ini```:
-            - You can use the button in the top right of the box in order to copy.
+            - You can use the button at the top right corner of the box to copy.
 
         ```
         [config]
@@ -110,16 +117,16 @@ import { Card, Steps, FileTree, Tabs, TabItem } from "@astrojs/starlight/compone
         Inside of the root of your microSD card, create a file named ```exosphere.ini```.
 
         <FileTree>
-        - atmosphere
-        - bootloader
-        - switch
-        - hekate_ctcaer_x.x.x.bin
-        - **hekate_ipl.ini**
-        - hbmenu.nro
+            - atmosphere/
+            - bootloader/
+            - switch/
+            - hekate_ctcaer_x.x.x.bin
+            - **exosphere.ini**
+            - hbmenu.nro
         </FileTree>
 
         Copy the bit below and paste it inside of ```exosphere.ini```:
-            - You can use the button in the top right of the box in order to copy.
+            - You can use the button at the top right corner of the box to copy.
 
         ```
         [exosphere]
@@ -140,18 +147,18 @@ import { Card, Steps, FileTree, Tabs, TabItem } from "@astrojs/starlight/compone
         Inside of ```/atmosphere/hosts/``` on the root of your microSD card, create a file named ```default.txt```.
 
         <FileTree>
-        - atmosphere
-            - hosts
-                - **default.txt**
-        - bootloader
-        - switch
-        - hekate_ctcaer_x.x.x.bin
-        - hekate_ipl.ini
-        - hbmenu.nro
+            - atmosphere
+                - hosts
+                    - **default.txt**
+            - bootloader/
+            - switch/
+            - hekate_ctcaer_x.x.x.bin
+            - exosphere.ini
+            - hbmenu.nro
         </FileTree>
 
         Copy the bit below and paste it inside of ```default.txt```:
-            - You can use the button in the top right of the box in order to copy.
+            - You can use the button at the top right corner of the box to copy.
 
         ```
         # Block Nintendo Servers
@@ -167,11 +174,13 @@ import { Card, Steps, FileTree, Tabs, TabItem } from "@astrojs/starlight/compone
         :::
 
         ---
+
 </Steps>
 
 ### Injecting A Payload
 
 ---
+
 To continue you'll also need:
 
 - An RCM JIG ( can be found on marketplaces like Amazon ).
@@ -191,11 +200,12 @@ OR
 ---
 
 <Steps>
-    8.  To start, place your microSD card inside of your Switch, take off the right joycon and put the RCM JIG on the right rail and slide it all the way down.
+    8.  To start, place your microSD card inside of your Switch, take off the right joycon and put the RCM JIG on the right rail, with the 2 metal prongs facing down, and slide it all the way down.
 
-        If the Switch is on, turn it off and then power it back on while holding the ```Vol +``` button, this should result in just a black screen.
+        If the Switch is on, turn it off and then power it back on while holding the ```Vol +``` button, this should result in just a black screen. *( If you look closer, you will see that the LCD backlight is on )*
 
         If you have a black screen, it means you're in RCM mode and your Switch is ready to inject.
+
 </Steps>
 
 <Tabs>
@@ -319,6 +329,7 @@ OR
     <TabItem label = "Payload Launcher">
 
     </TabItem>
+
 </Tabs>
 
 ### Creating emuMMC
@@ -328,7 +339,6 @@ OR
 Now, you will have to choose between either a partition-based emuMMC or file-based emuMMC, you can read about the differences in [partition-based or file-based](/miscellaneous/partition-or-file/) if you still haven't done so.
 
 **TLDR:** Partition-based emuMMC is recommended because of it's lower chance of corruption and higher performance, despite being a little harder to back up.
-
 
 <Tabs>
     <TabItem label = "Partition-based">
@@ -353,7 +363,7 @@ Now, you will have to choose between either a partition-based emuMMC or file-bas
 
             13. ###### Create backup
 
-                It is recommended to now make a backup, please read [backup / restore](/important/backup/) in order to make a backup using Hekate since you're already in it. Kill two birds with one stone.
+                It is recommended to now make a backup, please read [backup / restore](/important/backup/) in order to make a backup using Hekate since you're already in it. *Kill two birds with one stone.*
 
                 ---
         </Steps>
@@ -361,6 +371,7 @@ Now, you will have to choose between either a partition-based emuMMC or file-bas
     <TabItem label = "File-based">
 
     </TabItem>
+
 </Tabs>
 
 ### Finishing up
@@ -371,6 +382,7 @@ Now, you will have to choose between either a partition-based emuMMC or file-bas
     14. On the main menu of Hekate, press ```Launch```, and then select ```emuMMC - Atmosphere CFW``` to launch emuMMC with Atmosphere.
 
         Otherwise, select ```Stock``` to launch OFW ( can be used for things like online play ).
+
 </Steps>
 
 ---
