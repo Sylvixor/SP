@@ -5,9 +5,12 @@
 
 # SP Homebrew Guide
 
+A homebrew guide for the **Nintendo Switch**
+
+This project is built with [Starlight](https://github.com/withastro/starlight) documentation framework on top of [Astro](https://astro.build/) web framework.
+
 ## Table of Contents
 
-- [Introduction](#introduction)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Configuration](#configuration)
@@ -15,11 +18,6 @@
 - [License](#license)
 - [Acknowledgments](#acknowledgments)
 
-## Introduction
-
-A homebrew guide for the **Nintendo Switch**
-
-This project is built with [Starlight](https://github.com/withastro/starlight) documentation framework on top of [Astro](https://astro.build/) web framework.
 ## Installation
 
 To install and run this project locally, follow these steps:
@@ -48,6 +46,12 @@ To start the development server, run:
 
 ```bash
 npm run dev
+```
+
+or
+
+```bash
+npm start
 ```
 
 To build the project for production:
