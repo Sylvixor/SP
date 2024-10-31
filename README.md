@@ -85,9 +85,12 @@ Here is an overview of the project structure:
 /
 ├── public/              # Static assets
 ├── src/                 # Source files for the website
-│   ├── components/      # Astro components
-│   ├── layouts/         # Layout templates
-│   └── pages/           # Website pages
+│   ├── assets/          # Documentation assets
+│   ├── content/         # Documentation content
+│   │   └── docs/        # Documentation pages
+│   ├── fonts/           # Documentation fonts
+│   ├── pages/           # Other pages (HTML)
+│   └── styles/          # Documentation custom CSS
 ├── astro.config.mjs     # Astro configuration file
 ├── package.json         # Project metadata and dependencies
 ├── package-lock.json    # Lock file for package versions
@@ -100,7 +103,9 @@ Here is an overview of the project structure:
 This project is licensed under the terms of the **MIT License**.
 
 ## Acknowledgements
+
 Special thanks to:
+
 - The Astro team for developing such a great framework.
 - All contributors of the [Starlight](https://github.com/withastro/starlight) framework.
 - All contributors and libraries used in this project.
