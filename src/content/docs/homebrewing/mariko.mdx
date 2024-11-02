@@ -7,7 +7,7 @@ This section will go over homebrewing your patched V1 Switch or Mariko Switch. W
 
 Make sure you have read the Introduction section before doing this, as it contains a lot of important information to homebrewing.
 
-### First
+### Firstly
 
 ---
 
@@ -29,12 +29,14 @@ import { Card, Steps, FileTree, Tabs, TabItem } from "@astrojs/starlight/compone
 
 ###### For the initial setup you will need:
 
-- This ( fantastic ) guide. :)
+- This ( fantastic ) guide. **:)**
 - A patched V1 Switch or Mariko Switch **with a modchip**.
 - A microSD card of your choice.
   - Read [microSD guide](/miscellaneous/microsd/).
 - A ( micro ) SD card reader.
-  - You can buy a microSD card reader, you can buy an SD card reader with a microSD to SD adapter, you can use your laptops ( micro ) SD card reader. Whatever works, so long as you have something to access your microSD card.
+  - You can buy a microSD card reader, you can buy an SD card reader with a microSD to SD adapter, you can use your laptops ( micro ) SD card reader, or maybe even that microSD slot in your phone! *( Not recommended. Android will make folders in the card, which may make it look a bit messy, but it's a way! )*.
+
+        **Whatever works, so long as you have something to access your microSD card.**
 
 ---
 
@@ -72,7 +74,7 @@ import { Card, Steps, FileTree, Tabs, TabItem } from "@astrojs/starlight/compone
         Copy the bit below and paste it inside of ```hekate_ipl.ini```:
         - You can use the button in the top right of the box in order to copy.
 
-        ```
+        ```ini
         [config]
         autoboot=0
         autoboot_list=0
@@ -114,7 +116,7 @@ import { Card, Steps, FileTree, Tabs, TabItem } from "@astrojs/starlight/compone
         Copy the bit below and paste it inside of ```exosphere.ini```:
         - You can use the button in the top right of the box in order to copy.
 
-        ```
+        ```ini
         [exosphere]
         debugmode=1
         debugmode_user=0
@@ -147,7 +149,7 @@ import { Card, Steps, FileTree, Tabs, TabItem } from "@astrojs/starlight/compone
         Copy the bit below and paste it inside of ```default.txt```:
         - You can use the button in the top right of the box in order to copy.
 
-        ```
+        ```ini
         # Block Nintendo Servers
         127.0.0.1 *nintendo.*
         127.0.0.1 *nintendo-europe.com

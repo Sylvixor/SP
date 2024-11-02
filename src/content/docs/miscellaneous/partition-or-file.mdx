@@ -1,16 +1,13 @@
 ---
 title: Partition-based or file-based emuMMC / emuNAND?
 ---
+import { Badge } from "@astrojs/starlight/components";
 
-This section will go over the differences between a partition based and a file based EmuNAND.
+This section will go over the differences between a partition-based and a file-based EmuNAND.
 
 ---
 
-:::note[Recommended choice]
-It is highly recommended to use a partition based emuNAND because of it's better performance and lower chance of corruption.
-:::
-
-### Partition based
+### Partition-based <Badge text="Recommended" variant="success" />
 
 ---
 
@@ -22,7 +19,7 @@ Cons:
 - Creating an emuNAND requires the microSD card to be partitioned, in other words, the card will get wiped.
 - Migrating to a new microSD card or backing up your current one is more complex.
 
-### File based
+### File-based
 
 ---
 
@@ -33,6 +30,6 @@ Pros:
 Cons:
 - Lower performance.
 - Higher chance of corruption.
-- Transferring games between your SD card and emuNAND via system settings is not possible.
+- Transferring games between your SD card and emuNAND via system settings is **not** possible.
 
 ---
