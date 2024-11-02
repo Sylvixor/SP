@@ -1,0 +1,45 @@
+---
+title: Fixes for common issues
+---
+
+import { Badge, FileTree } from "@astrojs/starlight/components"
+
+### Entering the homebrew menu
+
+---
+
+There are two ways to launch the homebrew menu:
+
+1. By holding R and launching a game on your main menu. <Badge text="Recommended" variant="success" />
+2. By clicking on the album icon.
+    - This will launch the homebrew menu in Applet mode, which means some homebrew apps might not work.
+
+### Error 2002-2634 ( 010000000000001F )
+
+---
+
+If you are getting this error code after updating firmware, remove your gamecard. You can enable ```nogc``` to avoid this crash inside of ```hekate_ipl.ini```.
+Enabling ```nogc``` **will** prevent you from playing gamecards until you update your Switch to a newer firmware.
+    - Read [Upgrade / Downgrade](/important/upgrade/).
+
+### Battery is depleted and Switch won't power on
+
+---
+
+This will most likely be because you have ```AutoRCM``` enabled.
+To fix this, connect your Switch to a charger and let it charge, afterwards you can launch a payload again.
+    - Read [Launch a payload](/important/payload/).
+
+### Archivebit fix ( for MacOS )
+
+---
+
+If you're on MacOS and have inserted your microSD card into your device, you might experience issues such as the homebrew menu not detecting your homebrew applications among other issues.
+
+To fix this, boot into Hekate, press ```Tools``` -> ```Arch bit - RCM Touch - Pkg 1/2``` -> ```Fix Archive Bit```.
+
+### Failed to determine warmboot firmware
+
+---
+
+To fix this,

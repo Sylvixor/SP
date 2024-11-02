@@ -2,79 +2,161 @@
 title: Creating a backup of your Switch or restoring one
 ---
 
-import { Badge } from "@astrojs/starlight/components";
-
 This section will go over how you can go about creating a backup of your Switch or restoring one. There are 2 methods to do this:
 
 1. **Switch Method** <Badge text="Recommended" variant="success" />
-    - Make a backup directly on the microSD card in the Switch. Require at least 32GB (or 64GB for OLED) of free space.
-2. **PC Method**
-    - Make a backup using your PC, bypasses storing to the microSD. Only recommended for those with small microSD card that is not enough for a backup.
+    - Make a backup directly on the microSD card in the Switch. Requires at least 32GB ( or 64GB for OLED ) of free space.
+2. **PC Method ( Windows )**
+    - Make a backup using your PC, bypasses storing to the microSD. Only recommended for those with small microSD cards not big enough for a backup.
+    - Only works on **Windows**, so your device will need Windows or you'll need to run Windows inside of a **virtual machine** or **Docker** or whatever else works.
 
 :::caution[Watch out]
 Before you begin, please ensure that you know how to launch a payload. If not, read [launch payload](/important/payload/).
 :::
 
-import { Tabs, TabItem, Card, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Card, Steps, FileTree, Badge } from "@astrojs/starlight/components";
 
 <Tabs>
-    <TabItem label="Switch Method">
-        ### Requirement
+    <TabItem label = "Switch Method">
+        <Tabs>
+            <TabItem label = "Backing up">
+                <Steps>
+                    1.  ###### Download: ( skip if already done )
 
-        ---
+                        <Card title = "Hekate" icon = "external">
+                            ```hekate_ctcaer_x.x.x_Nyx_x.x.x.zip```
 
-        <Card title="Hekate">
-            From their **Github**.
-        </Card>
+                            From their **Github**.
+                        </Card>
 
-        ### Creating a backup
+                    2.  ###### MicroSD setup ( skip if already done )
 
-        ---
+                        Extract ```hekate_ctcaer_x.x.x_Nyx_x.x.x.zip``` into your microSD card.
 
-        1. Extract ```hekate_ctcaer_x.x.x_Nyx_x.x.x.zip``` into your microSD card.
-        2. Boot into Hekate.
-        3. Press on the ```Tools``` tab.
-        4. Pick the ```Backup eMMC``` option.
-        5. Pick the ```eMMC RAW GPP``` option.
-        6. Once done, press ```Backup eMMC``` again but pick the ```eMMC BOOT0 & BOOT1``` option this time.
-        7. Once done, your backup should be in a folder named ```Backup``` on the root of your microSD card.
-        8. Move this folder to your PC, laptop or any other storage device so you don't lose it.
-            - Make sure that you don't lose this folder as it will mean losing your backup.
+                    3.  ###### Backing up
 
-            **You have now successfully backed up your Switch!**
+                        Boot into Hekate.
 
-        :::note[Backups]
-        It is highly recommended to make backups regularly, whether this be every day, month, 6 months or a year is up to you.
-        This way, in the case that anything might happen, you have a recent-ish backup to fall back on.
-        :::
+                        Press on the ```Tools``` tab.
 
-        ### Restoring a backup
+                        Pick the ```Backup eMMC``` option.
 
-        ---
+                        Pick the ```eMMC RAW GPP``` option.
 
-        1. Take the ```Backup``` folder you have stored safely somewhere and move it back to the root of your microSD card.
-        2. Move all files that are inside of ```/bootloader/``` to ```/bootloader/restore/```.
-            - If this folder doesn't exist, create it.
-        3. Boot into Hekate.
-        4. Press on the ```Tools``` tab.
-        5. Pick the ```Restore eMMC``` option.
-        6. Pick the ```eMMC RAW GPP``` option.
-        7. Once done, press ```Restore eMMC``` again but pick the ```eMMC BOOT0 & BOOT1``` option this time.
-        8. Once done, close out of Hekate.
+                        Once done, press ```Backup eMMC``` again but pick the ```eMMC BOOT0 & BOOT1``` option this time.
 
-            **You have now successfully restored a backup of your Switch!**
+                    4.  ###### Finishing up
+
+                        Once done, your backup should be in a folder named ```Backup``` on the root of your microSD card.
+
+                        Move this folder to your PC, laptop or any other storage device so you don't lose it.
+
+                        :::caution[Caution]
+                        Make sure this is somewhere safe and make sure you don't lose it, losing this backup will mean you have no point to revert to if anything goes wrong!
+                        :::
+                        :::note[Backups]
+                        It is highly recommended to make backups regularly, whether this be every day, month, 6 months or a year is up to you.
+                        This way, in the case that anything might happen, you have a recent-ish backup to fall back on.
+                        :::
+                </Steps>
+                You have now successfully backed up your Switch!
+
+                ---
+            </TabItem>
+            <TabItem label = "Restoring backup">
+                <Steps>
+                    1.  ###### Download: ( skip if already done )
+
+                        <Card title = "Hekate" icon = "external">
+                            ```hekate_ctcaer_x.x.x_Nyx_x.x.x.zip```
+
+                            From their **Github**.
+                        </Card>
+
+                    2.  ###### MicroSD setup ( skip if already done )
+
+                        Extract ```hekate_ctcaer_x.x.x_Nyx_x.x.x.zip``` into your microSD card.
+
+                    3.  ###### Retrieve backup
+
+                        Take the ```Backup``` folder you have stored safely somewhere and move it back to the root of your microSD card.
+
+                        Move all files that are inside of ```/bootloader/``` to ```/bootloader/restore/```.
+
+                        If this folder doesn't exist, create it:
+
+                        <FileTree>
+                            - atmosphere/
+                            - bootloader/
+                                - restore/
+                                    - **your backup**
+                            - switch/
+                            - hekate_ctcaer_x.x.x.bin
+                            - hekate_ipl.ini
+                            - exosphere.ini
+                            - hbmenu.nro
+                        </FileTree>
+
+                    4.  ###### Restoring backup
+
+                        Boot into Hekate.
+
+                        Press on the ```Tools``` tab.
+
+                        Pick the ```Restore eMMC``` option.
+
+                        Pick the ```eMMC RAW GPP``` option.
+
+                        Once done, press ```Restore eMMC``` again but pick the ```eMMC BOOT0 & BOOT1``` option this time.
+
+                    5.  ###### Finishing up
+
+                        Once done, close out of Hekate.
+
+                        :::note[Backups]
+                        It is highly recommended to make backups regularly, whether this be every day, month, 6 months or a year is up to you.
+                        This way, in the case that anything might happen, you have a recent-ish backup to fall back on.
+                        :::
+                </Steps>
+                You have now successfully restored a backup!
+
+                ---
+            </TabItem>
+        </Tabs>
     </TabItem>
+    <TabItem label = "PC Method">
+        <Tabs>
+            <TabItem label = "Backing up">
+                <Steps>
+                    1.  ###### Download:
+                        <Card title = "Hekate" icon = "external">
+                            ```hekate_ctcaer_x.x.x_Nyx_x.x.x.zip```
 
-    <TabItem label="PC Method">
-        ### Requirement
+                            From their **Github**.
+                        </Card>
+                        <Card title = "NXNandManager" icon = "external">
+                            ```NxNandManager_vx.x_x64.zip```
 
-        ---
+                            From their **Github**.
+                        </Card>
+                </Steps>
+            </TabItem>
+            <TabItem label = "Restoring backup">
+                <Steps>
+                    1.  ###### Download:
+                        <Card title = "Hekate" icon = "external">
+                            ```hekate_ctcaer_x.x.x_Nyx_x.x.x.zip```
 
+                            From their **Github**.
+                        </Card>
+                        <Card title = "NXNandManager" icon = "external">
+                            ```NxNandManager_vx.x_x64.zip```
 
-        ### Creating a backup
-
-        ---
-
+                            From their **Github**.
+                        </Card>
+                </Steps>
+            </TabItem>
+        </Tabs>
     </TabItem>
 </Tabs>
 

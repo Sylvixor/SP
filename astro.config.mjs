@@ -26,6 +26,7 @@ export default defineConfig({
 					label: "Introduction",
 					items: [
 						{ label: "FAQ", link: "/introduction/faq" },
+						{ label: "Common issues", link: "/introduction/issues"},
 						{ label: "Homebrewable", link: "/introduction/homebrewable" },
 						{ label: "Avoid bans", link: "/introduction/avoid-ban" },
 					],
@@ -42,9 +43,10 @@ export default defineConfig({
 				{
 					label: "Important",
 					items: [
+						{ label: "MicroSD guide", link: "/important/microsd" },
 						{ label: "Launch payload", link: "/important/payload" },
-						{ label: "Backup / Restore", link: "/important/backup" },
 						{ label: "Backup save files", link: "/important/save" },
+						{ label: "Backup / Restore", link: "/important/backup" },
 						{ label: "Upgrade / Downgrade", link: "/important/upgrade" },
 						{ label: "Dump titles", link: "/important/dump" },
 						{ label: "Dump keys", link: "/important/keys" },
@@ -54,7 +56,6 @@ export default defineConfig({
 				{
 					label: "Miscellaneous",
 					items: [
-						{ label: "MicroSD guide", link: "/miscellaneous/microsd" },
 						{ label: "Partition-based or file-based", link: "/miscellaneous/partition-or-file" },
 						{ label: "Browse microSD via USB", link: "/miscellaneous/browse-microsd" },
 						{ label: "Homebrew app installation", link: "/miscellaneous/hbapp" },
@@ -63,6 +64,7 @@ export default defineConfig({
 						{ label: "Manage cheats", link: "miscellaneous/cheats" },
 						{ label: "Manage sysmodules", link: "/miscellaneous/sysmodules" },
 						{ label: "Setup Tesla overlay", link: "/miscellaneous/tesla" },
+						{ label: "Setup Incognito", link: "/miscellaneous/incognito"},
 						{ label: "Install themes", link: "/miscellaneous/themes" },
 						{ label: "Verify dumps", link: "/miscellaneous/verify" },
 						{ label: "Emulating amiibo", link: "/miscellaneous/emuiibo" },
