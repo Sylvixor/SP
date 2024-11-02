@@ -67,10 +67,10 @@ import { Card, Steps, FileTree, Tabs, TabItem } from "@astrojs/starlight/compone
             - You will need to create a configuration file to set up parameters for Hekate.
 
         <FileTree>
-            - atmosphere
-            - bootloader
+            - atmosphere/
+            - bootloader/
                 - **hekate_ipl.ini** Create this file.
-            - switch
+            - switch/
             - hekate_ctcaer_x.x.x.bin
             - hbmenu.nro
         </FileTree>
@@ -108,11 +108,12 @@ import { Card, Steps, FileTree, Tabs, TabItem } from "@astrojs/starlight/compone
         Inside of the root of your microSD card, create a file named ```exosphere.ini```.
 
         <FileTree>
-        - atmosphere
-        - bootloader
-        - switch
+        - atmosphere/
+        - bootloader/
+            - hekate_ipl.ini
+        - switch/
         - hekate_ctcaer_x.x.x.bin
-        - **hekate_ipl.ini** Create this file.
+        - **exosphere.ini** Create this file.
         - hbmenu.nro
         </FileTree>
 
@@ -138,13 +139,14 @@ import { Card, Steps, FileTree, Tabs, TabItem } from "@astrojs/starlight/compone
         Inside of ```/atmosphere/hosts/``` on the root of your microSD card, create a file named ```default.txt```.
 
         <FileTree>
-        - atmosphere
-            - hosts
+        - atmosphere/
+            - hosts/
                 - **default.txt** Create this file.
-        - bootloader
-        - switch
+        - bootloader/
+            - hekate_ipl.ini
+        - switch/
         - hekate_ctcaer_x.x.x.bin
-        - hekate_ipl.ini
+        - exosphere.ini
         - hbmenu.nro
         </FileTree>
 
