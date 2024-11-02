@@ -4,111 +4,203 @@ title: Launching a payload
 
 This section will go over how to launch a payload of your choice on your Switch.
 
-### Erista [ Unpatched V1 ]
+### Steps
 
 ---
 
-1. Go into RCM mode.
-
-import { Tabs, TabItem, Card, CardGrid } from "@astrojs/starlight/components";
+import { Card, Steps, FileTree, Tabs, TabItem } from "@astrojs/starlight/components"
 
 <Tabs>
-    <TabItem label="Windows">
-        Download:
+    <TabItem label = "Unpatched V1">
+        <Steps>
+            1.  ###### Entering RCM
 
-        ---
+                To start, place your microSD card inside of your Switch, take off the right joycon and put the RCM JIG on the right rail and slide it all the way down.
 
-        <Card title="TegraRCMGUI">
-            From their **Github**.
-        </Card>
-        <Card title="NSUSBLoader">
-            From their **Github**.
-        </Card>
+                If the Switch is on, turn it off and then power it back on while holding the ```Vol +``` button, this should result in just a black screen.
+
+                If you have a black screen, it means you're in RCM mode and your Switch is ready to inject.
+
+                :::note[Note]
+                If, when injecting, nothing happens, your unit may be patched, check [possibly patched](/homebrewing/possibly-patched/).
+                :::
+
+            2. ###### Check
+
+                Make sure that you have your preferred payload downloaded locally on your device at this point, this payload file should end in ```.bin```.
+        </Steps>
+
+        <Tabs>
+            <TabItem label = "PC / Laptop">
+                <Tabs>
+                    <TabItem label = "Windows">
+                        <Steps>
+                            3. ###### Download:
+                                <Card title = "TegraRcmGui" icon = "external">
+                                    ```TegraRcmGUI_vx.x_Installer.msi```
+
+                                    From their **Github**.
+                                </Card>
+
+                            4. ###### TegraRcmGui
+
+                                1. Open the installer and install TegraRcmGui. Once installed, open it. Once TegraRcmGui is running, go to the ```Settings``` tab and click on ```Install Driver```.
+
+                                2. Once the driver is installed, go back to TegraRcmGui, go to the ```Payload``` tab and press the folder icon. Navigate to whatever directory you put your preferred payload in and select it.
+
+                                4. Connect your Switch to your PC or laptop using an USB cable and press ```Inject payload```, you should now launch into your preferred payload.
+                        </Steps>
+                        ---
+                    </TabItem>
+                    <TabItem label = "Linux & MacOS">
+                        <Steps>
+                            3. ###### Access:
+                                <Card title = "Web Fusee Launcher" icon = "external">
+
+                                    From their **website**.
+
+                                    Works for **all distros**, **Intel Macs** & **Apple Silicon**.
+                                </Card>
+
+                            4. ###### Web Fusee Launcher
+
+                                1. Connect your Switch to your PC or laptop using an USB cable and access the website.
+
+                                2. Click on ```Custom .bin payload```, and choose your preferred payload.
+
+                                3. Press ```Do the thing!```, you should now launch into your preferred payload.
+                        </Steps>
+                        ---
+                    </TabItem>
+                    <TabItem label = "ChromeOS">
+                        <Steps>
+                            3. ###### Download:
+                                <Card title = "Rekado" icon = "external">
+                                    ```x.x.Rekado.xxx.-release.apk```
+
+                                    From their **Github**.
+                                </Card>
+
+                            4. ###### Rekado
+
+                                1. Connect your Switch to your laptop using an USB cable and open Rekado.
+
+                                2. Go to ```Payloads```, press the ```+``` icon, and choose your preferred payload.
+
+                                3. Select your preferred payload when prompted, and you should now launch into your preferred payload.
+                        </Steps>
+                        ---
+                    </TabItem>
+                </Tabs>
+            </TabItem>
+            <TabItem label = "Phone / Tablet">
+                <Tabs>
+                    <TabItem label = "Android">
+                        <Steps>
+                            3. ###### Download:
+                                <Card title = "Rekado" icon = "external">
+                                    ```x.x.Rekado.xxx.-release.apk```
+
+                                    From their **Github**.
+                                </Card>
+
+                            4. ###### Rekado
+
+                                1. Connect your Switch to your phone or tablet using an USB cable and open Rekado.
+
+                                2. Go to ```Payloads```, press the ```+``` icon, and choose your preferred payload.
+
+                                3. Select your preferred payload when prompted, and you should now launch into your preferred payload.
+                        </Steps>
+                        ---
+                    </TabItem>
+                    <TabItem label = "iOS / iPadOS">
+                        <Steps>
+                            3. ###### Download:
+                                <Card title = "NXBoot" icon = "external">
+                                    ```NXBoot_x.x.x-x.tipa```
+
+                                    From their **Github**.
+
+                                    Requires device to be **jailbroken** / requires **sideloading**.
+                                </Card>
+
+                            4. ###### NXBoot
+
+                                1. Connect your Switch to your phone or tablet using an USB cable and open NXBoot.
+
+                                2. Put your preferred payload in your iCloud storage.
+
+                                3. In NXBoot, select your preferred payload and you should now launch into your preferred payload.
+                        </Steps>
+                        ---
+                    </TabItem>
+                </Tabs>
+            </TabItem>
+            <TabItem label = "RCMLoader">
+                :::note[Note]
+                Only works to launch into Atmosphere!
+                :::
+                <Steps>
+                    3. ###### First use
+
+                        1. Recharge the RCMLoader before first use and put it inside of your Switch with the Switch turned off, you also won't need
+
+                    4. ###### RCMLoader
+
+                        1. Once the Switch is completely off, put the RCM JIG in the right rail and the RCMLoader in the USB port.
+
+                        2. Hold the power button on the Switch and the ```+``` button on the RCMLoader while the Switch is off and continue holding until the LED on the RCMLoader turns blue.
+
+                        3. You should now launch into Hekate.
+                </Steps>
+                ---
+            </TabItem>
+        </Tabs>
     </TabItem>
+    <TabItem label = "Mariko & Patched V1">
+        :::note[Mariko users]
+        Please ensure that your desired payload supports your device.
+        :::
+        <Steps>
+            1. ###### First
 
-    <TabItem label="Linux">
-        Download / Access:
+                This section uses Hekate, make sure it's installed on your device, but if it's already set up with CFW you should already have it.
 
+                Make sure that you have your preferred payload downloaded locally on your device at this point, this payload file should end in ```.bin```.
+
+            2. ###### Accessing the microSD card
+
+                1. Access your microSD card by using a ( micro ) SD card reader or USB.
+                    - Read [browse microSD card via USB](/miscellaneous/browse-microsd/).
+
+                2. Rename ```hekate_ctcaer_x.x.x.bin``` to ```payload.bin```.
+
+                3. Place your desired payload in ```/bootloader/payloads/```.
+
+                <FileTree>
+                    - atmosphere
+                    - bootloader
+                        - payloads
+                            - **your preferred payload**
+                    - switch
+                    - hekate_ctcaer_x.x.x.bin
+                    - hbmenu.nro
+                </FileTree>
+
+            3. ###### Hekate
+
+                1. Restart or power off your Switch,
+
+                2. Press the power button and launch into Hekate.
+
+                3. Once inside Hekate, press the ```payloads``` option and pick your desired payload.
+
+                4. You should now launch into your desired payload.
+        </Steps>
         ---
-
-        <Card title="NSUSBLoader">
-            From their **Github**.
-        </Card>
-        <Card title="Web Fusee Launcher">
-            From their **website**.
-        </Card>
-    </TabItem>
-
-    <TabItem label="MacOS">
-        Download / Access:
-
-        ---
-
-        <Card title="NSUSBLoader">
-            From their **Github**.
-        </Card>
-        <Card title="Web Fusee Launcher">
-            From their **website**.
-        </Card>
-    </TabItem>
-
-    <TabItem label="ChromeOS">
-        Access:
-
-        ---
-
-        <Card title="Web Fusee Launcher">
-            From their **website**.
-        </Card>
-    </TabItem>
-
-    <TabItem label="Android">
-        Download:
-
-        ---
-
-        <Card title="Rekado">
-            From their **Github**.
-        </Card>
-    </TabItem>
-
-    <TabItem label="iOS">
-        Download:
-
-        ---
-
-        <Card title="NXBoot">
-            From their **Github**.
-
-            **Requires a jailbroken device.**
-        </Card>
     </TabItem>
 </Tabs>
-
-- OR a portable payload injector. [ Like the RCMLoader ]
-
-:::note[Note]
-Follow the instructions for your choice of payload injector.
-:::
-
-2. Pick your desired payload with your payload injector of your choice and connect your Switch to your PC / laptop.
-    - If you use a portable payload injector, then you only need to connect the payload injector to your Switch.
-3. Launch the payload and you should now be in your desired payload.
-
-### Mariko [ and patched Erista ]
-
----
-
-:::note[Mariko users]
-Please ensure that your desired payload supports your device.
-:::
-
-1. Make sure you have Hekate installed on your device.
-2. Rename ```hekate_ctcaer_x.x.x.bin``` to ```payload.bin```.
-3. Place your desired payload in ```/bootloader/payloads/```.
-4. Press the power button and launch into Hekate.
-5. Once inside Hekate, press the ```payloads``` option and pick your desired payload.
-6. You should now launch into your desired payload.
 
 ### Continue reading
 

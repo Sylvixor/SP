@@ -19,17 +19,15 @@ Make sure you have read the Introduction section before doing this, as it contai
     - **TLDR:** Partition-based emuMMC is recommended because of it's lower chance of corruption and higher performance, despite being a little harder to back up.
 3. ###### Backup
     - Make sure you have backed up anything on the microSD card if the card has been used beforehand, because following this guide **will** wipe the microSD card.
-
-    ---
-
 </Steps>
+---
 
 :::note[Note]
 This guide will enable ```AutoRCM``` by default. Once you've used Hekate to enable it, the console from that moment on will always
 go into RCM when turned on, making the RCM JIG not needed anymore ( It is needed for the first time and every time you go out of CFW ).
 :::
 
-import { Card, Steps, FileTree, Tabs, TabItem } from "@astrojs/starlight/components";
+import { Card, Steps, FileTree, Tabs, TabItem } from "@astrojs/starlight/components"
 
 ### MicroSD Card Setup
 
@@ -204,6 +202,10 @@ To continue you'll also need:
         If the Switch is on, turn it off and then power it back on while holding the ```Vol +``` button, this should result in just a black screen.
 
         If you have a black screen, it means you're in RCM mode and your Switch is ready to inject.
+
+        :::note[Note]
+        If, when injecting, nothing happens, your unit may be patched, check [possibly patched](/homebrewing/possibly-patched/).
+        :::
 </Steps>
 
 <Tabs>
@@ -225,10 +227,8 @@ To continue you'll also need:
                         2. Once the driver is installed, go back to TegraRcmGui, go to the ```Payload``` tab and press the folder icon. Navigate to whatever directory you put the aforementioned ```hekate_ctcaer_x.x.x.bin``` in and select it.
 
                         4. Connect your Switch to your PC or laptop using an USB cable and press ```Inject payload```, you should now launch into Hekate.
-
-                        ---
-
                 </Steps>
+                ---
             </TabItem>
             <TabItem label = "Linux & MacOS">
                 <Steps>
@@ -248,6 +248,7 @@ To continue you'll also need:
 
                         3. Press ```Do the thing!```, you should now launch into Hekate.
                 </Steps>
+                ---
             </TabItem>
             <TabItem label = "ChromeOS">
                 <Steps>
@@ -266,6 +267,7 @@ To continue you'll also need:
 
                         3. Select ```hekate_ctcaer_x.x.x.bin``` when prompted, and you should now launch into Hekate.
                 </Steps>
+                ---
             </TabItem>
         </Tabs>
     </TabItem>
@@ -288,6 +290,7 @@ To continue you'll also need:
 
                         3. Select ```hekate_ctcaer_x.x.x.bin``` when prompted, and you should now launch into Hekate.
                 </Steps>
+                ---
             </TabItem>
             <TabItem label = "iOS / iPadOS">
                 <Steps>
@@ -308,6 +311,7 @@ To continue you'll also need:
 
                         3. In NXBoot, select ```hekate_ctcaer_x.x.x.bin``` and you should now launch into Hekate.
                 </Steps>
+                ---
             </TabItem>
         </Tabs>
     </TabItem>
@@ -325,6 +329,7 @@ To continue you'll also need:
 
                 3. You should now launch into Hekate.
         </Steps>
+        ---
     </TabItem>
 </Tabs>
 
@@ -358,6 +363,7 @@ Now, you will have to choose between either a partition-based emuMMC or file-bas
 
                 Select the ```Tools``` tab again, and then select ```Archive Bit - AutoRCM```, and then pick ```Enable AutoRCM```.
         </Steps>
+        ---
     </TabItem>
     <TabItem label = "File-based">
         <Steps>
@@ -377,6 +383,7 @@ Now, you will have to choose between either a partition-based emuMMC or file-bas
 
                 Select the ```Tools``` tab again, and then select ```Archive Bit - AutoRCM```, and then pick ```Enable AutoRCM```.
         </Steps>
+        ---
     </TabItem>
 </Tabs>
 
