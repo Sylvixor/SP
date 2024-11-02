@@ -1,3 +1,256 @@
 ---
 title: Mariko
 ---
+
+This section will go over homebrewing your patched V1 Switch or Mariko Switch. We will be going over setting up your microSD card, creating an emulated NAND ( emuNAND / emuMMC ) while also blocking Nintendo's servers so you don't get banned.
+- In order for this method to work, you explicitly do need a Patched V1 or Mariko **with a modchip**, stock models will **not** work.
+
+Make sure you have read the Introduction section before doing this, as it contains a lot of important information to homebrewing.
+
+### First
+
+---
+
+<Steps>
+    1. ###### Disable cloud saves
+        - To do this, go to ```Settings``` -> ```Data Management``` -> ```Save Data Cloud``` -> ```Settings``` and disable ```Automatically back up save data``` and ```Automatically download save data```.
+    2. ###### Read [partition-based or file-based](/miscellaneous/partition-or-file/)
+        - **TLDR:** Partition-based emuMMC is recommended because of it's lower chance of corruption and higher performance, despite being a little harder to back up.
+    3. ###### Backup
+        - Make sure you have backed up anything on the microSD card if the card has been used beforehand, because following this guide **will** wipe the microSD card.
+
+        ---
+
+</Steps>
+
+import { Card, Steps, FileTree, Tabs, TabItem } from "@astrojs/starlight/components";
+
+### MicroSD Card Setup
+
+---
+
+###### For the initial setup you will need:
+
+- This ( fantastic ) guide. :)
+- A patched V1 Switch or Mariko Switch **with a modchip**.
+- A microSD card of your choice.
+  - Read [microSD guide](/miscellaneous/microsd/).
+- A ( micro ) SD card reader.
+  - You can buy a microSD card reader, you can buy an SD card reader with a microSD to SD adapter, you can use your laptops ( micro ) SD card reader. Whatever works, so long as you have something to access your microSD card.
+
+---
+
+<Steps>
+    4. ###### Download the following files:
+        <Card title = "Hekate" icon = "external">
+            ```hekate_ctcaer_x.x.x_Nyx_x.x.x.zip```
+
+            From their **Github**.
+        </Card>
+        <Card title = "Atmosphere" icon = "external">
+            ```atmosphere-x.x.x-master-xxxxxxxxx+hbl-x.x.x+hbmenu-x.x.x.zip```
+
+            From their **Github**.
+        </Card>
+        <Card title = "Sigpatches" icon = "external">
+            ```sigpatches.zip```
+
+            From their **website**.
+        </Card>
+    5. ###### Hekate launch options
+
+        Inside of ```/bootloader/``` on the root of your microSD card, create a file named ```hekate_ipl.ini```.
+        - You will need to create a configuration file to set up parameters for Hekate.
+
+        <FileTree>
+            - atmosphere
+            - bootloader
+                - **hekate_ipl.ini** Create this file.
+            - switch
+            - hekate_ctcaer_x.x.x.bin
+            - hbmenu.nro
+        </FileTree>
+
+        Copy the bit below and paste it inside of ```hekate_ipl.ini```:
+        - You can use the button in the top right of the box in order to copy.
+
+        ```
+        [config]
+        autoboot=0
+        autoboot_list=0
+        bootwait=3
+        backlight=100
+        autohosoff=0
+        autonogc=1
+        updater2p=1
+        bootprotect=0
+
+        [CFW emuMMC - Atmosphere]
+        fss0=atmosphere/package3
+        emummcforce=1
+        cal0blank=1
+        kip1patch=nosigchk
+        icon=bootloader/res/icon_payload.bmp
+
+        [Stock]
+        fss0=atmosphere/package3
+        stock=1
+        emummc_force_disable=1
+        icon=bootloader/res/icon_switch.bmp
+        ```
+
+    6. ###### Avoiding a ban
+
+        Inside of the root of your microSD card, create a file named ```exosphere.ini```.
+
+        <FileTree>
+            - atmosphere
+            - bootloader
+            - switch
+            - hekate_ctcaer_x.x.x.bin
+            - **hekate_ipl.ini** Create this file.
+            - hbmenu.nro
+        </FileTree>
+
+        Copy the bit below and paste it inside of ```exosphere.ini```:
+        - You can use the button in the top right of the box in order to copy.
+
+        ```
+        [exosphere]
+        debugmode=1
+        debugmode_user=0
+        disable_user_exception_handlers=0
+        enable_user_pmu_access=0
+        blank_prodinfo_sysmmc=0
+        blank_prodinfo_emummc=1
+        allow_writing_to_cal_sysmmc=0
+        log_port=0
+        log_baud_rate=115200
+        log_inverted=0
+        ```
+
+    7. ###### Blocking Nintendo connections
+
+        Inside of ```/atmosphere/hosts/``` on the root of your microSD card, create a file named ```default.txt```.
+
+        <FileTree>
+            - atmosphere
+                - hosts
+                    - **default.txt** Create this file.
+            - bootloader
+            - switch
+            - hekate_ctcaer_x.x.x.bin
+            - hekate_ipl.ini
+            - hbmenu.nro
+        </FileTree>
+
+        Copy the bit below and paste it inside of ```default.txt```:
+        - You can use the button in the top right of the box in order to copy.
+
+        ```
+        # Block Nintendo Servers
+        127.0.0.1 *nintendo.*
+        127.0.0.1 *nintendo-europe.com
+        127.0.0.1 *nintendoswitch.*
+        95.216.149.205 *conntest.nintendowifi.net
+        95.216.149.205 *ctest.cdn.nintendo.net
+        ```
+
+        :::note[Note]
+        You can rename the file to ```emummc.txt``` if you **only** want this to apply to emuMMC, if you rename it to ```emummc.txt``` Nintendo connections will **not** be blocked in sysMMC.
+        :::
+
+        ---
+</Steps>
+
+### Creating emuMMC
+
+---
+
+Now, you will have to choose between either a partition-based emuMMC or file-based emuMMC, you can read about the differences in [partition-based or file-based](/miscellaneous/partition-or-file/) if you still haven't done so.
+
+**TLDR:** Partition-based emuMMC is recommended because of it's lower chance of corruption and higher performance, despite being a little harder to back up.
+
+---
+
+<Steps>
+    8.  ###### Launching into Hekate
+
+        In order to launch into Hekate, power off your Switch and power it on while holding ```VOL -``` in order to launch into Hekate.
+
+        ---
+</Steps>
+
+<Tabs>
+    <TabItem label = "Partition-based">
+        <Steps>
+            9.  ###### Partitioning
+
+                You should now be inside of Hekate. Select the ```Tools``` tab, and then select ```Partition SD card```, and then press ```Ok```.
+
+                Move the emuMMC ( RAW ) slider until it says ```29 FULL``` ( ```59 FULL``` for **OLED** ), and then press ```Next Step```, and then press ```Start```.
+
+                Once the operation is done, press ```Close```, and then select the ```Home``` tab.
+
+            10. ###### Creating emuMMC
+
+                Select ```emuMMC``` in the main menu, and then select ```Create emuMMC```.
+
+                Select ```SD Partition```, and then select ```Part 1```.
+
+                Wait for your emuMMC to get created. Once it's done, press ```Close```.
+
+                Select the ```Tools``` tab again, and then select ```Archive Bit - AutoRCM```, and then pick ```Enable AutoRCM```.
+        </Steps>
+    </TabItem>
+    <TabItem label = "File-based">
+        <Steps>
+            9.  ###### Partitioning
+
+                You should now be inside of Hekate. Select the ```Tools``` tab, and then select ```Partition SD card```, and then press ```Ok```.
+
+                Press ```Next Step```, and then press ```Start```.
+
+                Once the operation is done, press ```Close```, and then select the ```Home``` tab.
+
+            10. ###### Creating emuMMC
+
+                Select ```emuMMC``` in the main menu, and then select ```Create emuMMC```. Select ```SD File```.
+
+                Wait for your emuMMC to get created. Once it's done, press ```Close```.
+
+                Select the ```Tools``` tab again, and then select ```Archive Bit - AutoRCM```, and then pick ```Enable AutoRCM```.
+        </Steps>
+    </TabItem>
+</Tabs>
+
+### Finishing up
+
+---
+
+<Steps>
+    11. ###### Creating backup
+
+        It is recommended to now make a backup, please read [backup / restore](/important/backup/) in order to make a backup using Hekate since you're already in it. Kill two birds with one stone.
+
+    12. ###### Launching Atmosphere
+
+        On the main menu of Hekate, press ```Launch```, and then select ```emuMMC - Atmosphere CFW``` to launch emuMMC with Atmosphere.
+
+        Otherwise, select ```Stock``` to launch OFW ( can be used for things like online play ).
+</Steps>
+
+---
+
+Done! You have now successfully set up Atmosphere on your emuMMC.
+
+Now, if you want to take advantage of CFW on emuMMC, it's recommended to read through:
+
+- [Homebrew app installation](/miscellaneous/hbapp/).
+- [USB installation](/miscellaneous/usb-installation/).
+- [Manage cheats](/miscellaneous/cheats/).
+- [Setup Tesla overlay](/miscellaneous/tesla/).
+- [Install themes](/miscellaneous/themes/).
+- [Emulating amiibo](/miscellaneous/emuiibo/).
+
+---
