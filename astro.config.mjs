@@ -45,10 +45,10 @@ export default defineConfig({
 					items: [
 						{ label: "MicroSD guide", link: "/important/microsd" },
 						{ label: "Launch payload", link: "/important/payload" },
-						{ label: "Backup save files", link: "/important/save" },
+						{ label: "Backup save files", link: "/important/saves" },
 						{ label: "Backup / Restore", link: "/important/backup" },
 						{ label: "Update / Downgrade", link: "/important/update" },
-						{ label: "Dump titles", link: "/important/dump" },
+						{ label: "Dump titles", link: "/important/titles" },
 						{ label: "Dump keys", link: "/important/keys" },
 						{ label: "Dump firmware", link: "/important/firmware" },
 					]
@@ -56,10 +56,10 @@ export default defineConfig({
 				{
 					label: "Miscellaneous",
 					items: [
-						{ label: "Partition-based or file-based", link: "/miscellaneous/partition-or-file" },
+						{ label: "Partition-based or file-based", link: "/miscellaneous/partition" },
 						{ label: "Browse microSD via USB", link: "/miscellaneous/browse" },
-						{ label: "Install homebrew apps", link: "/miscellaneous/hbapp" },
-						{ label: "Install titles via USB", link: "/miscellaneous/usb-installation" },
+						{ label: "Install homebrew apps", link: "/miscellaneous/homebrew" },
+						{ label: "Install titles via USB", link: "/miscellaneous/usb" },
 						{ label: "Install themes", link: "/miscellaneous/themes" },
 						{ label: "Enable gamecard reader", link: "/miscellaneous/gamecard" },
 						{ label: "Manage cheats", link: "miscellaneous/cheats" },
@@ -67,7 +67,7 @@ export default defineConfig({
 						{ label: "Setup Tesla overlay", link: "/miscellaneous/tesla" },
 						{ label: "Setup Incognito", link: "/miscellaneous/incognito"},
 						{ label: "Verify dumps", link: "/miscellaneous/verify" },
-						{ label: "Emulating amiibo", link: "/miscellaneous/emuiibo" },
+						{ label: "Emulating Amiibo", link: "/miscellaneous/amiibo" },
 						{ label: "SXOS migration", link: "/miscellaneous/sxos" },
 						{ label: "About", link: "/miscellaneous/about" },
 					]
