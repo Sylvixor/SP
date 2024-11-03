@@ -69,6 +69,7 @@ export default defineConfig({
 						{ label: "Verify dumps", link: "/miscellaneous/verify" },
 						{ label: "Emulating amiibo", link: "/miscellaneous/emuiibo" },
 						{ label: "SXOS migration", link: "/miscellaneous/sxos" },
+						{ label: "About", link: "/miscellaneous/about" },
 					]
 				}
 			],
