@@ -2,7 +2,7 @@
 title: Fixes for common issues
 ---
 
-import { Badge, FileTree } from "@astrojs/starlight/components"
+import { Badge, FileTree, Tabs, TabItem } from "@astrojs/starlight/components"
 
 ### Entering the homebrew menu
 
@@ -14,13 +14,33 @@ There are two ways to launch the homebrew menu:
 2. By clicking on the album icon.
     - This will launch the homebrew menu in Applet mode, which means some homebrew apps might not work.
 
+### Entering RCM ( recovery ) mode
+
+---
+
+To start, place your microSD card inside of your Switch, take off the right joycon and put the RCM JIG on the right rail and slide it all the way down.
+
+If the Switch is on, turn it off and then power it back on while holding the ```Vol +``` button, this should result in just a black screen.
+
+If you have a black screen, it means you're in RCM mode and your Switch is ready to inject.
+
+:::note[Note]
+If, when injecting, nothing happens, your unit may be patched, check [possibly patched](/homebrewing/possibly-patched/).
+:::
+
+### Avoiding firmware update nag
+
+---
+
+
+
 ### Error 2002-2634 ( 010000000000001F )
 
 ---
 
 If you are getting this error code after updating firmware, remove your gamecard. You can enable ```nogc``` to avoid this crash inside of ```hekate_ipl.ini```.
 Enabling ```nogc``` **will** prevent you from playing gamecards until you update your Switch to a newer firmware.
-    - Read [Upgrade / Downgrade](/important/upgrade/).
+    - Read [Update / Downgrade](/important/update/).
 
 ### Battery is depleted and Switch won't power on
 
@@ -28,7 +48,72 @@ Enabling ```nogc``` **will** prevent you from playing gamecards until you update
 
 This will most likely be because you have ```AutoRCM``` enabled.
 To fix this, connect your Switch to a charger and let it charge, afterwards you can launch a payload again.
-    - Read [Launch a payload](/important/payload/).
+    - Read [Launch payload](/important/payload/).
+
+### Switch not booting after firmware update
+
+---
+
+If your Switch does not boot after updating your firmware, it may be because one of the following things, try all of them 1 by 1 until it fixes it:
+
+<Tabs>
+    <TabItem label = "Old CFW version">
+        You may be running an old version of Atmosphere which does not support the new firmware you're on.
+
+        To fix this, install the newest available version of Atmosphere and update your Sigpatches. You can also update Hekate while you're at it.
+
+        To update, install the latest versions of Atmosphere, Hekate and Sigpatches and drop all of the contents of each folder to the root of your microSD card and when it asks to overwrite, click yes for all.
+            - You can access your microSD card by taking it out and using a ( micro ) SD card reader or read [browse microSD via USB](/miscellaneous/browse/).
+
+        ---
+
+        If this still did not fix the problem at hand, continue to the next tab.
+    </TabItem>
+    <TabItem label = "Broken theme installed">
+        Your Switch may also not be booting because of a broken theme that is currently installed.
+
+        To fix this, access your microSD card ( [browse microSD via USB](/miscellaneous/browse/) ), go into ```/atmosphere/contents/``` and delete the folder named ```/0100000000001000/```.
+
+        <FileTree>
+            - atmosphere/
+                - contents/
+                    - **0100000000001000/** Delete this folder.
+            - hosts/
+            - bootloader/
+            - switch/
+            - hekate_ctcaer_x.x.x.bin
+            - hekate_ipl.ini
+            - exosphere.ini
+            - hbmenu.nro
+        </FileTree>
+
+        ---
+
+        If this still did not fix the problem at hand, continue to the next tab.
+    </TabItem>
+    <TabItem label = "Broken sysmodules installed">
+        Your Switch may also not be booting because of sysmodules you may have installed that are broken.
+
+        To fix this, access your microSD card ( [browse microSD via USB](/miscellaneous/browse/) ), inside of ```/atmosphere/```, delete the folder named ```/contents/``` entirely.
+
+        <FileTree>
+            - atmosphere/
+                - **contents/** Delete this folder.
+            - hosts/
+            - bootloader/
+            - switch/
+            - hekate_ctcaer_x.x.x.bin
+            - hekate_ipl.ini
+            - exosphere.ini
+            - hbmenu.nro
+        </FileTree>
+
+        ---
+
+    </TabItem>
+</Tabs>
+
+### Blue screen after updating Atmosphere
 
 ### Archivebit fix ( for MacOS )
 
@@ -42,4 +127,34 @@ To fix this, boot into Hekate, press ```Tools``` -> ```Arch bit - RCM Touch - Pk
 
 ---
 
-To fix this,
+To fix this, access your microSD card and access ```hekate_ipl.ini``` inside of ```/bootloader/```.
+
+:::note[Note]
+Skip this next bit if ```Warmboot Error Fix``` already exists in your Hekate launch options.
+:::
+
+<FileTree>
+    - atmosphere/
+    - bootloader/
+        - **hekate_ipl.ini** Access this file.
+    - switch/
+    - hekate_ctcaer_x.x.x.bin
+    - hbmenu.nro
+</FileTree>
+
+And add this inside of it:
+    - You can use the button in the top right of the box in order to copy.
+```ini
+[Warmboot Error Fix]
+fss0=atmosphere/package3
+stock=1
+emummc_force_disable=1
+icon=bootloader/res/icon_switch.bmp
+```
+
+Go into Hekate -> ```Launch``` -> Select ```Warmboot Error Fix``` -> Once launched, reboot back to Hekate and launch your emuMMC again.
+
+### [ERROR] Fatal error: [NXBOOT] Couldn't parse boot0: !
+
+---
+
