@@ -44,7 +44,7 @@ export default defineConfig({
 					label: "Important",
 					items: [
 						{ label: "MicroSD guide", link: "/important/microsd" },
-						{ label: "RCM | Launch Hekate", link: "/important/rcm" },
+						{ label: "RCM & Hekate", link: "/important/rcm" },
 						{ label: "Inject | Launch payload", link: "/important/payload" },
 						{ label: "Backup | Restore saves", link: "/important/saves" },
 						{ label: "Backup | Restore Switch", link: "/important/backup" },
@@ -58,7 +58,7 @@ export default defineConfig({
 					label: "Miscellaneous",
 					items: [
 						{ label: "Partition-based or file-based", link: "/miscellaneous/partition" },
-						{ label: "Browse microSD via USB", link: "/miscellaneous/browse" },
+						{ label: "Browse microSD card", link: "/miscellaneous/browse" },
 						{ label: "Install homebrew apps", link: "/miscellaneous/homebrew" },
 						{ label: "Install titles via USB", link: "/miscellaneous/usb" },
 						{ label: "Install themes", link: "/miscellaneous/themes" },
