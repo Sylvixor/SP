@@ -10,10 +10,70 @@ Keys are usually used for PC programs, but can also be used to fix a broken MMC 
 
 ---
 
-:::note[Models]
-This section requires you to either have an **unpatched V1** Switch or a **patched V1**, **V2**, **lite** or **OLED** with **a modchip**, otherwise this will **not** work.
-:::
+### Requirements
+
+---
+
+- This section requires you to either have an **unpatched V1** Switch or a **patched V1**, **V2**, **lite** or **OLED** with **a modchip**, otherwise this will **not** work.
+- This section requires you to know how to get into Hekate and for Hekate to be installed on your device.
+  - If this is **not** the case, follow <u>[RCM & Hekate](/important/rcm/)</u> first.
+- This section requires you to know how you can access your microSD card to set it up.
+  - If this is **not** the case, read <u>[Browse microSD card](/miscellaneous/browse/)</u> first.
+
+### Steps
+
+---
 
 <Steps>
     1.  ###### Download:
+
+        <Card title = "LockPickRCM" icon = "external">
+            ---
+            ```Lockpick_RCM.bin```
+
+            From their **website**.
+        </Card>
+
+    2.  ###### MicroSD card setup
+
+        Place ```TegraExplorer.bin``` & ```Lockpick_RCM.bin``` in ```/bootloader/payloads/``` on your microSD card:
+
+        <FileTree>
+            - atmosphere/
+            - bootloader/
+                - payloads/
+                    - **Lockpick_RCM.bin**
+            - switch/
+            - hekate_ctcaer_x.x.x.bin
+            - exosphere.ini
+            - hbmenu.nro
+        </FileTree>
+
+    3.  ###### Hekate
+
+        Launch into Hekate, select ```Payloads``` and select ```Lockpick_RCM.bin```.
+            - You can use the ```VOL +``` & ```VOL -``` to scroll up and down and use the power button to confirm your desired selection.
+
+        Select ```Dump from sysNAND```. LockpickRCM will dump available ```prod.keys```, ```title.keys``` and ```dev.keys```.
+            - Alternatively, if you have games installed on your emuNAND, you can select ```Dump from emuNAND```.
+            - Mariko can also dump ```partialaes.keys``` if you select ```Dump Mariko partials```.
+
+        Once the dumping process is done, select ```Reboot to bootloader/update.bin``` from the main menu in order to boot back into Hekate.
 </Steps>
+---
+
+You have now successfully dumped your keys, you should now be able to find your dump in ```/switch/``` on your microSD card.
+
+<FileTree>
+    - atmosphere/
+    - bootloader/
+    - **switch/**
+    - hekate_ctcaer_x.x.x.bin
+    - exosphere.ini
+    - hbmenu.nro
+</FileTree>
+
+### Continue Reading
+
+---
+

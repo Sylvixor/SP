@@ -2,38 +2,36 @@
 title: Creating a backup of your Switch or restoring one
 ---
 
+import { Card, Steps, FileTree, Tabs, TabItem, Badge } from "@astrojs/starlight/components"
+
 This section will go over how you can go about creating a backup of your Switch or restoring one. There are 2 methods to do this:
 
 1. **Switch Method** <Badge text="Recommended" variant="success" />
-    - Make a backup directly on the microSD card in the Switch. Requires at least 32GB ( or 64GB for OLED ) of free space.
-2. **PC Method ( Windows )**
+    - Make a backup directly on the microSD card in the Switch. Requires at least 32GB ( or 64GB for **OLED** ) of free space.
+2. **PC Method**
     - Make a backup using your PC, bypasses storing to the microSD. Only recommended for those with small microSD cards not big enough for a backup.
     - Only works on **Windows**, so your device will need Windows or you'll need to run Windows inside of a **virtual machine** or **Docker** or whatever else works.
 
-:::caution[Watch out]
-Before you begin, please ensure that you know how to launch a payload. If not, read [launch payload](/important/payload/).
-:::
+### Requirements
 
-import { Tabs, TabItem, Card, Steps, FileTree, Badge } from "@astrojs/starlight/components";
+---
+
+- This section requires you to either have an **unpatched V1** Switch or a **patched V1**, **V2**, **lite** or **OLED** with **a modchip**, otherwise this will **not** work.
+- This section requires you to know how to get into Hekate and for Hekate to be installed on your device for the Switch method.
+  - If this is **not** the case, follow <u>[RCM & Hekate](/important/rcm/)</u> first.
+- This section requires you to know how you can access your microSD card to set it up.
+  - If this is **not** the case, read <u>[Browse microSD card](/miscellaneous/browse/)</u> first.
+
+### Steps
+
+---
 
 <Tabs>
     <TabItem label = "Switch Method">
         <Tabs>
             <TabItem label = "Create backup">
                 <Steps>
-                    1.  ###### Download: ( skip if already done )
-
-                        <Card title = "Hekate" icon = "external">
-                            ```hekate_ctcaer_x.x.x_Nyx_x.x.x.zip```
-
-                            From their **Github**.
-                        </Card>
-
-                    2.  ###### MicroSD setup ( skip if already done )
-
-                        Extract ```hekate_ctcaer_x.x.x_Nyx_x.x.x.zip``` into your microSD card.
-
-                    3.  ###### Backing up
+                    1.  ###### Backing up
 
                         Boot into Hekate.
 
@@ -45,7 +43,7 @@ import { Tabs, TabItem, Card, Steps, FileTree, Badge } from "@astrojs/starlight/
 
                         Once done, press ```Backup eMMC``` again but pick the ```eMMC BOOT0 & BOOT1``` option this time.
 
-                    4.  ###### Finishing up
+                    2.  ###### Finishing up
 
                         Once done, your backup should be in a folder named ```Backup``` on the root of your microSD card.
 
@@ -65,25 +63,12 @@ import { Tabs, TabItem, Card, Steps, FileTree, Badge } from "@astrojs/starlight/
             </TabItem>
             <TabItem label = "Restoring backup">
                 <Steps>
-                    1.  ###### Download: ( skip if already done )
-
-                        <Card title = "Hekate" icon = "external">
-                            ```hekate_ctcaer_x.x.x_Nyx_x.x.x.zip```
-
-                            From their **Github**.
-                        </Card>
-
-                    2.  ###### MicroSD setup ( skip if already done )
-
-                        Extract ```hekate_ctcaer_x.x.x_Nyx_x.x.x.zip``` into your microSD card.
-
-                    3.  ###### Retrieve backup
+                    1.  ###### Retrieving backup
 
                         Take the ```Backup``` folder you have stored safely somewhere and move it back to the root of your microSD card.
 
                         Move all files that are inside of ```/bootloader/``` to ```/bootloader/restore/```.
-
-                        If this folder doesn't exist, create it:
+                            - If this folder doesn't exist, create it:
 
                         <FileTree>
                             - atmosphere/
@@ -92,12 +77,11 @@ import { Tabs, TabItem, Card, Steps, FileTree, Badge } from "@astrojs/starlight/
                                     - **your backup**
                             - switch/
                             - hekate_ctcaer_x.x.x.bin
-                            - hekate_ipl.ini
                             - exosphere.ini
                             - hbmenu.nro
                         </FileTree>
 
-                    4.  ###### Restoring backup
+                    2.  ###### Restoring backup
 
                         Boot into Hekate.
 
@@ -109,7 +93,7 @@ import { Tabs, TabItem, Card, Steps, FileTree, Badge } from "@astrojs/starlight/
 
                         Once done, press ```Restore eMMC``` again but pick the ```eMMC BOOT0 & BOOT1``` option this time.
 
-                    5.  ###### Finishing up
+                    3.  ###### Finishing up
 
                         Once done, close out of Hekate.
 
@@ -129,12 +113,8 @@ import { Tabs, TabItem, Card, Steps, FileTree, Badge } from "@astrojs/starlight/
             <TabItem label = "Create backup">
                 <Steps>
                     1.  ###### Download:
-                        <Card title = "Hekate" icon = "external">
-                            ```hekate_ctcaer_x.x.x_Nyx_x.x.x.zip```
-
-                            From their **Github**.
-                        </Card>
                         <Card title = "NXNandManager" icon = "external">
+                            ---
                             ```NxNandManager_vx.x_x64.zip```
 
                             From their **Github**.
@@ -144,12 +124,8 @@ import { Tabs, TabItem, Card, Steps, FileTree, Badge } from "@astrojs/starlight/
             <TabItem label = "Restoring backup">
                 <Steps>
                     1.  ###### Download:
-                        <Card title = "Hekate" icon = "external">
-                            ```hekate_ctcaer_x.x.x_Nyx_x.x.x.zip```
-
-                            From their **Github**.
-                        </Card>
                         <Card title = "NXNandManager" icon = "external">
+                            ---
                             ```NxNandManager_vx.x_x64.zip```
 
                             From their **Github**.
