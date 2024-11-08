@@ -2,6 +2,8 @@
 title: Mariko
 ---
 
+import { Card, Steps, FileTree, Tabs, TabItem } from "@astrojs/starlight/components";
+
 This section will go over homebrewing your patched V1 Switch or Mariko Switch. We will be going over setting up your microSD card, creating an emulated NAND ( emuNAND / emuMMC ) while also blocking Nintendo's servers so you don't get banned.
 - In order for this method to work, you explicitly do need a Patched V1 or Mariko **with a modchip**, stock models will **not** work.
 
@@ -14,14 +16,10 @@ Make sure you have read the Introduction section before doing this, as it contai
 <Steps>
     1. ###### Disable cloud saves
         - To do this, go to ```Settings``` -> ```Data Management``` -> ```Save Data Cloud``` -> ```Settings``` and disable ```Automatically back up save data``` and ```Automatically download save data```.
-    2. ###### Read [partition-based or file-based](/miscellaneous/partition-or-file/)
-        - **TLDR:** Partition-based emuMMC is recommended because of it's lower chance of corruption and higher performance, despite being a little harder to back up.
-    3. ###### Backup
+    2. ###### Backup
         - Make sure you have backed up anything on the microSD card if the card has been used beforehand, because following this guide **will** wipe the microSD card.
 </Steps>
 ---
-
-import { Card, Steps, FileTree, Tabs, TabItem } from "@astrojs/starlight/components";
 
 ### MicroSD Card Setup
 
@@ -32,7 +30,7 @@ import { Card, Steps, FileTree, Tabs, TabItem } from "@astrojs/starlight/compone
 - This ( fantastic ) guide. **:)**
 - A patched V1 Switch or Mariko Switch **with a modchip**.
 - A microSD card of your choice.
-  - Read [MicroSD guide](/miscellaneous/microsd/).
+  - Read <u>[MicroSD guide](/miscellaneous/microsd/)</u>.
 - A ( micro ) SD card reader.
   - You can buy a microSD card reader, you can buy an SD card reader with a microSD to SD adapter, you can use your laptops ( micro ) SD card reader, or maybe even that microSD slot in your phone! *( Not recommended. Android will make folders in the card, which may make it look a bit messy, but it's a way! )*.
 
@@ -43,16 +41,19 @@ import { Card, Steps, FileTree, Tabs, TabItem } from "@astrojs/starlight/compone
 <Steps>
     4. ###### Download the following files:
         <Card title = "Hekate" icon = "external">
+            ---
             ```hekate_ctcaer_x.x.x_Nyx_x.x.x.zip```
 
             From their **Github**.
         </Card>
         <Card title = "Atmosphere" icon = "external">
+            ---
             ```atmosphere-x.x.x-master-xxxxxxxxx+hbl-x.x.x+hbmenu-x.x.x.zip```
 
             From their **Github**.
         </Card>
         <Card title = "Sigpatches" icon = "external">
+            ---
             ```sigpatches.zip```
 
             From their **website**.
@@ -168,7 +169,7 @@ import { Card, Steps, FileTree, Tabs, TabItem } from "@astrojs/starlight/compone
 
 ---
 
-Now, you will have to choose between either a partition-based emuMMC or file-based emuMMC, you can read about the differences in [Partition-based or file-based](/miscellaneous/partition/) if you still haven't done so.
+Now, you will have to choose between either a partition-based emuMMC or file-based emuMMC, you can read about the differences in <u>[Partition-based or file-based](/miscellaneous/partition/)</u> if you still haven't done so.
 
 **TLDR:** Partition-based emuMMC is recommended because of it's lower chance of corruption and higher performance, despite being a little harder to back up.
 
@@ -234,7 +235,7 @@ Now, you will have to choose between either a partition-based emuMMC or file-bas
 <Steps>
     11. ###### Creating backup
 
-        It is recommended to now make a backup, please read [backup / restore](/important/backup/) in order to make a backup using Hekate since you're already in it. Kill two birds with one stone.
+        It is recommended to now make a backup, please read <u>[Backup | Restore Switch](/important/backup/)</u> in order to make a backup using Hekate since you're already in it. Kill two birds with one stone.
 
     12. ###### Launching Atmosphere
 
@@ -242,6 +243,9 @@ Now, you will have to choose between either a partition-based emuMMC or file-bas
 
         Otherwise, select ```Stock``` to launch OFW ( can be used for things like online play ).
 </Steps>
+---
+
+### Continue
 
 ---
 
@@ -249,12 +253,12 @@ Done! You have now successfully set up Atmosphere on your emuMMC.
 
 Now, if you want to take advantage of CFW on emuMMC, it's recommended to read through:
 
-- [Install homebrew apps](/miscellaneous/homebrew/).
-- [Install titles via USB](/miscellaneous/usb/).
-- [Install themes](/miscellaneous/themes/).
-- [Manage cheats](/miscellaneous/cheats/).
-- [Manage sysmodules](/miscellaneous/sysmodules/).
-- [Setup Tesla overlay](/miscellaneous/tesla/).
-- [Emulating Amiibo](/miscellaneous/amiibo/).
+- <u>[Install homebrew apps](/miscellaneous/homebrew/)</u>.
+- <u>[Install titles via USB](/miscellaneous/usb/)</u>.
+- <u>[Install themes](/miscellaneous/themes/)</u>.
+- <u>[Manage cheats](/miscellaneous/cheats/)</u>.
+- <u>[Manage sysmodules](/miscellaneous/sysmodules/)</u>.
+- <u>[Setup Tesla overlay](/miscellaneous/tesla/)</u>.
+- <u>[Emulating Amiibo](/miscellaneous/amiibo/)</u>.
 
 ---

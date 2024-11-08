@@ -44,10 +44,11 @@ export default defineConfig({
 					label: "Important",
 					items: [
 						{ label: "MicroSD guide", link: "/important/microsd" },
-						{ label: "Launch payload", link: "/important/payload" },
-						{ label: "Backup save files", link: "/important/saves" },
-						{ label: "Backup / Restore", link: "/important/backup" },
-						{ label: "Update / Downgrade", link: "/important/update" },
+						{ label: "RCM | Launch Hekate", link: "/important/rcm" },
+						{ label: "Inject | Launch payload", link: "/important/payload" },
+						{ label: "Backup | Restore saves", link: "/important/saves" },
+						{ label: "Backup | Restore Switch", link: "/important/backup" },
+						{ label: "Update | Downgrade", link: "/important/update" },
 						{ label: "Dump titles", link: "/important/titles" },
 						{ label: "Dump keys", link: "/important/keys" },
 						{ label: "Dump firmware", link: "/important/firmware" },
@@ -68,6 +69,7 @@ export default defineConfig({
 						{ label: "Setup Incognito", link: "/miscellaneous/incognito"},
 						{ label: "Verify dumps", link: "/miscellaneous/verify" },
 						{ label: "Emulating Amiibo", link: "/miscellaneous/amiibo" },
+						{ label: "MicroSD migration", link: "/miscellaneous/migrate" },
 						{ label: "SXOS migration", link: "/miscellaneous/sxos" },
 						{ label: "About", link: "/miscellaneous/about" },
 					]

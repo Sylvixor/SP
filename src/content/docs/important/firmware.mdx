@@ -1,3 +1,172 @@
 ---
-title: Dumping firmware
+title: Dumping your device's firmware
+---
+
+import { Card, Steps, FileTree, Tabs, TabItem } from "@astrojs/starlight/components"
+
+This section will go over how you can dump your device's firmware.
+
+---
+
+:::note[Models]
+This section requires you to either have an **unpatched V1** Switch or a **patched V1**, **V2**, **lite** or **OLED** with **a modchip**, otherwise this will **not** work.
+:::
+
+:::caution[Before you begin]
+This section requires you to know how to get into Hekate and for Hekate to be installed on your device.
+
+If this is **not** the case, follow <u>[RCM | Launch Hekate](/important/rcm/)</u> first.
+
+If this **is** the case, continue.
+:::
+
+<Tabs>
+    <TabItem label = "Unpatched V1">
+        <Steps>
+            1.  ###### Download:
+                <Card title = "TegraExplorer" icon = "external">
+                    ---
+                    ```TegraExplorer.bin```
+
+                    From their **Github**.
+                </Card>
+                <Card title = "LockPickRCM" icon = "external">
+                    ---
+                    ```Lockpick_RCM.bin```
+
+                    From their **website**.
+                </Card>
+
+            2.  ###### MicroSD card setup
+
+                Place ```TegraExplorer.bin``` & ```Lockpick_RCM.bin``` in ```/bootloader/payloads/``` on your microSD card:
+
+                <FileTree>
+                    - atmosphere/
+                    - bootloader/
+                        - payloads/
+                            - **TegraExplorer.bin**
+                            - **Lockpick_RCM.bin**
+                    - hekate_ipl.ini
+                    - switch/
+                    - hekate_ctcaer_x.x.x.bin
+                    - exosphere.ini
+                    - hbmenu.nro
+                </FileTree>
+
+            3.  ###### Hekate
+
+                Launch into Hekate, select ```Payloads``` and select ```Lockpick_RCM.bin```.
+
+                Once in Lockpick, select ```Dump from sysNAND```.
+                    - You can use the ```VOL +``` & ```VOL -``` to scroll up and down and use the power button to confirm your desired selection.
+
+                Once the dumping process is done, return to the main menu and select ```Reboot to Hekate```.
+
+            4.  ###### Hekate ( again )
+
+                Once in Hekate again, select ```Payloads``` and select ```TegraExplorer.bin``` this time.
+
+                Once in TegraExplorer, select ```FirmwareDump.te```.
+                    - You can use the ```VOL +``` & ```VOL -``` to scroll up and down and use the power button to confirm your desired selection.
+
+                Once the dumping process is done, select ```Reboot to bootloader/update.bin``` in order to boot back into Hekate.
+        </Steps>
+        ---
+
+        You have now successfully dumped your firmware, you should now be able to find your dump in ```/tegraexplorer/Firmware/xx.x.x/``` on your microSD card.
+
+        <FileTree>
+            - atmosphere/
+            - bootloader/
+            - switch/
+            - tegraexplorer/
+                - Firmware/
+                    - **xx.x.x/**
+            - hekate_ipl.ini
+            - hekate_ctcaer_x.x.x.bin
+            - exosphere.ini
+            - hbmenu.nro
+        </FileTree>
+    </TabItem>
+    <TabItem label = "Mariko & Patched V1">
+        <Steps>
+            1.  ###### Download:
+                <Card title = "TegraExplorer" icon = "external">
+                    ---
+                    ```TegraExplorer.bin```
+
+                    From their **Github**.
+                </Card>
+                <Card title = "LockPickRCM" icon = "external">
+                    ---
+                    ```Lockpick_RCM.bin```
+
+                    From their **website**.
+                </Card>
+                <Card title = "FirmwareDump Script" icon = "external">
+                    ---
+                    ```FirmwareDump.te```
+
+                    From their **Gitlab**.
+                </Card>
+
+            2.  ###### MicroSD card setup
+
+                Place ```TegraExplorer.bin``` & ```Lockpick_RCM.bin``` in ```/bootloader/payloads/``` on your microSD card:
+
+                <FileTree>
+                    - atmosphere/
+                    - bootloader/
+                        - payloads/
+                            - **TegraExplorer.bin**
+                            - **Lockpick_RCM.bin**
+                    - hekate_ipl.ini
+                    - switch/
+                    - hekate_ctcaer_x.x.x.bin
+                    - exosphere.ini
+                    - hbmenu.nro
+                </FileTree>
+
+                Place ```FirmwareDump.te``` in the root of your microSD card.
+
+            3.  ###### Hekate
+
+                Launch into Hekate, select ```Payloads``` and select ```Lockpick_RCM.bin```.
+
+                Once in Lockpick, select ```Dump from sysNAND```.
+                    - You can use the ```VOL +``` & ```VOL -``` to scroll up and down and use the power button to confirm your desired selection.
+
+                Once the dumping process is done, return to the main menu and select ```Reboot to Hekate```.
+
+            4.  ###### Hekate ( again )
+
+                Once in Hekate again, select ```Payloads``` and select ```TegraExplorer.bin``` this time.
+
+                Once in TegraExplorer, select ```FirmwareDump.te```.
+                    - You can use the ```VOL +``` & ```VOL -``` to scroll up and down and use the power button to confirm your desired selection.
+
+                Once the dumping process is done, select ```Reboot to bootloader/update.bin``` in order to boot back into Hekate.
+        </Steps>
+        ---
+
+        You have now successfully dumped your firmware, you should now be able to find your dump in ```/tegraexplorer/Firmware/xx.x.x/``` on your microSD card.
+
+        <FileTree>
+            - atmosphere/
+            - bootloader/
+            - switch/
+            - tegraexplorer/
+                - Firmware/
+                    - **xx.x.x/**
+            - hekate_ipl.ini
+            - hekate_ctcaer_x.x.x.bin
+            - exosphere.ini
+            - hbmenu.nro
+        </FileTree>
+    </TabItem>
+</Tabs>
+
+### Continue Reading
+
 ---
