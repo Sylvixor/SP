@@ -25,7 +25,7 @@ If the Switch is on, turn it off and then power it back on while holding the ```
 If you have a black screen, it means you're in RCM mode and your Switch is ready to inject.
 
 :::note[Note]
-If, when injecting, nothing happens, your unit may be patched, check [possibly patched](/homebrewing/possibly-patched/).
+If, when injecting, nothing happens, your unit may be patched, check <u>[Possibly patched](/homebrewing/possibly-patched/)</u>.
 :::
 
 ### Error 2002-2634 ( 010000000000001F )
@@ -34,7 +34,7 @@ If, when injecting, nothing happens, your unit may be patched, check [possibly p
 
 If you are getting this error code after updating firmware, remove your gamecard. You can enable ```nogc``` to avoid this crash inside of ```hekate_ipl.ini```.
 Enabling ```nogc``` **will** prevent you from playing gamecards until you update your Switch to a newer firmware.
-    - Read [Update / Downgrade](/important/update/).
+    - Read <u>[Update | Downgrade](/important/update/)</u>.
 
 ### Battery is depleted and Switch won't power on
 
@@ -42,7 +42,7 @@ Enabling ```nogc``` **will** prevent you from playing gamecards until you update
 
 This will most likely be because you have ```AutoRCM``` enabled.
 To fix this, connect your Switch to a charger and let it charge, afterwards you can launch a payload again.
-    - Read [Launch payload](/important/payload/).
+    - Read <u>[Inject | Launch payload](/important/payload/)</u>.
 
 ### Switch not booting after firmware update
 
@@ -57,7 +57,7 @@ If your Switch does not boot after updating your firmware, it may be because one
         To fix this, install the newest available version of Atmosphere and update your Sigpatches. You can also update Hekate while you're at it.
 
         To update, install the latest versions of Atmosphere, Hekate and Sigpatches and drop all of the contents of each folder to the root of your microSD card and when it asks to overwrite, click yes for all.
-            - You can access your microSD card by taking it out and using a ( micro ) SD card reader or read [browse microSD via USB](/miscellaneous/browse/).
+        - You can access your microSD card by taking it out and using a ( micro ) SD card reader or read <u>[Browse microSD card](/miscellaneous/browse/)</u>.
 
         ---
 
@@ -66,7 +66,7 @@ If your Switch does not boot after updating your firmware, it may be because one
     <TabItem label = "Broken theme installed">
         Your Switch may also not be booting because of a broken theme that is currently installed.
 
-        To fix this, access your microSD card ( [browse microSD via USB](/miscellaneous/browse/) ), go into ```/atmosphere/contents/``` and delete the folder named ```/0100000000001000/```.
+        To fix this, access your microSD card ( <u>[Browse microSD card](/miscellaneous/browse/)</u> ), go into ```/atmosphere/contents/``` and delete the folder named ```/0100000000001000/```.
 
         <FileTree>
             - atmosphere/
@@ -88,7 +88,7 @@ If your Switch does not boot after updating your firmware, it may be because one
     <TabItem label = "Broken sysmodules installed">
         Your Switch may also not be booting because of sysmodules you may have installed that are broken.
 
-        To fix this, access your microSD card ( [browse microSD via USB](/miscellaneous/browse/) ), inside of ```/atmosphere/```, delete the folder named ```/contents/``` entirely.
+        To fix this, access your microSD card ( <u>[Browse microSD card](/miscellaneous/browse/)</u> ), inside of ```/atmosphere/```, delete the folder named ```/contents/``` entirely.
 
         <FileTree>
             - atmosphere/
