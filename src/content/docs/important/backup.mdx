@@ -29,13 +29,13 @@ This section will go over how you can go about creating a backup of your Switch 
 <Tabs>
     <TabItem label = "Switch Method">
         <Tabs>
-            <TabItem label = "Create backup">
+            <TabItem label = "Creating backup">
                 <Steps>
                     1.  ###### Backing up
 
                         Boot into Hekate.
 
-                        Press on the ```Tools``` tab.
+                        Select the ```Tools``` tab.
 
                         Pick the ```Backup eMMC``` option.
 
@@ -48,18 +48,10 @@ This section will go over how you can go about creating a backup of your Switch 
                         Once done, your backup should be in a folder named ```Backup``` on the root of your microSD card.
 
                         Move this folder to your PC, laptop or any other storage device so you don't lose it.
-
-                        :::caution[Caution]
-                        Make sure this is somewhere safe and make sure you don't lose it, losing this backup will mean you have no point to revert to if anything goes wrong!
-                        :::
-                        :::note[Backups]
-                        It is highly recommended to make backups regularly, whether this be every day, month, 6 months or a year is up to you.
-                        This way, in the case that anything might happen, you have a recent-ish backup to fall back on.
-                        :::
                 </Steps>
-                You have now successfully backed up your Switch!
-
                 ---
+
+                You have now successfully backed up your eMMC!
             </TabItem>
             <TabItem label = "Restoring backup">
                 <Steps>
@@ -85,7 +77,7 @@ This section will go over how you can go about creating a backup of your Switch 
 
                         Boot into Hekate.
 
-                        Press on the ```Tools``` tab.
+                        Select the ```Tools``` tab.
 
                         Pick the ```Restore eMMC``` option.
 
@@ -96,21 +88,16 @@ This section will go over how you can go about creating a backup of your Switch 
                     3.  ###### Finishing up
 
                         Once done, close out of Hekate.
-
-                        :::note[Backups]
-                        It is highly recommended to make backups regularly, whether this be every day, month, 6 months or a year is up to you.
-                        This way, in the case that anything might happen, you have a recent-ish backup to fall back on.
-                        :::
                 </Steps>
-                You have now successfully restored a backup!
-
                 ---
+
+                You have now successfully restored a backup!
             </TabItem>
         </Tabs>
     </TabItem>
     <TabItem label = "PC Method">
         <Tabs>
-            <TabItem label = "Create backup">
+            <TabItem label = "Creating backup">
                 <Steps>
                     1.  ###### Download:
                         <Card title = "NXNandManager" icon = "external">
@@ -119,7 +106,58 @@ This section will go over how you can go about creating a backup of your Switch 
 
                             From their **Github**.
                         </Card>
+
+                    2.  ###### MicroSD card setup
+
+                        Create a folder named ```Backup``` somewhere on your PC or laptop and keep in mind where this is saved.
+
+                        Extract ```NxNandManager_vx.x_x64.zip``` to somewhere on your PC or laptop and keep in mind where this is saved.
+
+                    3.  ###### Hekate
+
+                        Boot into Hekate and connect your Switch to your PC or laptop using an USB cable.
+
+                        Select the ```Tools``` tab.
+
+                        Pick the ```USB Tools``` option.
+
+                        Pick the ```eMMC RAW GPP``` option.
+
+                    4.  ###### NxNandManager
+
+                        Launch NxNandManager.
+
+                        Select the ```File``` tab.
+
+                        Pick the ```Open Drive``` option.
+
+                        Press ```eMMC GPP Hekate```.
+
+                        Select ```FULL DUMP```.
+
+                        Select the ```Backup``` folder you created earlier.
+
+                        Once it says ```RAWNAND dumped & verified```, close the window and disconnect your Switch.
+
+                    5.  ###### Hekate ( again )
+
+                        Still in Hekate, press ```Close``` now to back out.
+
+                        Pick the ```Backup eMMC``` option.
+
+                        Pick the ```eMMC BOOT0 & BOOT1``` option.
+
+                        Finally, press ```Close``` again to back out.
+
+                    6.  ###### Finishing up
+
+                        You have now successfully dumped your eMMC, you should now be able to find your dumps in the folder named ```Backup``` you had created earlier and in the ```/backup/xxxxxxxx/``` folder on your microSD card.
+
+                        You can copy the ```/backup/xxxxxxxx/``` folder on your microSD card to the ```Backup``` folder that is stored on your PC or laptop to keep everything in 1 folder.
                 </Steps>
+                ---
+
+                You have now successfully backed up your eMMC!
             </TabItem>
             <TabItem label = "Restoring backup">
                 <Steps>
@@ -130,11 +168,67 @@ This section will go over how you can go about creating a backup of your Switch 
 
                             From their **Github**.
                         </Card>
+
+                    2.  ###### Retrieving backup
+
+                        Connect your Switch to your PC or laptop and launch Hekate on your Switch.
+
+                        Select the ```Tools``` tab.
+
+                        Pick the ```USB Tools``` option.
+
+                        Ensure that the ```Read-Only``` option is set to ```OFF```.
+
+                        Select the ```eMMC RAW GPP``` option.
+
+                    3.  ###### NxNandManager
+
+                        Launch NxNandManager.
+
+                        Select the ```File``` tab.
+
+                        Pick the ```Open Drive``` option.
+
+                        Pick the ```eMMC GPP Hekate``` option.
+
+                        Select ```FULL or PARTIAL RESTORE```.
+
+                        Navigate to your ```Backup``` folder and select ```RAWNAND.bin``` from inside of it.
+
+                        Pick ```Yes``` when prompted.
+
+                        Once done, you can disconnect your Switch from your PC or laptop.
+
+                    4.  ###### Finishing up
+
+                        Access your microSD card.
+
+                        On your microSD card, copy ```/backup/xxxxxxxx``` to ```/backup/xxxxxxxx/restore/```.
+                        - Create the folder if it doesn't exist.
+
+                        Launch into Hekate.
+
+                        Select the ```Tools``` tab.
+
+                        Select ```Restore eMMC``` and select ```eMMC BOOT0 & BOOT1```.
+
+                        Once done, close out of Hekate.
                 </Steps>
+                You have now successfully restored a backup!
+
+                ---
             </TabItem>
         </Tabs>
     </TabItem>
 </Tabs>
+
+:::caution[Caution]
+Make sure your backup is somewhere safe and make sure you don't lose it, losing this backup will mean you have no point to revert to if anything goes wrong!
+:::
+:::note[Backups]
+It is highly recommended to make backups regularly, whether this be every day, month, 6 months or a year is up to you.
+This way, in the case that anything might happen, you will have a recent-ish backup to fall back on.
+:::
 
 ### Continue reading
 

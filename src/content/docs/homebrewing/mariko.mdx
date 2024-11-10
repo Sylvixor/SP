@@ -2,7 +2,7 @@
 title: Mariko
 ---
 
-import { Card, Steps, FileTree, Tabs, TabItem } from "@astrojs/starlight/components";
+import { Card, Steps, FileTree, Tabs, TabItem, LinkCard } from "@astrojs/starlight/components";
 
 This section will go over homebrewing your patched V1 Switch or Mariko Switch. We will be going over setting up your microSD card, creating an emulated NAND ( emuNAND / emuMMC ) while also blocking Nintendo's servers so you don't get banned.
 - In order for this method to work, you explicitly do need a Patched V1 or Mariko **with a modchip**, stock models will **not** work.
@@ -58,6 +58,9 @@ Make sure you have read the Introduction section before doing this, as it contai
 
             From their **website**.
         </Card>
+        <LinkCard title = "Bootlogos" href = "https://switch.hacks.guide/files/bootlogos.zip">
+        </LinkCard>
+
     5. ###### Hekate launch options
 
         Inside of ```/bootloader/``` on the root of your microSD card, create a file named ```hekate_ipl.ini```.
@@ -86,19 +89,28 @@ Make sure you have read the Introduction section before doing this, as it contai
         updater2p=1
         bootprotect=0
 
-        [CFW emuMMC - Atmosphere]
+        [emuMMC - CFW]
         fss0=atmosphere/package3
         emummcforce=1
         cal0blank=1
         kip1patch=nosigchk
-        icon=bootloader/res/icon_payload.bmp
+        icon=bootloader/res/emu_boot.bmp
 
-        [Stock]
+        [sysMMC - CFW]
+        fss0=atmosphere/package3
+        kip1=atmosphere/kips/*
+        emummc_force_disable=1
+        icon=bootloader/res/sys_cfw_boot.bmp
+
+        [Stock - OFW]
         fss0=atmosphere/package3
         stock=1
         emummc_force_disable=1
-        icon=bootloader/res/icon_switch.bmp
+        icon=bootloader/res/stock_boot.bmp
         ```
+
+        Copy the ```/bootloader/``` folder that is inside of ```bootlogos.zip``` to the root of your microSD card.
+        - If asked to overwrite, click yes.
 
     6. ###### Avoiding a ban
 
@@ -239,9 +251,14 @@ Now, you will have to choose between either a partition-based emuMMC or file-bas
 
     12. ###### Launching Atmosphere
 
-        On the main menu of Hekate, press ```Launch```, and then select ```emuMMC - Atmosphere CFW``` to launch emuMMC with Atmosphere.
+        On the main menu of Hekate, press ```Launch```, and then select ```emuMMC - CFW``` to launch emuMMC with Atmosphere.
 
-        Otherwise, select ```Stock``` to launch OFW ( can be used for things like online play ).
+        Alternatively, select ```sysMMC - CFW``` to boot into your sysMMC with Atmosphere.
+        :::danger[Before launching sysMMC]
+        Doing certain things in sysMMC **will** get your device banned. Read <u>[Avoid bans](/introduction/avoid-ban/)</u> to read about what will get you banned and what won't.
+        :::
+
+        Alternatively, select ```Stock - OFW``` to launch OFW ( can be used for things like online play ).
 </Steps>
 ---
 
