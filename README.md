@@ -100,7 +100,7 @@ Here is an overview of the project structure:
 
 ## License
 
-This project is licensed under the Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0) License.
+SP © 2024 by Sylvixor is licensed under CC BY-NC-SA 4.0
 
 ## Acknowledgements
 
