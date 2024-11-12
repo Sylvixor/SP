@@ -2,7 +2,7 @@
 title: Browsing your microSD card using a PC or laptop
 ---
 
-import { Card, Steps, FileTree, Tabs, TabItem, Badge } from "@astrojs/starlight/components"
+import { Card, Steps, FileTree, Tabs, TabItem, LinkCard, Badge } from "@astrojs/starlight/components";
 
 This section will go over how you can browse your microSD card without having to take it out of the Switch.
 This is the recommended way to do things in regards to your microSD card.
@@ -12,10 +12,13 @@ There are 3 methods how you can browse your SD card using a cable:
 
 - **Haze**
     - Haze is built into AMS, making it not needed to install anything else.
+    - Requires Atmosphere to be installed.
 - **Hekate**
     - Using Hekate doesn't require you to go into AMS or even have it installed.
+    - Requires Hekate to be installed.
 - **DBI**
     - DBI is a great option for browsing your microSD card, because DBI has a lot of tools for everything you'd want to do in your emuMMC.
+    - Requires DBI to be installed inside of Atmosphere.
 
 ### Requirements
 
@@ -23,7 +26,9 @@ There are 3 methods how you can browse your SD card using a cable:
 
 - This section requires you to either have an **unpatched V1** Switch or a **patched V1**, **V2**, **lite** or **OLED** with **a modchip**, otherwise this will **not** work.
 - This section requires you to know how to get into Hekate and for Hekate to be installed on your device.
-  - If this is **not** the case, follow <u>[RCM & Hekate](/important/rcm/)</u> first.
+    - If this is **not** the case, follow <u>[RCM & Hekate](/important/rcm/)</u> first.
+- This section requires you to know how to get into Atmosphere ( AMS ) and for Atmosphere to be installed on your device.
+    - If this is **not** the case, follow <u>[Unpatched](/homebrewing/unpatched)</u> for the unpatched V1 or <u>[Mariko](/homebrewing/mariko/)</u> for every other model.
 
 ### Steps
 
@@ -33,51 +38,111 @@ There are 3 methods how you can browse your SD card using a cable:
     <TabItem label = "Haze">
         :::note[Enabling MTP]
             If you are on MacOS, please install a file transfer application to enable MTP functionality.
+
+            This method won't allow you to update AMS via USB since you need to be inside of AMS to use it.
         :::
 
-        - This method won't allow you to update AMS via USB. However, it can be used from the homebrew menu.
+        <Steps>
+            1.  ###### Requirement:
 
-        ### Requirement
+                <Card title = "Atmosphere 1.5.2 or newer" icon = "external">
+                    ---
+                </Card>
+
+            2.  ###### Inside of emuMMC
+
+                Launch the homebrew menu.
+                - There are 2 ways of launching the homebrew menu:
+                    - Launch any game on the homescreen while holding R. <Badge text="Recommended" variant="success" />
+                    - Launch the album.
+
+            3.  ###### PC or laptop
+
+                Connect your Switch to your PC or laptop using a USB cable.
+
+                A new drive labeled ```Nintendo Switch``` should now pop up in your file explorer.
+
+                Access the drive, you should now be able to browse your microSD card without having to take it out.
+        </Steps>
         ---
-
-        <Card title="AMS 1.5.2 or newer"></Card>
-
-        ### Steps
-        ---
-
-        1. Launch the homebrew menu.
-            - There are 2 ways to launch the homebrew menu:
-                - Launch any game on the homescreen while holding R.
-                - Launch the album.
-        2. Connect your Switch to your PC / laptop using a cable.
-        3. A new drive called ```Nintendo Switch``` should now shop up in your file explorer.
-        4. Access the drive, now you can browse your microSD card without having to take it out.
-
     </TabItem>
 
     <TabItem label = "Hekate">
-        :::note[Enabling MTP]
-            If you are on MacOS, please install a file transfer application to enable MTP functionality.
-        :::
+        <Steps>
+            1.  ###### Requirement:
 
-        ### Requirement
+                <Card title = "Hekate" icon = "external">
+                    ---
+                </Card>
+
+            2.  ###### Hekate
+
+                Boot into Hekate.
+
+                Navigate to the ```Tools``` tab.
+
+                Tap on ```USB Tools```.
+
+                Tap on ```SD Card```.
+
+            3.  ###### PC or laptop
+
+                Connect your switch to your PC or laptop using a USB cable.
+
+                A new drive labeled with your microSD card name should now pop up in your file explorer.
+
+                Access the drive, you should now be able to browse your microSD card without having to take it out.
+        </Steps>
         ---
-
-        ### Steps
-        ---
-
     </TabItem>
 
     <TabItem label = "DBI">
         :::note[Enabling MTP]
-            If you are on MacOS, please install a file transfer application to enable MTP functionality.
+        If you are on MacOS, please install a file transfer application to enable MTP functionality.
         :::
+        <Steps>
+            1.  ###### Requirements:
 
-        ### Requirement
+                <Card title = "Atmosphere" icon = "external">
+                    ---
+                </Card>
+                <Card title = "DBI" icon = "external">
+                    ---
+
+                    ```DBI.nro```
+
+                    From their **Github**.
+
+                    Read the release notes and download the latest English version.
+                </Card>
+
+            2.  ###### MicroSD card setup
+
+                Access your microSD card.
+
+                Place ```DBI.nro``` in the ```/switch/``` folder on your microSD card.
+
+            3.  ###### DBI
+
+                Connect your Switch to your PC or laptop using a USB cable.
+
+                Launch the homebrew menu.
+                - There are 2 ways of launching the homebrew menu:
+                    - Launch any game on the homescreen while holding R. <Badge text="Recommended" variant="success" />
+                    - Launch the album.
+
+                Launch DBI.
+
+                Press ```X``` or scroll down and choose ```MTP Responder``` from the menu.
+
+                A new drive labeled ```Switch``` should now pop up in your file explorer.
+
+                Access the drive, you should now be able to browse your microSD card without having to take it out.
+        </Steps>
         ---
-
-        ### Steps
-        ---
-
     </TabItem>
 </Tabs>
+
+### Continue Reading
+
+---
