@@ -22,6 +22,7 @@
 				--nav-color: #f5f7fa;
 				--nav-div-color: #c1c3c8;
 				--nav-border-color: #edeef3;
+				--accent-blue: #3d50f5;
 			}
 
 			* {
@@ -61,7 +62,7 @@
 			}
 
 			#dosbox-bg > h1 {
-				color: #3d50f5;
+				color: var(--accent-blue);
 			}
 
 			#dosbox-fullscreen {
@@ -91,8 +92,8 @@
 				margin-top: 1rem;
 				padding: 1rem;
 				font-size: 1.25rem;
-				background-color: #3d50f5;
-				color: white;
+				background-color: var(--accent-blue);
+				color: var(--background-color);
 				cursor: pointer;
 				border: none;
 				border-radius: 2rem;
@@ -160,7 +161,7 @@
 				gap: 1.5rem;
 				font-size: 1.5rem;
 				font-weight: 600;
-				color: #3d50f5;
+				color: var(--accent-blue);
 				text-decoration: none;
 				white-space: nowrap;
 			}
@@ -185,7 +186,7 @@
 			}
 
 			.icon-link {
-				color: #3d50f5;
+				color: var(--accent-blue);
 				text-decoration: none;
 				height: 1rem;
 			}
@@ -227,6 +228,7 @@
 				--nav-color: #23262f;
 				--nav-div-color: #353841;
 				--nav-border-color: #23262f;
+				--accent-blue: #b3c7ff;
 			}
 
 			/* Auto mode: Follows system's theme */
@@ -237,6 +239,7 @@
 					--nav-color: #23262f;
 					--nav-div-color: #353841;
 					--nav-border-color: #23262f;
+					--accent-blue: #b3c7ff;
 				}
 
 				html {
@@ -257,6 +260,7 @@
 				<div id="icon-container">
 					<a href="https://github.com/sylvixor/sp" class="icon-link"
 						><svg
+							class="nav-link-icon"
 							aria-hidden="true"
 							class="astro-wy4te6ga astro-c6vsoqas"
 							width="16"
@@ -271,6 +275,7 @@
 					</a>
 					<a href="https://discord.gg/zc2CmJWbz8" class="icon-link"
 						><svg
+							class="nav-link-icon"
 							aria-hidden="true"
 							width="16"
 							height="16"
@@ -284,6 +289,7 @@
 					</a>
 					<a href="https://t.me/sylvixor" class="icon-link"
 						><svg
+							class="nav-link-icon"
 							aria-hidden="true"
 							width="16"
 							height="16"
@@ -297,6 +303,7 @@
 					</a>
 					<a href="https://www.reddit.com/r/SwitchPirates" class="icon-link"
 						><svg
+							class="nav-link-icon"
 							aria-hidden="true"
 							width="16"
 							height="16"
@@ -412,12 +419,24 @@
 			const themeIconDark = document.querySelector("#theme-icon-dark");
 			const themeIconAuto = document.querySelector("#theme-icon-auto");
 
+			const navIcons = document.querySelectorAll(".nav-link-icon");
+
+			const darkModeMediaQuery = window.matchMedia(
+				"(prefers-color-scheme: dark)"
+			);
+
 			// Apply auto theme icon based on system preference
 			function applyAutoIconTheme(scheme) {
 				if (scheme === "dark") {
 					themeIconAuto.setAttribute("fill", "#fff");
+					navIcons.forEach((icon) => {
+						icon.style.fill = "#b3c7ff"; // Also changes the nav link icon theme
+					});
 				} else {
 					themeIconAuto.setAttribute("fill", "#333");
+					navIcons.forEach((icon) => {
+						icon.style.fill = "#3d50f5";
+					});
 				}
 			}
 
@@ -438,6 +457,11 @@
 					html.classList.add("light-mode");
 					body.classList.add("light-mode");
 
+					// Change nav icons theme
+					navIcons.forEach((icon) => {
+						icon.style.fill = "#3d50f5";
+					});
+
 					// Show theme icon
 					themeIconLight.style.display = "inline-block";
 
@@ -445,6 +469,10 @@
 				} else if (theme === "dark") {
 					html.classList.add("dark-mode");
 					body.classList.add("dark-mode");
+
+					navIcons.forEach((icon) => {
+						icon.style.fill = "#b3c7ff";
+					});
 
 					themeIconDark.style.display = "inline-block";
 
@@ -454,6 +482,8 @@
 
 					// Follow system preference
 					localStorage.setItem("starlight-theme", "");
+
+					applyAutoIconTheme(darkModeMediaQuery.matches ? "dark" : "light");
 				}
 			}
 
@@ -461,30 +491,19 @@
 			const savedTheme = localStorage.getItem("starlight-theme") || "auto";
 			themeSelect.value = savedTheme;
 			applyTheme(savedTheme);
+			applyAutoIconTheme(darkModeMediaQuery.matches ? "dark" : "light");
 
-			// Update theme on change
+			// Update theme on option change
 			themeSelect.addEventListener("change", (e) => {
 				const selectedTheme = e.target.value;
 				applyTheme(selectedTheme);
 			});
 
-			// Detect color scheme
-			function detectColorScheme() {
-				const darkModeMediaQuery = window.matchMedia(
-					"(prefers-color-scheme: dark)"
-				);
-
-				// Set the initial SVG color based on the current color scheme
-				applyAutoIconTheme(darkModeMediaQuery.matches ? "dark" : "light");
-
-				// Listen for changes in the color scheme
-				darkModeMediaQuery.addEventListener("change", (e) => {
-					const newColorScheme = e.matches ? "dark" : "light";
-					applyAutoIconTheme(newColorScheme);
-				});
-			}
-
-			detectColorScheme();
+			// Listen for color scheme changes
+			darkModeMediaQuery.addEventListener("change", (e) => {
+				const newColorScheme = e.matches ? "dark" : "light";
+				applyAutoIconTheme(newColorScheme);
+			});
 		</script>
 	</body>
 </html>
