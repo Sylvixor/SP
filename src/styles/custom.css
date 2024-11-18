@@ -77,3 +77,32 @@ starlight-tabs {
     font-size: 1.5rem;
 }
 
+:root {
+	--sl-color-accent-low: #27184a;
+	--sl-color-accent: #7922f2;
+	--sl-color-accent-high: #cabefe;
+	--sl-color-white: #ffffff;
+	--sl-color-gray-1: #eeecf5;
+	--sl-color-gray-2: #c2c0cb;
+	--sl-color-gray-3: #8b899c;
+	--sl-color-gray-4: #585567;
+	--sl-color-gray-5: #383646;
+	--sl-color-gray-6: #272434;
+	--sl-color-black: #18171e;
+	--sl-content-width: 55rem;
+}
+:root[data-theme='light'] {
+	--sl-color-accent-low: #d8d0ff;
+	--sl-color-accent: #7b25f4;
+	--sl-color-accent-high: #381b6f;
+	--sl-color-white: #18171e;
+	--sl-color-gray-1: #272434;
+	--sl-color-gray-2: #383646;
+	--sl-color-gray-3: #585567;
+	--sl-color-gray-4: #8b899c;
+	--sl-color-gray-5: #c2c0cb;
+	--sl-color-gray-6: #eeecf5;
+	--sl-color-gray-7: #f6f6fa;
+	--sl-color-black: #ffffff;
+	--sl-content-width: 55rem;
+}
