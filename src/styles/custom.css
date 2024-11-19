@@ -324,7 +324,7 @@ h1 {
 
 .page {
 	background:
-			linear-gradient(185deg, var(--top-gradient-bg), transparent 50vh),
+			linear-gradient(185deg, var(--top-gradient-bg), transparent 100vh),
 			radial-gradient(var(--hero-gradient-bg), transparent 65%) no-repeat calc(100% + 80rem) calc(100% + 100rem) / 180rem
 			180rem;
 }
