@@ -20,7 +20,7 @@ export const { getStaticPaths, GET } = OGImageRoute({
 			// Use the page title and description as the image title and description.
 			title: page.data.title,
 			description: page.data.description,
-			bgImage: {
+			logo: {
 				path: "og.png",
 			},
 			// Customize various colors and add a border.
