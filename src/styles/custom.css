@@ -2,8 +2,7 @@
 @font-face {
 	font-family: "made_carving_soft_personal_Lg";
 	src:
-		url("/fonts/madecarvingsoftpersonaluse-light-webfont.woff2")
-			format("woff2"),
+		url("/fonts/madecarvingsoftpersonaluse-light-webfont.woff2") format("woff2"),
 		url("/fonts/madecarvingsoftpersonaluse-light-webfont.woff") format("woff");
 	font-weight: normal;
 	font-style: normal;
@@ -26,11 +25,11 @@
 
 /* Home page logo */
 @media (min-width: 50rem) {
-    .hero:where(.astro-jbfsktt5) {
-        grid-template-columns: 6fr 6fr;
-        gap: 3%;
-        padding-block: clamp(2.5rem, calc(1rem + 10vmin), 10rem);
-    }
+	.hero:where(.astro-jbfsktt5) {
+		grid-template-columns: 6fr 6fr;
+		gap: 3%;
+		padding-block: clamp(2.5rem, calc(1rem + 10vmin), 10rem);
+	}
 
 	.hero:where(.astro-jbfsktt5) > img:where(.astro-jbfsktt5),
 	.hero:where(.astro-jbfsktt5) > .hero-html:where(.astro-jbfsktt5) {
@@ -39,18 +38,17 @@
 	}
 }
 
-
 /* Top nav title */
 .site-title {
-    background-color: rgba(61, 80, 245, 0.1);
-    padding: 0.2rem 1rem;
-    border-radius: 0.5rem;
+	background-color: rgba(61, 80, 245, 0.1);
+	padding: 0.2rem 1rem;
+	border-radius: 0.5rem;
 }
 
 /* Links */
 a {
-    text-decoration: none;
-    font-weight: bold;
+	text-decoration: none;
+	font-weight: bold;
 }
 
 /* Custom tabs bg color */
@@ -74,7 +72,7 @@ starlight-tabs {
 
 /* Custom header font size */
 .sl-markdown-content h3:not(:where(.not-content *)) {
-    font-size: 1.5rem;
+	font-size: 1.5rem;
 }
 
 /* Dark mode colors. */
@@ -91,8 +89,9 @@ starlight-tabs {
 	--sl-color-gray-6: #1c2835;
 	--sl-color-black: #13191f;
 }
+
 /* Light mode colors. */
-:root[data-theme='light'] {
+:root[data-theme="light"] {
 	--sl-color-accent-low: oklch(84.12% 0.113 0.11);
 	--sl-color-accent: oklch(65% 0.291 0.28);
 	--sl-color-accent-high: oklch(25.88% 0.118 0.18);
@@ -140,7 +139,10 @@ h1 {
 	border-radius: 0.25rem;
 }
 
-.sl-markdown-content .expressive-code .frame.has-title:not(.is-terminal) .title {
+.sl-markdown-content
+	.expressive-code
+	.frame.has-title:not(.is-terminal)
+	.title {
 	border-top-color: var(--sl-color-gray-5);
 	border-right-width: 1px;
 	border-right-color: var(--sl-color-gray-5);
@@ -150,7 +152,10 @@ h1 {
 	overflow: visible;
 }
 
-.sl-markdown-content .expressive-code .frame.has-title:not(.is-terminal) .title::after {
+.sl-markdown-content
+	.expressive-code
+	.frame.has-title:not(.is-terminal)
+	.title::after {
 	inset: 0 0 -1px 0;
 	border-top: none;
 	border-bottom-width: 1px;
@@ -316,7 +321,7 @@ h1 {
 	--icon-spacing: 0.5rem;
 }
 
-:root[data-theme='light'] {
+:root[data-theme="light"] {
 	--top-gradient-bg: hsla(319, 100%, 50%, 0.1);
 	--hero-gradient-bg: hsla(189, 96%, 42%, 0.15);
 	--sl-color-bg-sidebar: transparent;
@@ -324,9 +329,9 @@ h1 {
 
 .page {
 	background:
-			linear-gradient(185deg, var(--top-gradient-bg), transparent 100vh),
-			radial-gradient(var(--hero-gradient-bg), transparent 65%) no-repeat calc(100% + 80rem) calc(100% + 100rem) / 180rem
-			180rem;
+		linear-gradient(185deg, var(--top-gradient-bg), transparent 100vh),
+		radial-gradient(var(--hero-gradient-bg), transparent 65%) no-repeat
+			calc(100% + 80rem) calc(100% + 100rem) / 180rem 180rem;
 }
 
 header {
@@ -383,12 +388,16 @@ header {
 }
 
 /* Increase heading  */
-.sl-markdown-content :not(.heading-wrapper) + :is(.heading-wrapper):not(:where(.not-content *)) {
+.sl-markdown-content
+	:not(.heading-wrapper)
+	+ :is(.heading-wrapper):not(:where(.not-content *)) {
 	margin-block-start: 3rem;
 }
 
 /* Add HR before H2s within page content */
-.sl-markdown-content :not(.level-h2) + :is(.level-h2):not(:where(.not-content *)) {
+.sl-markdown-content
+	:not(.level-h2)
+	+ :is(.level-h2):not(:where(.not-content *)) {
 	margin-block-start: 3rem;
 	padding-block-start: 3rem;
 	border-top: 1px solid var(--sl-color-gray-5);

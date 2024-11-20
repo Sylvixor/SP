@@ -25,6 +25,20 @@
 				--accent-blue: #3d50f5;
 			}
 
+			:root {
+				--pink-hsl: 319, 100%, 9%;
+				--overlay-pink: hsla(var(--pink-hsl), 1);
+				--sl-color-bg-sidebar: transparent;
+				--top-gradient-bg: hsla(319, 100%, 50%, 0.1);
+				--hero-gradient-bg: hsla(189, 96%, 42%, 0.15);
+				--sl-color-bg-nav: var(--sl-color-bg);
+			}
+
+			:root[data-theme="light"] {
+				--top-gradient-bg: hsla(319, 100%, 9%, 0.4);
+				--hero-gradient-bg: hsla(189, 96%, 42%, 0.1);
+			}
+
 			* {
 				margin: 0;
 				padding: 0;
@@ -33,7 +47,12 @@
 				transition: 0.05s;
 			}
 
+			html {
+				height: 100%;
+			}
+
 			body {
+				height: 100%;
 				background-color: var(--background-color);
 				color: var(--text-color);
 			}
@@ -55,6 +74,11 @@
 				flex-direction: column;
 				justify-content: center;
 				align-items: center;
+
+				background:
+					linear-gradient(185deg, var(--top-gradient-bg), transparent 100vh),
+					radial-gradient(var(--hero-gradient-bg), transparent 65%) no-repeat
+						calc(100% + 80rem) calc(100% + 100rem) / 180rem 180rem;
 			}
 
 			#dosbox-bg > * {
@@ -229,6 +253,9 @@
 				--nav-div-color: #353841;
 				--nav-border-color: #23262f;
 				--accent-blue: #b3c7ff;
+
+				--top-gradient-bg: hsla(319, 100%, 9%, 0.4);
+				--hero-gradient-bg: hsla(189, 96%, 42%, 0.1);
 			}
 
 			/* Auto mode: Follows system's theme */
@@ -240,6 +267,9 @@
 					--nav-div-color: #353841;
 					--nav-border-color: #23262f;
 					--accent-blue: #b3c7ff;
+
+					--top-gradient-bg: hsla(319, 100%, 9%, 0.4);
+					--hero-gradient-bg: hsla(189, 96%, 42%, 0.1);
 				}
 
 				html {
