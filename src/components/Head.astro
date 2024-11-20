@@ -3,10 +3,18 @@ import Default from '@astrojs/starlight/components/Head.astro';
 ---
 
 <Default {...Astro.props as any} />
-<meta
-	property="og:image"
-	name="twitter:image"
-	content={`${Astro.url.origin}/og${
-		Astro.url.pathname === '/' ? '/index.png' : Astro.url.pathname.replace(/\/$/, '.png')
-	}`}
-/>
+<title>SP</title>
+<meta name="description" content="Nintendo Switch Homebrewing Guide">
+
+<meta property="og:url" content="https://homebrew.sylvixor.com">
+<meta property="og:type" content="website">
+<meta property="og:title" content="SP">
+<meta property="og:description" content="Nintendo Switch Homebrewing Guide">
+<meta property="og:image" content="/src/assets/og-bg.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:domain" content="homebrew.sylvixor.com">
+<meta property="twitter:url" content="https://homebrew.sylvixor.com">
+<meta name="twitter:title" content="SP">
+<meta name="twitter:description" content="Nintendo Switch Homebrewing Guide">
+<meta name="twitter:image" content="/src/assets/og-bg.png">
