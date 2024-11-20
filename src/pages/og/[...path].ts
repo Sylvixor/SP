@@ -17,11 +17,11 @@ export const { getStaticPaths, GET } = OGImageRoute({
 	getImageOptions: (path, page) => ({
 		title: page.title,
 		description: page.description,
-		// logo: {
-		// 	// This is actually transparent
-		// 	// The logo is embedded in the BG image to control positioning
-		// 	path: "./src/assets/og-logo.png",
-		// },
+		logo: {
+			// This is actually transparent
+			// The logo is embedded in the BG image to control positioning
+			path: "./src/assets/og-logo.png",
+		},
 		bgImage: {
 			path: "./src/assets/og-bg.png",
 			fit: "none",
