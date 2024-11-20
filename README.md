@@ -1,7 +1,10 @@
 ![Astro](https://img.shields.io/badge/astro-%232C2052.svg?style=for-the-badge&logo=astro&logoColor=white)
 ![HTML](https://img.shields.io/badge/html-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS](https://img.shields.io/badge/css-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
-![Markdown](https://img.shields.io/badge/markdown-%23000000.svg?style=for-the-badge&logo=markdown&logoColor=white)
+![MDX](https://img.shields.io/badge/MDX-%23000000.svg?style=for-the-badge&logo=mdx&logoColor=white)
+
+[![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://homebrew.sylvixor.com/)
+[![Website status](https://img.shields.io/website-online-offline-green-red/https/homebrew.sylvixor.com.svg)](https://homebrew.sylvixor.com/)
 
 # SP Homebrew Guide
 
