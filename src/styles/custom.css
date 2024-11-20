@@ -2,9 +2,9 @@
 @font-face {
 	font-family: "made_carving_soft_personal_Lg";
 	src:
-		url("../fonts/madecarvingsoftpersonaluse-light-webfont.woff2")
+		url("/fonts/madecarvingsoftpersonaluse-light-webfont.woff2")
 			format("woff2"),
-		url("../fonts/madecarvingsoftpersonaluse-light-webfont.woff") format("woff");
+		url("/fonts/madecarvingsoftpersonaluse-light-webfont.woff") format("woff");
 	font-weight: normal;
 	font-style: normal;
 }
