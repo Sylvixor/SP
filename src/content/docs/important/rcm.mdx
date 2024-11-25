@@ -4,3 +4,390 @@ tableOfContents:
     minHeadingLevel: 1
     maxHeadingLevel: 5
 ---
+
+import { Card, Steps, FileTree, Tabs, TabItem, LinkCard } from "@astrojs/starlight/components"
+
+### Firstly
+
+---
+
+<Steps>
+    1. ###### Disable cloud saves
+        - To do this, go to ```Settings``` -> ```Data Management``` -> ```Save Data Cloud``` -> ```Settings``` and disable ```Automatically back up save data``` as well as ```Automatically download save data```.
+    2. ###### Backup
+        - Make sure you have backed up anything on the microSD card if the card has been used beforehand, because following this guide **will** wipe the microSD card.
+</Steps>
+---
+
+### Requirements
+
+---
+
+- This ( fantastic ) guide. **:)**
+- An unpatched V1 Switch.
+- A microSD card of your choice.
+- Read <u>[MicroSD guide](/miscellaneous/microsd/)</u>.
+- A ( micro ) SD card reader.
+- You can buy a microSD card reader, you can buy an SD card reader with a microSD to SD adapter, you can use your laptops ( micro ) SD card reader, or maybe even that microSD slot in your phone! *( Not recommended. Android will make folders in the card, which may make it look a bit messy, but it's a way! )*.
+
+**Whatever works, so long as you have something to access your microSD card.**
+
+**AND**
+
+- An RCM JIG ( can be found on marketplaces like Amazon ).
+- A USB cable to connect your Switch to your device.
+- A PC or laptop.
+
+**OR**
+
+- A phone or tablet.
+
+**OR**
+
+- An RCMLoader ( can be bought from sites like Amazon and Aliexpress ).
+
+:::note[AutoRCM]
+This guide will enable ```AutoRCM``` by default. Once you've used Hekate to enable it, the console from that moment on will always
+go into RCM when turned on, making the RCM JIG not needed anymore ( It is needed for the first time and every time you go out of CFW ).
+:::
+
+### MicroSD Card Setup
+
+---
+
+###### For the initial setup you will need:
+
+- This ( fantastic ) guide. **:)**
+- An unpatched V1 Switch.
+- A microSD card of your choice.
+  - Read <u>[MicroSD guide](/miscellaneous/microsd/)</u>.
+- A ( micro ) SD card reader.
+  - You can buy a microSD card reader, you can buy an SD card reader with a microSD to SD adapter, you can use your laptops ( micro ) SD card reader, or maybe even that microSD slot in your phone! *( Not recommended. Android will make folders in the card, which may make it look a bit messy, but it's a way! )*.
+
+**Whatever works, so long as you have something to access your microSD card.**
+
+---
+
+<Steps>
+    4. ###### Download the following files:
+        <Card title = "Hekate" icon = "external">
+            ---
+            ```hekate_ctcaer_x.x.x_Nyx_x.x.x.zip```
+
+            From their **Github**.
+        </Card>
+        <Card title = "Atmosphere" icon = "external">
+            ---
+            ```atmosphere-x.x.x-master-xxxxxxxxx+hbl-x.x.x+hbmenu-x.x.x.zip```
+
+            From their **Github**.
+        </Card>
+        <Card title = "Sigpatches" icon = "external">
+            ---
+            ```sigpatches.zip```
+
+            From their **website**.
+        </Card>
+        <LinkCard title = "Bootlogos" href = "https://switch.hacks.guide/files/bootlogos.zip">
+        </LinkCard>
+    5. ###### Hekate launch options
+
+        Inside of ```/bootloader/``` on the root of your microSD card, create a file named ```hekate_ipl.ini```.
+        - You will need to create a configuration file to set up parameters for Hekate.
+
+        <FileTree>
+            - atmosphere/
+            - bootloader/
+            - **hekate_ipl.ini** Create this file.
+            - switch/
+            - hekate_ctcaer_x.x.x.bin
+            - hbmenu.nro
+        </FileTree>
+
+        Copy the bit below and paste it inside of ```hekate_ipl.ini```:
+        - You can use the button in the top right of the box in order to copy.
+
+        ```ini
+        [config]
+        autoboot=0
+        autoboot_list=0
+        bootwait=3
+        backlight=100
+        autohosoff=0
+        autonogc=1
+        updater2p=1
+        bootprotect=0
+
+        [emuMMC - CFW]
+        fss0=atmosphere/package3
+        emummcforce=1
+        cal0blank=1
+        kip1patch=nosigchk
+        icon=bootloader/res/emu_boot.bmp
+
+        [sysMMC - CFW]
+        fss0=atmosphere/package3
+        kip1=atmosphere/kips/*
+        emummc_force_disable=1
+        icon=bootloader/res/sys_cfw_boot.bmp
+
+        [Stock - OFW]
+        fss0=atmosphere/package3
+        stock=1
+        emummc_force_disable=1
+        icon=bootloader/res/stock_boot.bmp
+        ```
+
+        Copy the ```/bootloader/``` folder that is inside of ```bootlogos.zip``` to the root of your microSD card.
+        - If asked to overwrite, click yes.
+
+    6. ###### Avoiding a ban
+
+        Inside of the root of your microSD card, create a file named ```exosphere.ini```.
+
+        <FileTree>
+            - atmosphere/
+            - bootloader/
+            - hekate_ipl.ini
+            - switch/
+            - hekate_ctcaer_x.x.x.bin
+            - **exosphere.ini** Create this file.
+            - hbmenu.nro
+        </FileTree>
+
+        Copy the bit below and paste it inside of ```exosphere.ini```:
+        - You can use the button in the top right of the box in order to copy.
+
+        ```ini
+        [exosphere]
+        debugmode=1
+        debugmode_user=0
+        disable_user_exception_handlers=0
+        enable_user_pmu_access=0
+        blank_prodinfo_sysmmc=0
+        blank_prodinfo_emummc=1
+        allow_writing_to_cal_sysmmc=0
+        log_port=0
+        log_baud_rate=115200
+        log_inverted=0
+        ```
+
+    7. ###### Blocking Nintendo connections
+
+        Inside of ```/atmosphere/hosts/``` on the root of your microSD card, create a file named ```default.txt```.
+
+        <FileTree>
+            - atmosphere/
+            - hosts/
+            - **default.txt** Create this file.
+            - bootloader/
+            - hekate_ipl.ini
+            - switch/
+            - hekate_ctcaer_x.x.x.bin
+            - exosphere.ini
+            - hbmenu.nro
+        </FileTree>
+
+        Copy the bit below and paste it inside of ```default.txt```:
+        - You can use the button in the top right of the box in order to copy.
+
+        ```ini
+        # Block Nintendo Servers
+        127.0.0.1 *nintendo.*
+        127.0.0.1 *nintendo-europe.com
+        127.0.0.1 *nintendoswitch.*
+        95.216.149.205 *conntest.nintendowifi.net
+        95.216.149.205 *ctest.cdn.nintendo.net
+        ```
+
+        :::note[Note]
+        You can rename the file to ```emummc.txt``` if you **only** want this to apply to emuMMC, if you rename it to ```emummc.txt``` Nintendo connections will **not** be blocked in sysMMC.
+        :::
+</Steps>
+---
+
+<Tabs>
+    <TabItem label = "Erista">
+        ### Injecting A Payload
+
+        ---
+        To continue you'll also need:
+
+        - An RCM JIG ( can be found on marketplaces like Amazon ).
+        - A USB cable to connect your Switch to your device.
+        - A PC or laptop.
+
+        **OR**
+
+        - A phone or tablet.
+
+        **OR**
+
+        - An RCMLoader ( can be bought from sites like Amazon and Aliexpress ).
+
+        ### Start
+
+        ---
+
+        <Steps>
+            8. ###### Setting aside payload
+
+                Inside of ```hekate_ctcaer_x.x.x_Nyx_x.x.x.zip``` that you downloaded earlier, there is a file named ```hekate_ctcaer_x.x.x.bin```.
+
+                Copy this file to your desktop or any other directory where you can find it later, you will need it in a bit.
+
+            9. ###### Entering RCM
+
+                To start, place your microSD card inside of your Switch, take off the right joycon and put the RCM JIG on the right rail and slide it all the way down.
+
+                If the Switch is on, turn it off and then power it back on while holding the ```Vol +``` button, this should result in just a black screen.
+
+                If you have a black screen, it means you're in RCM and your Switch is ready to inject.
+
+                :::note[Note]
+                For the next step, if, when injecting, nothing happens, your unit may be patched, check [Possibly patched](/homebrewing/possibly-patched/).
+                :::
+        </Steps>
+        <Tabs>
+            <TabItem label = "PC / Laptop">
+                <Tabs>
+                    <TabItem label = "Windows">
+                        <Steps>
+                            10. ###### Download:
+                                <Card title = "TegraRcmGui" icon = "external">
+                                    ---
+                                    ```TegraRcmGUI_vx.x_Installer.msi```
+
+                                    From their **Github**.
+                                </Card>
+
+                            11. ###### TegraRcmGui
+
+                                1. Open the installer and install TegraRcmGui. Once installed, open it. Once TegraRcmGui is up and running, go to the ```Settings``` tab and click on ```Install Driver```.
+
+                                2. Once the driver is installed, go back to TegraRcmGui, go to the ```Payload``` tab and press the folder icon. Navigate to whatever directory you put the aforementioned ```hekate_ctcaer_x.x.x.bin``` in and select it.
+
+                                3. Connect your Switch to your PC or laptop using an USB cable and press ```Inject payload```, you should now launch into Hekate.
+                        </Steps>
+                        ---
+                    </TabItem>
+                    <TabItem label = "Linux & MacOS">
+                        <Steps>
+                            10. ###### Access:
+                                <Card title = "Web Fusee Launcher" icon = "external">
+                                    ---
+
+                                    From their **website**.
+
+                                    Works for **all distros**, **Intel Macs** & **Apple Silicon**.
+                                </Card>
+
+                            11. ###### Web Fusee Launcher
+
+                                1. Connect your Switch to your PC or laptop using an USB cable and access the website.
+
+                                2. Click on ```Custom .bin payload``` and select ```hekate_ctcaer_x.x.x.bin``` ( that you set aside earlier ).
+
+                                3. Press ```Do the thing!``` and you should launch into Hekate.
+                        </Steps>
+                        ---
+                    </TabItem>
+                    <TabItem label = "ChromeOS">
+                        <Steps>
+                            10. ###### Download:
+                                <Card title = "Rekado" icon = "external">
+                                    ---
+                                    ```x.x.Rekado.xxx.-release.apk```
+
+                                    From their **Github**.
+                                </Card>
+
+                            11. ###### Rekado
+
+                                1. Connect your Switch to your laptop using an USB cable and open Rekado.
+
+                                2. Go to ```Payloads```, press the ```+``` icon and select ```hekate_ctcaer_x.x.x.bin``` ( that you set aside earlier ).
+
+                                3. Select ```hekate_ctcaer_x.x.x.bin``` when prompted, and you should now launch into Hekate.
+                        </Steps>
+                        ---
+                    </TabItem>
+                </Tabs>
+            </TabItem>
+            <TabItem label = "Phone / Tablet">
+                <Tabs>
+                    <TabItem label = "Android">
+                        <Steps>
+                            10. ###### Download:
+                                <Card title = "Rekado" icon = "external">
+                                    ---
+                                    ```x.x.Rekado.xxx.-release.apk```
+
+                                    From their **Github**.
+                                </Card>
+
+                            11. ###### Rekado
+
+                                1. Connect your Switch to your phone or tablet using an USB cable and open Rekado.
+
+                                2. Go to ```Payloads```, press the ```+``` icon and select ```hekate_ctcaer_x.x.x.bin``` ( that you set aside earlier ).
+
+                                3. Select ```hekate_ctcaer_x.x.x.bin``` when prompted, and you should now launch into Hekate.
+                        </Steps>
+                        ---
+                    </TabItem>
+                    <TabItem label = "iOS / iPadOS">
+                        <Steps>
+                            10. ###### Download:
+                                <Card title = "NXBoot" icon = "external">
+                                    ---
+                                    ```NXBoot_x.x.x-x.tipa```
+
+                                    From their **Github**.
+
+                                    Requires device to be **jailbroken** / requires **sideloading**.
+                                </Card>
+
+                            11. ###### NXBoot
+
+                                1. Connect your Switch to your phone or tablet using an USB cable and open NXBoot.
+
+                                2. Put the ```hekate_ctcaer_x.x.x.bin``` file that you set aside earlier in your iCloud storage.
+
+                                3. In NXBoot, select ```hekate_ctcaer_x.x.x.bin``` and you should now launch into Hekate.
+                        </Steps>
+                        ---
+                    </TabItem>
+                </Tabs>
+            </TabItem>
+            <TabItem label = "RCMLoader">
+                <Steps>
+                    10. ###### First use
+
+                        1. Recharge the RCMLoader before first use and put it inside of your Switch with the Switch turned off, you also won't need
+
+                    11. ###### RCMLoader
+
+                        1. Once the Switch is completely off, put the RCM JIG in the right rail and the RCMLoader in the USB port.
+
+                        2. Hold the power button on the Switch and the ```+``` button on the RCMLoader while the Switch is off and continue holding until the LED on the RCMLoader turns blue.
+
+                        3. You should now launch into Hekate.
+                </Steps>
+                ---
+            </TabItem>
+        </Tabs>
+    </TabItem>
+    <TabItem label = "Mariko & Patched V1">
+        <Steps>
+            8.  ###### Launching into Hekate
+
+                In order to launch into Hekate, power off your Switch and power it on while holding ```VOL -``` in order to launch into Hekate.
+        </Steps>
+        ---
+    </TabItem>
+</Tabs>
+
+### Continue Reading
+
+---
