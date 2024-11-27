@@ -18,33 +18,125 @@ There are 2 methods to which you can do this:
 DBI is much simpler. You can go more in-depth with JKSV, go with whichever you prefer.
 :::
 
+### Steps
+
 ---
 
 <Steps>
     1.  ###### First ( Skip if already done )
-        Download either **DBI** or **JKSV** from their Github.
+        Download and install either **DBI** or **JKSV** from their Github.
 
         Then install either one of them onto your Switch.
-        - Read [Install homebrew apps](/miscellaneous/homebrew/) on how to do it if you don't already know.
+        - Read <u>[Install homebrew apps](/miscellaneous/homebrew/)</u> on how to do it if you don't already know.
 </Steps>
-
----
 
 <Tabs>
     <TabItem label = "DBI">
         <Tabs>
-            <TabItem label = "Create backup">
+            <TabItem label = "Creating backup">
+                <Steps>
+                    1.  ###### Start
+
+                        Connect your Switch to your PC or laptop using a USB cable.
+
+                        On your Switch, launch the homebrew menu and launch ```DBI```.
+                        - There are 2 ways of launching the homebrew menu:
+                            - Launch any game on the homescreen while holding R. <Badge text="Recommended" variant="success" />
+                            - Launch the album.
+
+                    2.  ###### Backup process
+
+                        Inside of DBI, run ```MTP Responder```.
+
+                        There should now be a new drive named ```Switch``` inside of your choice of file explorer.
+
+                        Access the drive and access the ```7: Saves``` folder.
+
+                        Copy over both of the folders titled ```Installed games``` and ```Uninstalled games``` to somewhere on your PC or laptop.
+                </Steps>
+                You have now successfully backed up all of the saves of your games!
+
+                ---
             </TabItem>
             <TabItem label = "Restoring backup">
+                <Steps>
+                    1.  ###### Start
+
+                        Connect your Switch to your PC or laptop using a USB cable.
+
+                        On your Switch, launch the homebrew menu and launch ```DBI```.
+                        - There are 2 ways of launching the homebrew menu:
+                            - Launch any game on the homescreen while holding R. <Badge text="Recommended" variant="success" />
+                            - Launch the album.
+
+                    2.  ###### Restoration process
+
+                        Inside of DBI, run ```MTP Responder```.
+
+                        There should now be a new drive named ```Switch``` inside of your choice of file explorer.
+
+                        Access the drive and access the ```7: Saves``` folder.
+
+                        Take the 2 folders named ```Installed games``` and ```Uninstalled games``` and copy them to ```7: Saves```.
+                </Steps>
+                You have now successfully restored your save backup!
+
+                ---
             </TabItem>
         </Tabs>
     </TabItem>
     <TabItem label = "JKSV">
         <Tabs>
-            <TabItem label = "Create backup">
+            <TabItem label = "Creating backup">
+                <Steps>
+                    1.  ###### Start
+
+                        On your Switch, launch the homebrew menu and launch ```JKSV```.
+                        - There are 2 ways of launching the homebrew menu:
+                            - Launch any game on the homescreen while holding R. <Badge text="Recommended" variant="success" />
+                            - Launch the album.
+
+                    2.  ###### Backup process
+
+                        Select your user on the left side with the ```A``` button.
+
+                        Select your desired game and press ```A``` to select it.
+
+                        Press ```A``` again to create a new save backup.
+
+                        Enter a name for the save data folder containing the save data and press ```+``` or ```OK```.
+                </Steps>
+                You have now successfully backed up all of the saves of your games!
+
+                ---
             </TabItem>
             <TabItem label = "Restoring backup">
+                <Steps>
+                    1.  ###### Start
+
+                        On your Switch, launch the homebrew menu and launch ```JKSV```.
+                        - There are 2 ways of launching the homebrew menu:
+                            - Launch any game on the homescreen while holding R. <Badge text="Recommended" variant="success" />
+                            - Launch the album.
+
+                    2.  ###### Restoration process
+
+                        Select your user on the left side with the ```A``` button.
+
+                        Select your desired game and press ```A``` to select it.
+
+                        Hover over the save data folder you created earlier and press ```Y```.
+
+                        Hold the ```A``` button until the process is finished.
+                </Steps>
+                You have now successfully backed up all of the saves of your games!
+
+                ---
             </TabItem>
         </Tabs>
     </TabItem>
 </Tabs>
+
+### Continue Reading
+
+---
