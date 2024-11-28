@@ -5,6 +5,8 @@ tableOfContents:
     maxHeadingLevel: 5
 ---
 
+import { Badge, Tabs, TabItem, Card, Steps } from "@astrojs/starlight/components";
+
 This section will go over how you can dump your titles, both from the gamecard reader for physical copies or from the e-shop for copies bought online.
 
 **DBI** is required to do this.
@@ -20,3 +22,55 @@ If you are on MacOS, please install something like OpenMTP in order to enable MT
 - This section requires you to either have an **unpatched V1** Switch or a **patched V1**, **V2**, **lite** or **OLED** with **a modchip**, otherwise this will **not** work.
 - This section requires you to have Atmosphere as well Hekate to be installed and for you to know how to access them.
     - If this is not the case, start by reading from <u>[FAQ](/introduction/faq/)</u>.
+
+### Steps
+
+---
+
+<Steps>
+    1.  ###### Start
+
+        Connect your Switch to your PC or laptop using a USB cable.
+
+        On your Switch, launch the homebrew menu and launch ```DBI```.
+        - There are 2 ways of launching the homebrew menu:
+            - Launch any game on the homescreen while holding R. <Badge text="Recommended" variant="success" />
+            - Launch the album.
+
+        Once inside of DBI, run ```MTP Responder```.
+
+        Once it's connected, there should be a new drive in your choice of file explorer named ```Switch```.
+
+        Continue reading with one of the two methods below, depending on whether you want to dump a physical gamecard or a game purchased online.
+</Steps>
+<Tabs>
+    <TabItem label = "Gamecard">
+        <Steps>
+            2.  ###### DBI
+
+                On your PC or laptop, inside of the microSD card, access ```9: Gamecard```.
+
+                Select ```Title[XXXXXXXXXXXXXXXX] (trimmed).xci``` and copy it to somewhere on your PC.
+        </Steps>
+        You have now successfully dumped your physical gamecard!
+
+        ---
+    </TabItem>
+    <TabItem label = "Installed">
+        <Steps>
+            2.  ###### DBI
+
+                On your PC or laptop, inside of the microSD card, access ```4: Installed games```.
+
+                Find the folder for your desired game and copy it to somewhere on your PC.
+                - Do **NOT** copy over the ```Title [B+U+DXXXXXX].nsp``` file. For a clean dump, you should always copy over the folder or **only** the desired **B**ase, **U**pdate or **D**LC.
+        </Steps>
+        You have now successfully dumped your installed game(s)!
+
+        ---
+    </TabItem>
+</Tabs>
+
+### Continue Reading
+
+---
