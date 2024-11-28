@@ -4,3 +4,119 @@ tableOfContents:
     minHeadingLevel: 1
     maxHeadingLevel: 5
 ---
+
+import { Badge, Tabs, TabItem, Card, Steps } from "@astrojs/starlight/components";
+
+This section will go over how you can update or downgrade your Switch, completely. There are some things you can update, including:
+
+- **Firmware** ( most important ).
+- **Hekate**.
+- **Atmosphere**.
+- **Sigpatches**.
+- **Sysmodules** ( doesn't apply for everyone ).
+
+### Tips
+
+---
+
+- It is not always required to update your firmware. When you update to a new firmware too quickly, you run the risk of Atmosphere and such not working because they haven't been updated to support the new firmware yet. Before updating, make sure that the firmware you're updating to is old enough for it to be supported by most things.
+- It is recommended to dump your current firmware before upgrading, because in the case that something you use does not support the firmware you're updating to, you can always downgrade.
+    - Read <u>[Dump firmware](/important/firmware/)</u>.
+- It is recommended to update everything every once in a while, new games often require higher firmwares than the last.
+
+### Requirements
+
+---
+
+- This section requires you to either have an **unpatched V1** Switch or a **patched V1**, **V2**, **lite** or **OLED** with **a modchip**, otherwise this will **not** work.
+- This section requires you to have Atmosphere as well Hekate to be installed and for you to know how to access them.
+  - If this is not the case, start by reading from <u>[FAQ](/introduction/faq/)</u>.
+
+### Steps
+
+:::note[Labels]
+Hekate, Atmosphere and Sigpatches are bundled in CFW.
+:::
+
+:::caution[Order]
+In order to update everything, follow this section in order.
+:::
+
+### CFW
+
+---
+
+<Steps>
+    1.  ###### Download the latest version of:
+        <Card title = "Hekate" icon = "external">
+            ---
+            ```hekate_ctcaer_x.x.x_Nyx_x.x.x.zip```
+        </Card>
+        <Card title = "Atmosphere" icon = "external">
+            ---
+            ```atmosphere-x.x.x-master-xxxxxxxxx+hbl-x.x.x+hbmenu-x.x.x.zip```
+        </Card>
+        <Card title = "Sigpatches" icon = "external">
+            ---
+            ```sigpatches.zip```
+        </Card>
+
+    2.  ###### Steps
+
+        Extract all of the ```.zip``` files you downloaded and move them over to the root of your microSD card.
+        - If you don't know how, read <u>[Browse microSD card](/important/browse/)</u>.
+</Steps>
+You have now successfully updated your Hekate, Atmosphere and Sigpatches!
+
+---
+
+### Firmware
+
+:::caution[Versions]
+The steps for updating and downgrading are the same. If you're updating, make sure the firmware version you're upgrading to is higher than your current firmware version.
+If you're downgrading, make sure the firmware version you're downgrading to is lower than your current firmware version.
+:::
+
+---
+
+<Steps>
+    3.  ###### Get:
+        <Card title = "Firmware Files" icon = "external">
+            ---
+        </Card>
+        - If you don't know how, read <u>[Dump firmware](/important/firmware/)</u>.
+
+        Put these firmware files on your microSD card.
+        - If you don't know how, read <u>[Browse microSD card](/important/browse/)</u>.
+
+    4.  ###### Atmosphere
+
+        On your Switch, launch the homebrew menu and launch ```Daybreak```.
+        - There are 2 ways of launching the homebrew menu:
+            - Launch any game on the homescreen while holding R. <Badge text="Recommended" variant="success" />
+            - Launch the album.
+
+    5.  ###### Daybreak
+
+        Inside of Daybreak, select ```Install```.
+
+        Select the folder that contains your firmware files.
+
+        Select ```Continue```.
+
+        Select ```Preserve settings```.
+
+        Select ```Install ( FAT32 & exFAT )```.
+
+        Select ```Continue``` again in order to proceed.
+
+        Once done, you will need to reboot in order to apply changes.
+</Steps>
+You have now successfully updated or downgraded your firmware!
+
+---
+
+
+### Continue Reading
+
+---
