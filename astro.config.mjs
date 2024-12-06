@@ -71,11 +71,8 @@ export default defineConfig({
 						{ label: "Install homebrew apps", link: "/miscellaneous/homebrew" },
 						{ label: "Install titles via USB", link: "/miscellaneous/usb" },
 						{ label: "Install themes", link: "/miscellaneous/themes" },
-						{
-							label: "Enable gamecard reader",
-							link: "/miscellaneous/gamecard",
-						},
-						{ label: "Manage cheats", link: "miscellaneous/cheats" },
+						{ label: "Enable gamecard reader", link: "/miscellaneous/gamecard", },
+						{ label: "Manage cheats & mods", link: "miscellaneous/cheats" },
 						{ label: "Manage sysmodules", link: "/miscellaneous/sysmodules" },
 						{ label: "Setup Tesla overlay", link: "/miscellaneous/tesla" },
 						{ label: "Setup Incognito", link: "/miscellaneous/incognito" },
