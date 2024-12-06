@@ -2,11 +2,14 @@
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
 
+import starlightImageZoom from 'starlight-image-zoom'
+
 // https://astro.build/config
 export default defineConfig({
 	site: "https://homebrew.sylvixor.com",
 	integrations: [
 		starlight({
+			plugins: [starlightImageZoom()],
 			title: "SP",
 			description: "Homebrew Guide",
 			customCss: ["./src/styles/custom.css"],
