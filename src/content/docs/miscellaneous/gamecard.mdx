@@ -1,46 +1,97 @@
 ---
-title: Enabling gamecard reader
+title: Enabling the gamecard reader
 tableOfContents:
     minHeadingLevel: 1
     maxHeadingLevel: 5
 ---
 
-This section will go over how you can enable the gamecard reader.
+import { Steps, Tabs, TabItem } from "@astrojs/starlight/components"
 
-### Fusee
+This section will go over how you can enable the gamecard reader in-case you want to play your physical copies.
 
----
-
-1. Access your microSD card, either with a reader or using an USB [ see [Browse USB]() ].
-2. Navigate to the ```/atmosphere/config/``` folder.
-3. Open ```stratosphere.ini``` with any text editor.
-    - If you do not have a file named ```stratosphere.ini``` in this directory, copy it over from ```/atmosphere/config_templates```.
-4. You now need to add the following to the bottom of your ```stratosphere.ini``` file:
-    - ```nogc = 0```.
-5. Save the file and ensure it is still saved as ```.ini```.
-6. Reinsert your microSD card into your Switch and boot AMS or just exit out of MTP.
-
-### Hekate [ FSS0 ]
-
-
-### GUI Method
+### Requirements
 
 ---
 
-1. Boot into Hekate.
-2. Go to the ```options``` tab.
-3. Disable the ```auto NoGC``` option.
-4. Boot into AMS.
+- This section requires you to either have an **unpatched V1** Switch or a **patched V1**, **V2**, **lite** or **OLED** with **a modchip**, otherwise this will **not** work.
+- This section requires you to have Atmosphere as well Hekate to be installed and for you to know how to access them.
+- If this is not the case, start by reading from <u>[FAQ](/introduction/faq/)</u>.
+- This section requires you to know the different ways of accessing your microSD card.
+    - If this is not the case, start by reading <u>[Browse microSD card](/important/browse/)</u>.
 
-### PC / laptop method
+### Steps
 
 ---
 
-1. Access your microSD card, either with a reader or using an USB [ see [Browse USB]() ].
-2. Navigate to the ```/bootloader/``` and open ```hekate_ipl.ini```.
-3. Remove the following entry:
-    - ```kip1patch=nogc```.
-4. Save the file and ensure it is still saved as ```.ini```.
-5. Reinsert your microSD card into your Switch and boot into AMS or just exit out of MTP.
+<Tabs>
+    <TabItem label = "Fusee">
+        <Steps>
+            1.  ###### MicroSD card
+
+                Access your microSD card, either with a reader or using an USB.
+
+            2.  ###### Configuration
+
+                Navigate to the ```/atmosphere/config/``` folder.
+
+                Open ```stratosphere.ini``` with any text editor.
+
+                If you do not have a file named ```stratosphere.ini``` in this directory, copy it over from ```/atmosphere/config_templates```.
+
+                You now need to add the following to the bottom of your ```stratosphere.ini``` file:
+                - ```nogc = 0```.
+
+                Save the file and ensure it is still saved as ```.ini```.
+
+                Reinsert your microSD card into your Switch and boot AMS or just exit out of MTP.
+        </Steps>
+        ---
+
+        You have now successfully enabled your gamecard reader! To disable, simply remove the ```nogc = 0``` parameter from your ```stratosphere.ini``` file.
+    </TabItem>
+    <TabItem label = "Hekate">
+        <Tabs>
+            <TabItem label = "GUI method">
+                <Steps>
+                    1.  ###### Hekate
+
+                        Boot into Hekate.
+
+                        Go to the ```options``` tab.
+
+                        Disable the ```auto NoGC``` option.
+
+                        Boot into AMS.
+                </Steps>
+                ---
+
+                You have now successfully enabled your gamecard reader! To disable, simply enable the ```auto NoGC``` again.
+            </TabItem>
+            <TabItem label = "PC / Laptop method">
+                <Steps>
+                    1.  ###### MicroSD card
+
+                        Access your microSD card, either with a reader or using an USB.
+
+                    2.  ###### Configuration
+
+                        Navigate to the ```/bootloader/``` and open ```hekate_ipl.ini```.
+
+                        Remove the following entry:
+                        - ```kip1patch=nogc```.
+
+                        Save the file and ensure it is still saved as ```.ini```.
+
+                        Reinsert your microSD card into your Switch and boot into AMS or just exit out of MTP.
+                </Steps>
+                ---
+
+                You have now successfully enabled your gamecard reader! To disable, simply add back the ```kip1patch=nogc``` in your ```hekate_ipl.ini``` file.
+            </TabItem>
+        </Tabs>
+    </TabItem>
+</Tabs>
+
+### Continue Reading
 
 ---
