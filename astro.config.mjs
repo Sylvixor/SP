@@ -78,7 +78,6 @@ export default defineConfig({
 						{ label: "Manage cheats & mods", link: "miscellaneous/cheats" },
 						{ label: "Manage sysmodules", link: "/miscellaneous/sysmodules" },
 						{ label: "Setup Tesla overlay", link: "/miscellaneous/tesla" },
-						{ label: "Setup Incognito", link: "/miscellaneous/incognito" },
 						{ label: "Verify dumps", link: "/miscellaneous/verify" },
 						{ label: "Emulating Amiibo", link: "/miscellaneous/amiibo" },
 						{ label: "MicroSD migration", link: "/miscellaneous/migrate" },

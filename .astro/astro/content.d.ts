@@ -319,13 +319,6 @@ declare module 'astro:content' {
   collection: "docs";
   data: InferEntrySchema<"docs">
 } & { render(): Render[".mdx"] };
-"miscellaneous/incognito.mdx": {
-	id: "miscellaneous/incognito.mdx";
-  slug: "miscellaneous/incognito";
-  body: string;
-  collection: "docs";
-  data: InferEntrySchema<"docs">
-} & { render(): Render[".mdx"] };
 "miscellaneous/migrate.mdx": {
 	id: "miscellaneous/migrate.mdx";
   slug: "miscellaneous/migrate";
