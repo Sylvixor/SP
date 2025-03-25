@@ -41,10 +41,7 @@ export default defineConfig({
 					label: "Homebrewing",
 					items: [
 						{ label: "Unpatched", link: "/homebrewing/unpatched" },
-						{
-							label: "Possibly Patched",
-							link: "/homebrewing/possibly-patched",
-						},
+						{ label: "Possibly Patched", link: "/homebrewing/possibly-patched" },
 						{ label: "Patched", link: "/homebrewing/patched" },
 						{ label: "Mariko", link: "/homebrewing/mariko" },
 					],
@@ -67,10 +64,7 @@ export default defineConfig({
 				{
 					label: "Miscellaneous",
 					items: [
-						{
-							label: "Partition-based or file-based",
-							link: "/miscellaneous/partition",
-						},
+						{ label: "Partition-based or file-based", link: "/miscellaneous/partition" },
 						{ label: "Install homebrew apps", link: "/miscellaneous/homebrew" },
 						{ label: "Install titles via USB", link: "/miscellaneous/usb" },
 						{ label: "Install themes", link: "/miscellaneous/themes" },
@@ -83,6 +77,12 @@ export default defineConfig({
 						{ label: "MicroSD migration", link: "/miscellaneous/migrate" },
 						{ label: "SXOS migration", link: "/miscellaneous/sxos" },
 						{ label: "About", link: "/miscellaneous/about" },
+					],
+				},
+				{
+					label: "Overclocking",
+					items: [
+						{ label: "Getting started", link: "/overclocking/start" },
 					],
 				},
 			],
