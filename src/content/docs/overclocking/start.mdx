@@ -4,3 +4,85 @@ tableOfContents:
     minHeadingLevel: 1
     maxHeadingLevel: 5
 ---
+
+import { Card, Steps, FileTree, Tabs, TabItem, LinkCard } from "@astrojs/starlight/components";
+
+This section will go over how you can go about overclocking your Switch in order to get a higher and / or more stable framerate.
+
+### Before you start
+
+---
+
+- You need to have followed the guide to install CFW on either your emunand, sysnand, or both.
+    - See <u>[Homebrewable?](/introduction/homebrewable/)</u>.
+
+- Back up your emunand, sysnand, or both:
+
+<Tabs>
+    <TabItem label = "SysNAND">
+        1. Go into Hekate and navigate to the ```Tools``` section, then select ```Backup eMMC```.
+        2. Create a backup of ```eMMC BOOT0 & BOOT1```.
+        3. Back up the ```eMMC RAW GPP``` partition.
+
+        ---
+    </TabItem>
+    <TabItem label = "EmuNAND">
+        1. Go into Hekate and navigate to the ```Tools``` section, then select ```Backup eMMC```.
+        2. To back up your emuNAND, enable the option for ```SD emuMMC Raw Partition```.
+        3. Create a backup of ```eMMC BOOT0 & BOOT1```.
+        4. Back up the ```eMMC RAW GPP``` partition.
+
+        ---
+    </TabItem>
+</Tabs>
+
+A backup will now be created on the root of your microSD card with the name ```Backup```. Put this folder somewhere safe.
+
+### Installation
+
+---
+
+<Steps>
+    1.  Install:
+
+        <Card title = "SaltyNX" icon = "external">
+            ---
+            From their **Github**.
+        </Card>
+        <Card title = "nx-ovlloader+" icon = "external">
+            ---
+            From their **Github**.
+        </Card>
+        <Card title = "EOS" icon = "external">
+            ---
+            From their **Github**.
+        </Card>
+        <Card title = "Status Monitor Overlay" icon = "external">
+            ---
+            From their **Github**.
+        </Card>
+        <Card title = "FPSLocker" icon = "external">
+            ---
+            From their **Github**.
+        </Card>
+        <Card title = "Ultrahand" icon = "external">
+            ---
+            From their **Github**.
+        </Card>
+        <Card title = "ReverseNX-RT" icon = "external">
+            ---
+            From their **Github**.
+        </Card>
+
+        ##### Optional:
+
+        <Card title = "Edizon" icon = "external">
+            ---
+            From their **Github**.
+        </Card>
+        <Card title = "NX-FanControl" icon = "external">
+            ---
+            From their **Github**.
+        </Card>
+</Steps>
+
