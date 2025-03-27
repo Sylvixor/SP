@@ -36,7 +36,7 @@ This section will go over how you can go about overclocking your Switch in order
     </TabItem>
 </Tabs>
 
-A backup will now be created on the root of your microSD card with the name ```Backup```. Put this folder somewhere safe.
+A backup will now be created on the root of your microSD card with the name ```backup```. Put this folder somewhere safe.
 
 ### Installation
 
@@ -47,42 +47,79 @@ A backup will now be created on the root of your microSD card with the name ```B
 
         <Card title = "SaltyNX" icon = "external">
             ---
+            Required background process.
+
             From their **Github**.
         </Card>
         <Card title = "nx-ovlloader+" icon = "external">
             ---
-            From their **Github**.
-        </Card>
-        <Card title = "EOS" icon = "external">
-            ---
-            From their **Github**.
-        </Card>
-        <Card title = "Status Monitor Overlay" icon = "external">
-            ---
-            From their **Github**.
-        </Card>
-        <Card title = "FPSLocker" icon = "external">
-            ---
+            Required for overlay.
+
             From their **Github**.
         </Card>
         <Card title = "Ultrahand" icon = "external">
             ---
+            The overlay of choice.
+
             From their **Github**.
         </Card>
+        <Card title = "EOS" icon = "external">
+            ---
+            Toolkit for overclocking.
+
+            From their **Github**.
+        </Card>
+        <Card title = "Status Monitor Overlay" icon = "external">
+            ---
+            To monitor everything.
+
+            From their **Github**.
+        </Card>
+        <Card title = "FPSLocker" icon = "external">
+            ---
+            For 60fps mods.
+
+            From their **Github**.
+        </Card>
+
+        ##### Optionally
+
+        Install:
+
         <Card title = "ReverseNX-RT" icon = "external">
             ---
+            To force docked in handheld and vice versa.
+
             From their **Github**.
         </Card>
-
-        ##### Optional:
-
         <Card title = "Edizon" icon = "external">
             ---
+            For game cheats.
+
             From their **Github**.
         </Card>
         <Card title = "NX-FanControl" icon = "external">
             ---
+            To manually control the fan.
+
             From their **Github**.
         </Card>
+
+    2.  ##### Fixing archive bit
+    
+        Boot into Hekate, navigate to ```Tools``` > ```Arch Bit - RCM - Touch - pkg1/2``` > ```Fix Archive Bit```.
+
+    3.  ##### Checking console information
+
+        Also in Hekate, navigate to ```Console Info``` > ```HW & Fuses```. Note down the **DRAM ID**, **CPU Speedo 0**, **CPU Speedo 2** and **SOC Speedo**.
 </Steps>
 
+---
+
+### Continue
+
+---
+
+Now, if you have an **V1** Switch, please continue to <u>[Erista](/overclocking/erista)</u>.
+
+If you have a **V2**, **Lite** or **OLED**, please continue to <u>[Mariko](/overclocking/mariko)</u>.
