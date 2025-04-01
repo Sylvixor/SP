@@ -13,20 +13,25 @@ This section will go over how you can go about overclocking your Switch in order
 
 ---
 
-- You need to have followed the guide to install CFW on either your emunand, sysnand, or both.
-    - See <u>[Homebrewable?](/introduction/homebrewable/)</u>.
+- This section requires you to either have an **unpatched V1** Switch or a **patched V1**, **V2**, **lite** or **OLED** with **a modchip**, otherwise this will **not** work.
+- This section requires you to have Atmosphere as well Hekate to be installed and for you to know how to access them.
+    - If this is not the case, start by reading from <u>[FAQ](/introduction/faq/)</u>.
+- This section requires you to know the different ways of accessing your microSD card.
+    - If this is not the case, start by reading <u>[Browse microSD card](/important/browse/)</u>.
 
-- Back up your emunand, sysnand, or both:
+### Create a backup
+
+---
 
 <Tabs>
-    <TabItem label = "SysNAND">
+    <TabItem label = "SysMMC / SysNAND">
         1. Go into Hekate and navigate to the ```Tools``` section, then select ```Backup eMMC```.
         2. Create a backup of ```eMMC BOOT0 & BOOT1```.
         3. Back up the ```eMMC RAW GPP``` partition.
 
         ---
     </TabItem>
-    <TabItem label = "EmuNAND">
+    <TabItem label = "EmuMMC / EmuNAND">
         1. Go into Hekate and navigate to the ```Tools``` section, then select ```Backup eMMC```.
         2. To back up your emuNAND, enable the option for ```SD emuMMC Raw Partition```.
         3. Create a backup of ```eMMC BOOT0 & BOOT1```.
@@ -120,6 +125,6 @@ A backup will now be created on the root of your microSD card with the name ```b
 
 ---
 
-Now, if you have an **V1** Switch, please continue to <u>[Erista](/overclocking/erista)</u>.
+Now, if you have a **V1** Switch, please continue to <u>[Erista](/overclocking/erista)</u>
 
-If you have a **V2**, **Lite** or **OLED**, please continue to <u>[Mariko](/overclocking/mariko)</u>.
+If you have a **V2**, **Lite** or **OLED**, please continue to <u>[Mariko](/overclocking/mariko)</u>
