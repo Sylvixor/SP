@@ -2,14 +2,12 @@
 import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
 
-import starlightImageZoom from 'starlight-image-zoom'
-
 // https://astro.build/config
 export default defineConfig({
 	site: "https://homebrew.sylvixor.com",
 	integrations: [
 		starlight({
-			plugins: [starlightImageZoom()],
+			plugins: [],
 			title: "SP",
 			description: "Homebrew Guide",
 			customCss: ["./src/styles/custom.css"],
@@ -21,12 +19,12 @@ export default defineConfig({
 			logo: {
 				src: "./src/assets/SP-logo-nav.png",
 			},
-			social: {
-				github: "https://github.com/sylvixor/sp",
-				discord: "https://discord.gg/zc2CmJWbz8",
-				telegram: "https://t.me/switchSP",
-				reddit: "https://www.reddit.com/r/SwitchPirates",
-			},
+			social: [
+				{ icon: 'github', label: 'GitHub', href: 'https://github.com/sylvixor/sp' },
+				{ icon: 'discord', label: 'Discord', href: 'https://discord.gg/zc2CmJWbz8' },
+				{ icon: 'telegram', label: 'Telegram', href: 'https://t.me/switchSP' },
+				{ icon: 'reddit', label: 'Reddit', href: 'https://www.reddit.com/r/SwitchPirates' },
+				],
 			sidebar: [
 				{
 					label: "Introduction",
