@@ -3,3 +3,4 @@ node_modules
 .astro/astro
 .astro
 .DS_Store
+.vercel
