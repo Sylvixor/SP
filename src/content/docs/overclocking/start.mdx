@@ -48,7 +48,7 @@ A backup will now be created on the root of your microSD card with the name ```b
 ---
 
 <Steps>
-    1.  Install:
+    1.  ##### Install
 
         <Card title = "SaltyNX" icon = "external">
             ---
@@ -89,7 +89,7 @@ A backup will now be created on the root of your microSD card with the name ```b
 
         ##### Optionally
 
-        Install:
+        Install
 
         <Card title = "ReverseNX-RT" icon = "external">
             ---
@@ -117,6 +117,24 @@ A backup will now be created on the root of your microSD card with the name ```b
     3.  ##### Checking console information
 
         Also in Hekate, navigate to ```Console Info``` > ```HW & Fuses```. Note down the **DRAM ID**, **CPU Speedo 0**, **CPU Speedo 2** and **SOC Speedo**.
+
+    4.  ##### Hekate
+
+        Access your microSD card, go into ```/bootloader/hekate_ipl.ini``` and add the line:
+
+        ```
+        kip1=atmosphere/kips/*
+        ```
+        ---
+
+</Steps>
+
+### Atmosphere
+
+<Steps>
+    4.  ###### Atmosphere
+
+        Launch into Atmosphere
 </Steps>
 
 ---

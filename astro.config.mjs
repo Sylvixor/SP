@@ -12,7 +12,7 @@ export default defineConfig({
 			description: "Homebrew Guide",
 			customCss: ["./src/styles/custom.css"],
 			// credits: true,
-			favicon: "/favicon.png",
+			favicon: "/favicon.ico",
 			components: {
 				Head: "./src/components/Head.astro",
 			},
