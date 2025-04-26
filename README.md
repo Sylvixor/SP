@@ -101,6 +101,10 @@ Here is an overview of the project structure:
 └── .gitignore           # Files to ignore in Git
 ```
 
+## Contributors
+- Sylvixor [(@Sylvixor)](https://github.com/Sylvixor)- Project Owner, Logo, Content, Maintainer
+- The Legendary John [(@thelegendaryjohn)](https://github.com/thelegendaryjohn) - Co-owner, Content, Styling, Maintainer
+
 ## License
 
 SP © 2024 by Sylvixor is licensed under CC BY-NC-SA 4.0
