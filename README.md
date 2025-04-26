@@ -102,8 +102,8 @@ Here is an overview of the project structure:
 ```
 
 ## Contributors
-- Sylvixor [(@Sylvixor)](https://github.com/Sylvixor)- Project Owner, Logo, Content, Maintainer
-- The Legendary John [(@thelegendaryjohn)](https://github.com/thelegendaryjohn) - Co-owner, Content, Styling, Maintainer
+- Sylvixor ([@Sylvixor](https://github.com/Sylvixor)) - Project Owner, Logo, Content, Maintainer
+- The Legendary John ([@thelegendaryjohn](https://github.com/thelegendaryjohn)) - Co-owner, Content, Styling, Maintainer
 
 ## License
 
