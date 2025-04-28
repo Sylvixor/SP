@@ -3,6 +3,8 @@ title: Getting Started
 tableOfContents:
     minHeadingLevel: 1
     maxHeadingLevel: 5
+prev: false
+next: false
 ---
 
 import { Card, Steps, FileTree, Tabs, TabItem, LinkCard } from "@astrojs/starlight/components";
@@ -11,13 +13,19 @@ This section will go over how you can go about overclocking your Switch in order
 
 ### Before you start
 
+:::danger[Caution]
+Overclocking carries inherent risk. If done incorrectly, it could cause damage.
+
+By proceeding, you accept full responsibility for any consequences. We are not liable for any damage, data loss, or bricking that may occur as a result of overclocking.
+:::
+
 ---
 
 - This section requires you to either have an **unpatched V1** Switch or a **patched V1**, **V2**, **lite** or **OLED** with **a modchip**, otherwise this will **not** work.
 - This section requires you to have Atmosphere as well Hekate to be installed and for you to know how to access them.
-    - If this is not the case, start by reading from <u>[FAQ](/introduction/faq/)</u>.
+    - If this is not the case, start by reading from <u>[FAQ](/introduction/faq/)</u>
 - This section requires you to know the different ways of accessing your microSD card.
-    - If this is not the case, start by reading <u>[Browse microSD card](/important/browse/)</u>.
+    - If this is not the case, start by reading <u>[Browse microSD card](/important/browse/)</u>
 
 ### Create a backup
 
@@ -125,19 +133,15 @@ A backup will now be created on the root of your microSD card with the name ```b
         ```
         kip1=atmosphere/kips/*
         ```
-        ---
-
-</Steps>
-
-### Atmosphere
-
-<Steps>
-    4.  ###### Atmosphere
-
-        Launch into Atmosphere
 </Steps>
 
 ---
+
+:::danger[Overclocking Software]
+**Never** use 4IFIR.
+
+It can damage your Switch without warning among other issues. Always use Sys-Clk-OC ( Included in EOS ).
+:::
 
 ### Continue
 

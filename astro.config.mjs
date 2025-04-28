@@ -84,6 +84,7 @@ export default defineConfig({
 						{ label: "Getting started", link: "/overclocking/start" },
 						{ label: "Erista", link: "/overclocking/erista" },
 						{ label: "Mariko", link: "/overclocking/mariko" },
+						{ label: "Test stability", link: "/overclocking/stability" },
 						{ label: "Using overlays", link: "/overclocking/overlay" },
 					],
 				},

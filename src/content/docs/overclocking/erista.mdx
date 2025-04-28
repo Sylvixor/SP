@@ -3,6 +3,56 @@ title: Erista
 tableOfContents:
     minHeadingLevel: 1
     maxHeadingLevel: 5
+prev: true
+next:
+    link: /overclocking/stability/
+    label: Test stability
+lastUpdated: 2022-08-09
 ---
 
 This section will go over everything overclocking related when it comes to Erista Switches.
+
+### Erista Limits
+
+---
+
+##### CPU:
+- Erista CPU limit of 15A is reached at **1785MHz** without any UV.
+
+##### GPU:
+- The Erista GPU limit of 15A is reached at **921MHz** without any UV with moderate speedos.
+
+##### Charger IC:
+- 18W limit restricts overclocking for Erista units. This is the main limiting factor, but the PMIC current limits for CPU and GPU will be reached first.
+
+##### GPU Scheduling:
+- On: Caps GPU usage at ~96.7%
+- Off: Caps GPU usage at ~99.7%
+
+:::danger[Note]
+Disabling GPU Scheduling will slightly increase power draw. Use it with caution.
+:::
+
+### Settings for EOS Switchcraft
+
+---
+
+##### CPU Settings
+
+---
+
+##### GPU Settings
+
+---
+
+##### RAM Settings
+
+---
+
+### Clock Settings
+
+---
+
+### Troubleshooting
+
+---
