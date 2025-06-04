@@ -5,6 +5,8 @@ tableOfContents:
     maxHeadingLevel: 5
 ---
 
+import { Badge, Tabs, TabItem, Card, Steps, FileTree } from "@astrojs/starlight/components";
+
 This section will go over how you can migrate to another microSD card. This could happen because you want more storage for more games or your current microSD card just doesn't perform the way you want it to.
 Either way, this section will go over how you can safely migrate to a new microSD card without having to start from scratch.
 
@@ -12,9 +14,93 @@ Either way, this section will go over how you can safely migrate to a new microS
 
 ---
 
+- This section requires you to either have an **unpatched V1** Switch or a **patched V1**, **V2**, **lite** or **OLED** with **a modchip**, otherwise this will **not** work.
+- This section requires you to have Atmosphere as well Hekate to be installed and for you to know how to access them.
+    - If this is not the case, start by reading from <u>[FAQ](/introduction/faq/)</u>.
+- This section requires you to know the different ways of accessing your microSD card.
+    - If this is not the case, start by reading <u>[Browse microSD card](/important/browse/)</u>.
+
 ### Steps
 
 ---
+
+<Tabs>
+    <TabItem label = "File-based emuMMC">
+        <Steps>
+            1.  Make the new microSD card FAT32 ( preferably with Hekate ).
+
+            2.  Copy the contents of your old microSD card to your new microSD card.
+        </Steps>
+        ---
+    </TabItem>
+    <TabItem label = "Partition-based emuMMC">
+        <Steps>
+            1.  ###### Hekate
+
+                Boot into Hekate, and then go to the ```Tools``` tab.
+
+                Choose ```Backup eMMC``` and then turn on ```SD emuMMC RAW Partition```.
+
+                Pick ```SD emuMMC RAW GPP```.
+
+                Once done, press ```Close```, and go back to the ```Tools``` tab.
+
+                Choose ```Backup eMMC``` and then turn on ```SD emuMMC RAW Partition```.
+
+                Pick ```SD emuMMC BOOT0 & BOOT1```.
+
+            2.  ###### PC / Laptop
+
+                Plug your old microSD card into your PC / laptop and go to your ```/backup/{emmc_sn}/emummc``` folder and move all ```rawnand.bin.xx```, ```BOOT0```
+                and ```BOOT1``` files into the ```restore``` folder.
+
+                Afterwards, move your ```backup```, ```emummc``` and ```bootloader``` folders onto your PC / laptop.
+
+                Move the ```bootloader``` folder into your new microSD card and plug it into your Switch.
+                    - If you are using a Mariko device, make sure to move ```payload.bin``` as well.
+                    - If you are using SX Gear, move the ```boot.dat``` file as well.
+
+            3.  ###### Hekate again
+
+                Boot into Hekate, and then go to the ```Tools``` tab.
+
+                Pick ```Partition SD Card```.
+
+                Move the ```emuMMC (RAW)``` slider to ```29 FULL``` for Erista and ```61 FULL``` for Mariko.
+
+                Press ```Next Step``` and press ```Start```.
+
+            4.  ###### PC / Laptop again
+
+                Plug your new microSD card into your PC / laptop and move your ```backup``` and ```emummc``` folders into your new microSD card.
+                    - If you are using a Mariko device, make sure to move ```payload.bin``` as well.
+                    - If you are using SX Gear, move the ```boot.dat``` file as well.
+
+                Plug your new microSD card back into your Switch.
+
+            5.  ###### Hekate once again
+
+                Boot into Hekate, and then go to the ```Tools``` tab.
+
+                Pick ```Restore eMMC``` and turn on ```SD emuMMC RAW Partition```.
+
+                Pick ```SD emuMMC RAW GPP```.
+
+                Once done, press ```Close```, and go back to the ```Tools``` tab.
+
+                Choose ```Restore eMMC``` and turn on ```SD emuMMC RAW Partition```.
+
+                Pick ```SD emuMMC BOOT0 & BOOT1```.
+
+                Once done, press ```Close```, and then pick ```emuMMC```, then pick ```Migrate emuMMC```, and finally pick ```Fix RAW```.
+
+                Once done, you can move the rest of your CFW files onto your new microSD card and boot into Atmosphere.
+        </Steps>
+        ---
+    </TabItem>
+</Tabs>
+
+Now you have successfully migrated to a new microSD card!
 
 ### Continue Reading
 

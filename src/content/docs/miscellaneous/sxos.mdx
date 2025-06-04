@@ -5,6 +5,8 @@ tableOfContents:
     maxHeadingLevel: 5
 ---
 
+import { Badge, Tabs, TabItem, Card, Steps, FileTree } from "@astrojs/starlight/components";
+
 This sectionw will go over how you can migrate from SX OS to Atmosphere. The reason for this is that SX OS has not been updated for a very long time and will never be updated again.
 It is good practice to switch over to Atmosphere as soon as possible.
 
@@ -12,9 +14,139 @@ It is good practice to switch over to Atmosphere as soon as possible.
 
 ---
 
+- This section requires you to either have an **unpatched V1** Switch or a **patched V1**, **V2**, **lite** or **OLED** with **a modchip**, otherwise this will **not** work.
+- This section requires you to have Atmosphere as well Hekate to be installed and for you to know how to access them.
+    - If this is not the case, start by reading from <u>[FAQ](/introduction/faq/)</u>.
+- This section requires you to know the different ways of accessing your microSD card.
+    - If this is not the case, start by reading <u>[Browse microSD card](/important/browse/)</u>.
+
+:::note[For Mariko users]
+If you updated via ChoiDujourNX on your sysMMC then you have to either get a donor boot0/boot1 or use a backup of your sysMMC boot0/boot1 and then 
+restore it via NxNandManager, hekate, or sxos bootmenu. This is because ChoiDuJourNX corrupts your boot0/boot1 and will prevent you from 
+being able to boot into sysMMC on Atmosphere.
+:::
+
 ### Steps
 
 ---
+
+<Steps>
+    1.  ###### CFW files
+
+        Extract the following files into the root of your microSD card.
+        <Card title = "SX_Gear_v1.1.zip" icon = "external">
+        ---
+        SX Core / Lite & SX Pro users only.
+
+        Make sure to overwrite your current ```boot.dat``` file.
+        </Card>
+        <Card title = "hekate_ctcaer_x.x.x_Nyx_x.x.x.zip" icon = "external">
+        ---
+        From their **Github**.
+        </Card>
+        <Card title = "atmosphere-x.x.x-master.zip" icon = "external">
+        ---
+
+        From their **Github**.
+        </Card>
+        <Card title = "patch-1.9.0-20.zip" icon = "external">
+        ---
+        </Card>
+
+        Rename ```hekate_ctcaer_x.x.x.bin``` to ```payload.bin``` ( SX Core / Lite, SX Pro and Spacecraft-NX users ).
+
+    2.  ###### Hekate launch options
+
+        Create a file named ```hekate_ipl.ini``` inside of your ```/bootloader/``` folder.
+
+        Copy and paste the following configuration within the file:
+
+        ```
+        [config]
+        autoboot=0
+        autoboot_list=0
+        bootwait=3
+        backlight=100
+        autohosoff=0
+        autonogc=1
+        updater2p=1
+        bootprotect=0
+
+        [CFW emuMMC - Atmosphere]
+        pkg3=atmosphere/package3
+        emummcforce=1
+        cal0blank=1
+        kip1patch=nosigchk
+        icon=bootloader/res/icon_payload.bmp
+
+        [CFW sysMMC - Atmosphere]
+        pkg3=atmosphere/package3
+        emummc_force_disable=1
+        icon=bootloader/res/icon_payload.bmp
+
+        [Stock]
+        pkg3=atmosphere/package3
+        stock=1
+        emummc_force_disable=1
+        icon=bootloader/res/icon_switch.bmp
+        ```
+
+    3.  ###### Blank serial info
+
+        Create a file named ```exosphere.ini``` in the root of your microSD card.
+
+        Copy and paste the following configuration within the file:
+
+        ```
+        [exosphere]
+        debugmode=1
+        debugmode_user=0
+        disable_user_exception_handlers=0
+        enable_user_pmu_access=0
+        blank_prodinfo_sysmmc=0
+        blank_prodinfo_emummc=1
+        allow_writing_to_cal_sysmmc=0
+        log_port=0
+        log_baud_rate=115200
+        log_inverted=0
+        ```
+
+    4.  ###### Blocking Nintendo connections
+
+        Create a file named ```default.txt``` in ```/atmosphere/hosts/``` ( the ```/hosts/``` folder won't exist, so create it ).
+
+        Copy and paste the following configuation within the file:
+
+        ```
+        # Block Nintendo Servers
+        127.0.0.1 *nintendo.*
+        127.0.0.1 *nintendo-europe.com
+        127.0.0.1 *nintendoswitch.*
+        95.216.149.205 *conntest.nintendowifi.net
+        95.216.149.205 *ctest.cdn.nintendo.net
+        ```
+
+        :::note[Note]
+        If you want to use Atmosphere on sysMMC as well, rename the file to ```emummc.txt```.
+        :::
+
+    5.  ###### Finishing up
+
+        Place your microSD card back into your Switch, power it on and boot into Hekate.
+
+        Select ```emuMMC``` in the main menu, then select ```Migrate emuMMC``` and finally select ```emunand```.
+
+        Once it's done, select ```Close```.
+
+        Click on ```launch```, and select your CFW launch option.
+
+        :::note[sysMMC > emuMMC & emuMMC > sysMMC]
+        To switch between sysMMC and emuMMC, just go back into hekate's launch options in order to select either sysMMC or emuMMC.
+        :::
+</Steps>
+---
+
+Now you have successfully migrated from SXOS to Atmosphere!
 
 ### Continue Reading
 

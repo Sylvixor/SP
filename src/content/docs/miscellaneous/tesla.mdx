@@ -5,15 +5,89 @@ tableOfContents:
     maxHeadingLevel: 5
 ---
 
-This sectionw will go over how you can migrate from SX OS to Atmosphere. The reason for this is that SX OS has not been updated for a very long time and will never be updated again.
-It is good practice to switch over to Atmosphere as soon as possible.
+import { Card } from "@astrojs/starlight/components";
+
+This sectionw will go over how you can install the Tesla overlay menu.
 
 ### Requirements
 
 ---
 
-### Steps
+- This section requires you to either have an **unpatched V1** Switch or a **patched V1**, **V2**, **lite** or **OLED** with **a modchip**, otherwise this will **not** work.
+- This section requires you to have Atmosphere as well Hekate to be installed and for you to know how to access them.
+    - If this is not the case, start by reading from <u>[FAQ](/introduction/faq/)</u>.
+- This section requires you to know the different ways of accessing your microSD card.
+    - If this is not the case, start by reading <u>[Browse microSD card](/important/browse/)</u>.
+
+### Installation
 
 ---
+
+To install Tesla, download the following files and extract them into your microSD card:
+        
+<Card title = "ovlmenu.zip" icon = "external">
+---
+
+From their **Github**.
+</Card>
+<Card title = "nx-ovlloader.zip" icon = "external">
+---
+
+From their **Github**.
+</Card>
+
+To open Tesla overlay, the standard shortcut is: ```L + D-PAD DOWN + R3```.
+
+### List of available modules
+
+---
+
+#### System tools
+
+---
+
+Name                   | Description                                         |
+---------------------- | --------------------------------------------------- |
+fastCFWswitch          | Boot into different payloads.                       |
+MasterVolume           | Adjust volume from the overlay menu.                |
+NX-FanControl          | Let's you control the built-in fan.                 |
+ovlSysmodule           | Let's you toggle sysmodules from the overlay menu.  |
+QuickNTP               | Syncs the Switch's time with a list of NTP servers. |
+Status Monitor Overlay | Monitor your hardware in real time.                 |
+Studious-Pancake       | Reboot to Hekate configs.                           |
+sys-clk                | Allows you to set CPU/GPU/MEM clocks.               |
+sys-ftpd-ovl           | Displays your internal IP for FTP purposes.         |
+
+#### Other tools
+
+---
+
+Name                 | Description                                                    |
+-------------------- | -------------------------------------------------------------- |
+EdiZon Overlay       | Overlay functionality for EdiZon / Breeze.                     |
+emuiibo              | Use emulated Amiibo from your overlay.                         |
+ReverseNX-RT         | Allows you to switch between docked and handheld in real-time. |
+ShareNX Overlay      | Share your last screenshot while in-game.                      |
+sys-tune             | A simple background audio player.                              |
+TestReaderOverlay-NX | Let's you view .txt files.                                     |
+
+#### Game specific
+
+---
+
+Name                             | Description                                                                    |
+-------------------------------- | ------------------------------------------------------------------------------ |
+CaptureSight                     | View Pokemon Sword & Shield data while playing the game.                       |
+MEGAHAKUS                        | A Tesla overlay for 初音ミク Project DIVA MEGA39's.                             |
+Ultimate Training Modpack Plugin | A Skyline plugin using cargo-skyline for adding features to the training mode. |
+
+#### Tesla overlay games
+
+---
+
+Name   | Description                       |
+------ | --------------------------------- |
+Snek   | Simple snake game in the overlay. |
+Tetris | Tetris in the overlay.            |
 
 ### Continue Reading
